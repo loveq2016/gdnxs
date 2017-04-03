@@ -1,0 +1,18 @@
+.checkbox-table-item {
+    height: 37px;
+    margin: 5px 0px 9px 32px;
+    border: 1px solid #EAECF1;
+    padding: 6px;
+    text-align: left;
+}
+.checkbox-table-header{
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #DEDADA;
+    font-weight: bolder;
+    background-color: #DFE4E6;
+    text-align: left;
+}
+.icheckbox_square-blue{
+    margin-right: 12px;
+}

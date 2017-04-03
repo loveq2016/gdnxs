@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!--懒加载 -->
+<!--	<settings>
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="aggressiveLazyLoading" value="false" />
+	</settings>-->
+	<!--<typeAliases>
+		&lt;!&ndash; user &ndash;&gt;
+		<typeAlias type="com.qinghui.street.user.model.UserModel"
+			alias="UserModel" />
+
+		<typeAlias type="com.qinghui.base.vo.SelectModel" alias="SelectModel" />
+
+	</typeAliases>-->
+</configuration>

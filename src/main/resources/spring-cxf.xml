@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-lazy-init="true"
+    xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:jaxws="http://cxf.apache.org/jaxws"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+        http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+         
+    <import resource="classpath:META-INF/cxf/cxf.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+    <!-- 
+    action:UsernameToken指使用用户令牌 
+    passwordType:PasswordText指密码加密策略，这里直接文本 
+    user:cxfServer指别名 
+    passwordCallBackRef:serverPasswordCallback指消息验证 
+     --> 
+	<!--<jaxws:endpoint id="dataSyncServiceImpl"
+        implementor="com.minstone.specialweb.sync.webservice.DataSyncServiceImpl" address="/dataSyncService">
+       &lt;!&ndash;  <jaxws:inInterceptors>
+            <bean   
+                class="org.apache.cxf.interceptor.LoggingInInterceptor" />   
+            <bean   
+                class="org.apache.cxf.binding.soap.saaj.SAAJInInterceptor" />   
+            <bean   
+                class="org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor">   
+                <constructor-arg>   
+                    <map>   
+                        <entry key="action" value="UsernameToken" />   
+                        <entry key="passwordType"  
+                            value="PasswordText" />   
+                        <entry key="user" value="cxfServer" />   
+                        <entry key="passwordCallbackRef">   
+                            <ref bean="serverAuthCallback" />   
+                        </entry>   
+                    </map>   
+                </constructor-arg>   
+            </bean>   
+        </jaxws:inInterceptors>     
+        
+        &ndash;&gt;
+        <jaxws:inInterceptors>
+            <ref bean="ipInterceptor"/>
+        </jaxws:inInterceptors>
+    </jaxws:endpoint>-->
+
+    <!-- 	<jaxws:client id="webServiceClient" serviceClass="com.minstone.specialweb.sync.webservice.DataSyncService" address="http://210.76.70.125:8888/SpecialWeb/webservice/dataSyncService">
+        <jaxws:outInterceptors>
+              <bean
+                  class="org.apache.cxf.interceptor.LoggingOutInterceptor" />
+              <bean
+                  class="org.apache.cxf.binding.soap.saaj.SAAJOutInterceptor" />
+              <bean
+                  class="org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor">
+                  <constructor-arg>
+                      <map>
+                          <entry key="action" value="UsernameToken" />
+                          <entry key="passwordType"
+                              value="PasswordText" />
+                          <entry key="user" value="cxfClient" />
+                          <entry key="passwordCallbackRef">
+                              <ref bean="clientAuthCallback" />
+                          </entry>
+                      </map>
+                  </constructor-arg>
+              </bean>
+          </jaxws:outInterceptors>
+        </jaxws:client>-->
+
+
+
+    <jaxws:client id="originZcodeWebService" serviceClass="cn.com.gzqinghui.api.webservice.OriginZcodeWebService" address="http://124.127.246.224:8001/icippsp/soapws/originzcode?wsdl"></jaxws:client>
+     
+    <jaxws:client id="pspFiapplyWebService" serviceClass="cn.com.gzqinghui.api.webservice.PspFiapplyWebService" address="http://124.127.246.224:8001/icippsp/soapws/icipfiapply?wsdl"></jaxws:client>
+
+    <jaxws:client id="pspGiqciOriginServise" serviceClass="cn.com.gzqinghui.api.webservice.PspGiqciOriginServise" address="http://124.127.246.224:8001/icippsp/soapws/giqciOrigin?wsdl"></jaxws:client>
+
+    <jaxws:client id="pspNotarialCodeInfoServise" serviceClass="cn.com.gzqinghui.api.webservice.PspNotarialCodeInfoServise" address="http://124.127.246.224:8001/icippsp/soapws/pspNotaCodeInfo?wsdl"></jaxws:client>
+  
+  
+</beans>

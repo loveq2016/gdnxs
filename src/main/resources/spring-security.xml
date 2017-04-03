@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security
+     http://www.springframework.org/schema/security/spring-security-4.0.xsd
+     http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+	<!--<sec:http pattern="/oauth/token" create-session="stateless" use-expressions="true" 
+		auto-config="true" once-per-request="true" authentication-manager-ref="oauth2AuthenticationManager" 
+		entry-point-ref="oauth2AuthenticationEntryPoint"> -->
+	<!--<sec:intercept-url pattern="/oauth/token" method="GET" access="isFullyAuthenticated()"/> -->
+	<!--<sec:anonymous enabled="false"/> -->
+	<!--<sec:http-basic entry-point-ref="oauth2AuthenticationEntryPoint"/> -->
+	<!--<sec:custom-filter ref="clientCredentialsTokenEndpointFilter" before="BASIC_AUTH_FILTER"/> -->
+	<!--<sec:access-denied-handler ref="oauth2AccessDeniedHandler"/> -->
+	<!--</sec:http> -->
+	<!--<oauth2:client-details-service id="clientDetailsService"> -->
+	<!--<oauth2:client client-id="mobile_1" authorized-grant-types="password,refresh_token,authorization_code,implicit" -->
+	<!--secret="secret_1" scope="read,write,trust" /> -->
+	<!--</oauth2:client-details-service> -->
+	<!--<beans:bean id="oauth2ClientDetailsUserService" class="org.springframework.security.oauth2.provider.client.ClientDetailsUserDetailsService"> -->
+	<!--<beans:constructor-arg ref="clientDetailsService"/> -->
+	<!--</beans:bean> -->
+	<!--<sec:authentication-manager id="oauth2AuthenticationManager"> -->
+	<!--<sec:authentication-provider user-service-ref="oauth2ClientDetailsUserService"/> -->
+	<!--</sec:authentication-manager> -->
+	<!--<beans:bean id="tokenStore" class="org.springframework.security.oauth2.provider.token.store.JdbcTokenStore"> -->
+	<!--<beans:constructor-arg ref="dataSource"/> -->
+	<!--</beans:bean> -->
+	<!--<beans:bean id="tokenServices" class="org.springframework.security.oauth2.provider.token.DefaultTokenServices"> -->
+	<!--<beans:property name="tokenStore" ref="tokenStore"/> -->
+	<!--<beans:property name="supportRefreshToken" value="true"/> -->
+	<!--</beans:bean> -->
+	<!--<beans:bean id="oauth2AuthenticationEntryPoint" class="org.springframework.security.oauth2.provider.error.OAuth2AuthenticationEntryPoint"/> -->
+
+	<!--<beans:bean id="oauth2AccessDeniedHandler" class="org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHandler"/> -->
+	<!--<beans:bean id="oauthUserApprovalHandler" class="org.springframework.security.oauth2.provider.approval.DefaultUserApprovalHandler"/> -->
+
+	<!--<beans:bean id="oauth2AccessDecisionManager" class="org.springframework.security.access.vote.UnanimousBased"> -->
+	<!--<beans:constructor-arg> -->
+	<!--<beans:list> -->
+	<!--<beans:bean class="org.springframework.security.oauth2.provider.vote.ScopeVoter"/> -->
+	<!--<beans:bean class="org.springframework.security.access.vote.RoleVoter"/> -->
+	<!--<beans:bean class="org.springframework.security.access.vote.AuthenticatedVoter"/> -->
+	<!--</beans:list> -->
+	<!--</beans:constructor-arg> -->
+	<!--</beans:bean> -->
+	<!--<oauth2:authorization-server client-details-service-ref="clientDetailsService" 
+		token-services-ref="tokenServices" user-approval-handler-ref="oauthUserApprovalHandler" 
+		> -->
+	<!--<oauth2:authorization-code /> -->
+	<!--<oauth2:implicit /> -->
+	<!--<oauth2:refresh-token disabled="false"/> -->
+	<!--<oauth2:client-credentials /> -->
+	<!--<oauth2:password /> -->
+	<!--</oauth2:authorization-server> -->
+	<!--<beans:bean id="clientCredentialsTokenEndpointFilter" class="org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter"> -->
+	<!--<beans:property name="authenticationManager" ref="oauth2AuthenticationManager"/> -->
+	<!--</beans:bean> -->
+
+	<beans:bean id="springUtf8Encoding"
+		class="org.springframework.web.filter.CharacterEncodingFilter">
+		<beans:property name="encoding" value="utf-8" />
+		<beans:property name="forceEncoding" value="true" />
+	</beans:bean>
+
+	<sec:http pattern="/**/*.js" security="none" create-session="never" />
+	<sec:http pattern="/**/*.png" security="none" create-session="never" />
+	<sec:http pattern="/**/*.woff2" security="none" create-session="never" />
+	<sec:http pattern="/**/*.css" security="none" create-session="never" />
+	<sec:http pattern="/**/*.jpg" security="none" create-session="never" />
+	<sec:http pattern="/**/*.jpeg" security="none" create-session="never" />
+	<sec:http pattern="/**/*.gif" security="none" create-session="never" />
+	<sec:http pattern="/**/*.htm" security="none" create-session="never" />
+	<sec:http pattern="/**/*.html" security="none" create-session="never" />
+	<sec:http pattern="/web/**/*.jsp" security="none"
+		create-session="never" />
+
+	<sec:http pattern="/**/j_spring_security_logout" auto-config="true">
+		<sec:csrf disabled="true" />
+		<sec:logout logout-url="/j_spring_security_logout"
+			logout-success-url="/login.mvc" delete-cookies="JSESSIONID" />
+	</sec:http>
+	<!--对外接口配置-->
+	<sec:http pattern="/web/**/*.remote" auto-config="true">
+		<sec:csrf disabled="true" />
+	</sec:http>
+
+	<!--监控配置-->
+	<sec:http pattern="/druid/*" auto-config="true">
+		<sec:csrf disabled="true" />
+	</sec:http>
+	<!--app 加密校验使用 -->
+	<beans:bean id="apiSecuirtyFilter"
+				class="cn.com.gzqinghui.sysmgr.interceptor.ApiSecuirtyFilter" />
+
+
+
+	<sec:http use-expressions="true" auto-config="true"
+		once-per-request="true">
+		<sec:custom-filter ref="springUtf8Encoding"
+			position="FIRST" />
+		<!--<sec:custom-filter ref="apiSecuirtyFilter"-->
+						   <!--after="FIRST" />-->
+
+
+		<sec:intercept-url pattern="/web/**/*.mvc" access="permitAll()" />
+		<sec:intercept-url pattern="/**/web/**/*.jsp" access="permitAll()" />
+
+		<sec:intercept-url pattern="/" access="permitAll()" />
+		<sec:intercept-url pattern="**/notify/**" access="permitAll()" />
+		<!-- <sec:intercept-url pattern="/shareTemplate/**" access="permitAll()"/> -->
+		<sec:intercept-url pattern="/login.mvc" access="isAnonymous()" />
+
+		<sec:intercept-url pattern="/userInfo"
+			access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
+		<sec:intercept-url pattern="/console/**" access="isAuthenticated()" />
+		<!--<sec:intercept-url pattern="/admin" access="isAuthenticated()" />-->
+		<sec:intercept-url pattern="/other/**" access="isAuthenticated()" />
+		<sec:intercept-url pattern="/**/*.jsp" access="isAuthenticated()" />
+		<sec:intercept-url pattern="/**/j_spring_security_check"
+			access="permitAll()" requires-channel="http" />
+		<sec:intercept-url pattern="/**/j_spring_security_logout"
+			access="permitAll()" requires-channel="http" />
+		<sec:access-denied-handler error-page="/login.mvc?error=true" />
+		<sec:form-login login-page='/login.mvc'
+			login-processing-url="/j_spring_security_check"
+			authentication-failure-url="/login.mvc?error=true"
+			username-parameter="username" authentication-success-handler-ref="authenticationSuccessHandler"
+			password-parameter="password" />
+		<sec:session-management
+			session-authentication-strategy-ref="sas1" />
+		<sec:port-mappings>
+			<sec:port-mapping http="8080" https="8443" />
+		</sec:port-mappings>
+		<sec:headers>
+			<sec:frame-options policy="SAMEORIGIN" />
+		</sec:headers>
+
+	</sec:http>
+	<beans:bean id="sessionRegistry"
+		class="org.springframework.security.core.session.SessionRegistryImpl" />
+	<beans:bean id="sas1"
+		class="org.springframework.security.web.authentication.session.ConcurrentSessionControlAuthenticationStrategy">
+		<beans:constructor-arg name="sessionRegistry"
+			ref="sessionRegistry" />
+		<beans:property name="maximumSessions" value="-1" />
+		<beans:property name="exceptionIfMaximumExceeded"
+			value="true" />
+	</beans:bean>
+	<beans:bean id="authenticationSuccessHandler"
+		class="cn.com.gzqinghui.sysmgr.core.service.AuthenticationSuccessHandler">
+		<beans:property name="alwaysUseDefaultTargetUrl" value="false" />
+		<beans:property name="defaultTargetUrl" value="/console/main.mvc" />
+	</beans:bean>
+	<beans:bean id="securityManagerSupport"
+		class="cn.com.gzqinghui.sysmgr.core.service.SecurityManagerSupport" />
+	<beans:bean id="passwordEncoder"
+		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
+	<sec:authentication-manager>
+		<authentication-provider user-service-ref="securityManagerSupport">
+			<password-encoder ref="passwordEncoder" />
+		</authentication-provider>
+		<sec:authentication-provider>
+			<sec:user-service>
+				<sec:user name="system" password="12345" authorities="ROLE_USER, ROLE_ADMIN" />
+			</sec:user-service>
+		</sec:authentication-provider>
+		<!-- authentication from database -->
+		<!--<sec:authentication-provider> -->
+		<!--<sec:jdbc-user-service data-source-ref="dataSource" -->
+		<!--users-by-username-query="SELECT account AS username,password, status 
+			AS enabled FROM tb_sys_usr_info WHERE account=? AND status = 1 limit 1" -->
+		<!--authorities-by-username-query="SELECT username, role FROM view_user_permission 
+			WHERE username=?"/> -->
+		<!--<sec:password-encoder hash="md5"/> -->
+		<!--</sec:authentication-provider> -->
+
+	</sec:authentication-manager>
+	<sec:global-method-security
+		secured-annotations="enabled" jsr250-annotations="enabled" />
+
+</beans:beans>

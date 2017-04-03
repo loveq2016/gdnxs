@@ -1,0 +1,108 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+##设定访问路径:js/controller
+#set($posmallFirstName=${stringUtil.getFirstLowerName($javaName)})
+#if ($!componentName)
+    #set($control_baseurl = "$componentName/$moduelName")
+    <%@include file="../../../jsp/common/css_common.jsp" %>
+#else
+    #set($control_baseurl = "$moduelName")
+    <%@include file="../../jsp/common/css_common.jsp" %>
+#end
+</head>
+<body class="container">
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">&nbsp;</h3>
+    </div>
+
+    <div class="panel-body">
+
+        <!-- 搜索表单 -->
+        <form  id="${moduelName}_search"  onsubmit="return false;"  autocomplete="off" >
+            <div class="searchDiv">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                       <div class="search_box row">
+                                        #foreach($columnInfo in ${tbInfo.getColumnList()})
+                                            #set($colName=${columnInfo.get(0)})
+                                        #if($columnInfo.size()>2)
+                                            #set($colMeta=${columnInfo.get(2)})
+                                            #set($showName=${colMeta.showName})
+                                        #else
+                                            #set($showName=$colName)
+                                        #end
+                                        <label for="${moduelName}_${colName}" class="search_label">${showName}：</label>
+                                        <div class="col-xs-3">
+                                         <input name="${posmallFirstName}.${colName}" id="${moduelName}_${colName}" type="text"
+                                                        class="form-control btn-block" placeholder="${showName}" aria-describedby="basic-addon1"/></td>
+                                        </div>
+                                         #if(${velocityCount}%3==0)
+                                        </div>
+                                        <div class="search_box row row-${velocityCount}">
+                                        #end
+                                        #end
+                                        #if(${tbInfo.getColumnList().size()}%3!=0)
+                                           </div>
+                                        #end
+                                       <div class="search_fn_box">
+
+                                               <input class="btn btn-default " name="search" type="button" value="查 询" onclick="javascript:page_moudel.${moduelName}_query();"/>&nbsp;
+                                               <input class="btn btn-default" type="button" value="重 置"  onclick="$('#${moduelName}_search')[0].reset(),page_moudel.${moduelName}_query();">
+                                               <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>&nbsp;&nbsp;
+                                               <a href="javascript:void(0);"   onclick="page_moudel.add_${moduelName}();">
+                                               <i class="glyphicon glyphicon-plus"></i>&nbsp;添加</a>
+                                               <a href="javascript:void(0);" onclick="page_moudel.batchdel_${moduelName}();">
+                                               <i class="glyphicon glyphicon-remove"></i>&nbsp;删除
+                                               </a>
+                                               <a href="javascript:void(0);" onclick="page_moudel.generator_${moduelName}()">
+                                               <i class="glyphicon glyphicon-download-alt"></i>&nbsp;导出数据
+                                </a>
+
+
+                                </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+        <!--  表格 -->
+        <table id="${moduelName}_list_table"></table>
+
+        <!--  工具栏 -->
+        <div id="${moduelName}_toolbar">
+
+            <%--  <button id="${moduelName}_add" class="btn btn-success" onclick="page_moudel.add_${moduelName}()">
+                <i class="glyphicon glyphicon-plus"></i> 新增
+            </button>
+
+            <button id="${moduelName}_remove" class="btn btn-danger" onclick="page_moudel.batchdel_${moduelName}();">
+                <i class="glyphicon glyphicon-remove"></i> 删除
+            </button>
+
+           <button class="btn btn-success fileinput-button" id="${moduelName}_export">
+                <i class="glyphicon glyphicon-download-alt"></i>
+                <span  onclick="page_moudel.${moduelName}_exportExcel()">导出数据</span>
+			</button>--%>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
+#if ($!componentName)
+    #set($control_baseurl = "$componentName/$moduelName")
+    <%@include file="../../../jsp/common/js_common.jsp" %>
+#else
+    #set($control_baseurl = "$moduelName")
+    <%@include file="../../jsp/common/js_common.jsp" %>
+#end
+#set($posmallFirstName=${stringUtil.getFirstLowerName($javaName)})
+    <script type="text/javascript" src="${baseURL}/jsp/${control_baseurl}/${moduelName}.js"></script>
+</head>
+

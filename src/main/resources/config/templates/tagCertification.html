@@ -1,0 +1,727 @@
+<html>
+<head>
+    <title>溯源认证</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        /*=======CSS reset start=======*/
+        body {
+            font-family: "microsoft yahei";
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        input {
+            border: none;
+        }
+
+        i {
+            font-style: normal;
+        }
+
+        input[type="button"] {
+            cursor: pointer;
+        }
+
+        input[type="text"] {
+            vertical-align: middle;
+        }
+
+        input[type="radio"], input[type="checkbox"], input[type="button"], label, select {
+            vertical-align: middle;
+            font-family: "microsoft yahei";
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            font-family: "microsoft yahei";
+        }
+
+        fieldset, img {
+            border: none;
+            vertical-align: middle;
+        }
+
+        address, caption, cite, code, dfn, em, var {
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        ol, ul, li {
+            list-style-type: none;
+        }
+
+        caption {
+            text-align: left;
+        }
+
+        q:before, q:after {
+            content: '';
+        }
+
+        abbr, acronym {
+            border: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3b9bd2;
+        }
+
+        /*a:hover{color: #ff7200;}*/
+        h1, h2, h3, h4, h5 {
+            font-weight: normal;
+        }
+
+        b {
+            font-weight: normal;
+        }
+
+        textarea {
+            resize: none;
+            font-family: "microsoft yahei";
+        }
+
+        s {
+            text-decoration: none;
+        }
+
+        /*=======CSS reset end=======*/
+        .mb20 {
+            margin-bottom: 20px;
+        }
+
+        .fb {
+            font-weight: bold;
+        }
+
+        .fn {
+            font-weight: normal;
+        }
+
+        .unl {
+            text-decoration: underline;
+        }
+
+        .no_unl {
+            text-decoration: none;
+        }
+
+        /*=======文字排版 end======*/
+        .overh {
+            overflow: hidden;
+        }
+
+        .mt20 {
+            margin-top: 20px;
+        }
+
+        /*===========文字颜色 end==========*/
+        .hideObj {
+            display: none;
+        }
+
+        .mr10 {
+            margin-right: 10px;
+        }
+
+        .showObj {
+            display: block;
+        }
+
+        .fl {
+            float: left;
+            display: inline;
+        }
+
+        .fr {
+            float: right;
+            display: inline;
+        }
+
+        .w1200 {
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            min-width: 1200px;
+        }
+
+        .bd_content {
+            margin-left: 30px;
+        }
+
+        .ng_binding {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 36px;
+            font-weight: 500;
+            line-height: 1.1;
+        }
+
+        .nav_tabs {
+            border-bottom: 1px solid #ddd;
+            height: 41px;
+            position: relative;
+        }
+
+        .nav_tabs ul li {
+            float: left;
+            margin-bottom: -1px;
+        }
+
+        .nav_tabs ul li a {
+            margin-right: 2px;
+            line-height: 1.42857143;
+            border: 1px solid transparent;
+            border-radius: 4px 4px 0 0;
+            padding: 10px 15px;
+            font-size: 14px;
+            display: block;
+        }
+
+        .nav_tabs ul .active a, .nav_tabs ul .active a:hover {
+            color: #555;
+            cursor: default;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-bottom-color: transparent;
+        }
+
+        .nav_tabs ul li a:hover {
+            background: #e6e6e6;
+            color: #555;
+        }
+
+        .nav_tabs ul::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .tab_content {
+            padding: 10px 0;
+        }
+
+        .form_group > label {
+            width: 150px;
+            text-align: right;
+            display: block;
+            float: left;
+            line-height: 35px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .form_group > label i {
+            color: #f00;
+        }
+
+        .form_info {
+            margin-left: 20px;
+            line-height: 35px;
+            font-size: 15px;
+            min-width: 560px;
+            float: left;
+        }
+
+        .form_group::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .form_group input[type=checkbox], .form_group input[type=radio] {
+            position: relative;
+            margin: 0 2px 0 7px;
+            top: -2px;
+        }
+
+        .btn_apply {
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn_apply:hover {
+            background: #e6e6e6;
+        }
+
+        .input_group_box {
+            position: relative;
+            display: table;
+            border-collapse: separate;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+        .input_group_box span {
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1;
+            color: #555;
+            text-align: center;
+            background-color: #eee;;
+            display: table-cell;
+            border-right: 1px solid #ccc;
+            width: 84px;
+        }
+
+        .input_group {
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            width: 480px;
+            display: table-cell;
+        }
+
+        .input_textarea {
+            width: 615px;
+            height: 60px;
+        }
+
+        .btn_reupload {
+            width: 70px;
+            height: 30px;
+            background: #5ac1df;
+            color: #fff;
+            text-align: center;
+            border: none;
+            outline: none;
+            border-radius: 3px;
+        }
+
+        .choose_file {
+            margin-top: 20px;
+        }
+
+        .choose_file + span {
+            margin-left: 10px;
+        }
+
+        .btn_keep_editor {
+            margin-left: 170px;
+            margin-top: 10px;
+        }
+
+        .btn_keep_editor button {
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .footer {
+            padding: 10px 15px;
+            background-color: #f5f5f5;
+            border-top: 1px solid #ddd;
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        .footer p {
+            margin: 0 0 10px;
+        }
+
+        .input_text, .selext_text {
+            height: 37px;
+            width: 100%;
+        }
+
+        .input_num {
+            width: 60%;
+            height: 35px;
+            border: 1px solid #ccc;
+        }
+
+        .select_num, .unit {
+            width: 35%;
+            margin-left: 4%;
+            height: 37px;
+        }
+
+        .border_none {
+            border: none;
+        }
+
+        .table_info table {
+            width: 100%;
+        }
+
+        .table_info table tr {
+            border-top: 1px solid #ddd;
+        }
+
+        .table_info table tbody tr th, .table_info table tbody tr td {
+            padding: 7px 4px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .table_info > table > tbody > tr > td {
+            max-width: 235px;
+        }
+
+        .table_info > table > tbody > tr > td tbody tr {
+            background: #fff;
+        }
+
+        .table_info table tbody tr:hover {
+            background: #e6e6e6;
+        }
+
+        .btn_report {
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            color: #fff;
+            background: #5cb85c;
+            border: 1px solid #4cae4c;
+            border-radius: 4px;
+        }
+
+        .input_text_box {
+            border: 1px solid #ccc;
+            height: 35px;
+            border-radius: 4px;
+        }
+
+        .m_left {
+            margin-left: 10px;
+        }
+
+        .input_textarea_item {
+            width: 400px;
+            height: 50px;
+        }
+
+        .btn_delete {
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            background: #d9534f;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: #fff;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .table_list_group table tbody tr td {
+            padding: 15px 10px;
+            font-size: 14px;
+            text-align: left;
+            border-top: 1px solid #ddd;
+        }
+
+        .table_list_group table {
+            border: 1px solid #ddd;
+        }
+
+        .table_list_group table tbody tr:hover {
+            background: #e6e6e6;
+        }
+
+        .table_list_group table tbody tr td:first-of-type {
+            min-width: 200px;
+        }
+
+        .table_list_group table tbody tr td:last-of-type {
+            min-width: 500px;
+        }
+
+        .select_papers {
+            width: 150px;
+            height: 30px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .input_papers {
+            width: 272px;
+            height: 30px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .input_receive {
+            width: 370px;
+            height: 32px;
+            border: 1px solid #ccc;
+        }
+
+        .receive_apply {
+            margin-bottom: 10px;
+        }
+
+        .certificate_list table {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .certificate_list table tr {
+            border-top: 1px solid #ddd;
+        }
+
+        .certificate_list table tbody tr th, .table_info table tbody tr td {
+            padding: 5px 4px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .certificate_list > table > tbody > tr > td {
+            max-width: 235px;
+        }
+
+        .certificate_list > table > tbody > tr > td tbody tr {
+            background: #fff;
+        }
+
+        .certificate_list table tbody tr:hover {
+            background: #e6e6e6;
+        }
+
+        .this_position {
+            position: absolute;
+            left: 678px;
+            top: 0;
+        }
+
+        .certificate_list table {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .certificate_list table tr {
+            border-top: 1px solid #ddd;
+        }
+
+        .certificate_list table tbody tr th, .table_info table tbody tr td {
+            padding: 5px 4px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .certificate_list > table > tbody > tr > td {
+            max-width: 235px;
+        }
+
+        .certificate_list > table > tbody > tr > td tbody tr {
+            background: #fff;
+        }
+
+        .certificate_list table tbody tr:hover {
+            background: #e6e6e6;
+        }
+
+        /*编辑页面*/
+        .edit_title {
+            height: 35px;
+            width: 840px;
+            background: #f5f5f5;
+            margin: 20px 0;
+            font-size: 16px;
+            padding: 0 10px;
+            line-height: 35px;
+        }
+
+        .edit_box {
+            border: 1px solid #ccc;
+            width: 860px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .edit_box_title {
+            height: 38px;
+            border-bottom: 1px solid #ccc;
+            background: #f5f5f5;
+            margin-bottom: 20px;
+            font-size: 16px;
+            padding: 0 10px;
+            line-height: 38px;
+        }
+
+        .input_edit_box {
+            border: 1px solid #ccc;
+            height: 35px;
+            border-radius: 4px;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+<body class="bg">
+<div class="index_header_top">
+    <div class="w1200">
+        <div class="top_info_other fl">
+            <ul>
+                <li><a href="javascript:;">English</a></li>
+                <li>|</li>
+                <li><a href="javascript:;">简体中文</a></li>
+            </ul>
+        </div>
+        <div class="top_info_other fr">
+            <ul>
+                <li>
+                    <div class="right_nav_down">
+                        <a href="javascript:;">我的服务</a>
+                        <div class="right_nav_down_item">
+                            <ul>
+                                <li><a href="javascript:;">我的服务</a></li>
+                                <li><a href="javascript:;">我的服务</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>|</li>
+                <li>
+                    <div class="right_nav_down">
+                        <a href="javascript:;">关于我们</a>
+                        <div class="right_nav_down_item">
+                            <ul>
+                                <li><a href="javascript:;">关于我们</a></li>
+                                <li><a href="javascript:;">关于我们</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>|</li>
+                <li><a href="javascript:;">联系我们</a></li>
+                <li>|</li>
+                <li><a href="javascript:;">系统更新</a></li>
+                <li>|</li>
+                <li>
+                    <div class="right_nav_down">
+                        <a href="javascript:;">技术支援</a>
+                        <div class="technical_support">
+                            <p class="phone">02011000</p>
+                            <form>
+                                <dl>
+                                    <dt>姓名：</dt>
+                                    <dd><input type="text"></dd>
+                                </dl>
+                                <dl>
+                                    <dt>联系方式：</dt>
+                                    <dd><input type="text"></dd>
+                                </dl>
+                                <dl>
+                                    <dt>备注：</dt>
+                                    <dd><input type="text"></dd>
+                                </dl>
+                                <button class="btn_submit">提交</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </li>
+                <li>|</li>
+                <li><a href="javascript:;">使用教程</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="index_top_nav">
+    <div class="w1200">
+        <div class="logo_login fl"><img src="images/logo_login.png"></div>
+        <div class="account_quit fr">
+            <div class="account_name">欢迎，0926gc1@qq.com</div>
+            <div class="btn_quit">退出</div>
+        </div>
+    </div>
+</div>
+<div class="index_main">
+    <div class="menu_bar_left">
+        <ul>
+            <li><a href="javascript:;"><i class="ico_menu_01"></i>商家资料</a></li>
+            <li><a href="javascript:;"><i class="ico_menu_02"></i>常用商户列表</a></li>
+            <li><a href="javascript:;"><i class="ico_menu_03"></i>更改密码</a></li>
+            <li><a href="javascript:;"><i class="ico_menu_04"></i>商品列表</a></li>
+            <li><a href="javascript:;"><i class="ico_menu_05"></i>管理权清单</a></li>
+            <li><a href="javascript:;"><i class="ico_menu_06"></i>企业授权清单</a></li>
+            <li><a href="javascript:;"><i class="ico_menu_07"></i>批次号列表</a></li>
+            <li class="current"><a href="javascript:;"><i class="ico_menu_08"></i>溯源申请</a></li>
+            <li><a href="javascript:;"><i class="ico_menu_09"></i>申请列表</a></li>
+            <li><a href="javascript:;"><i class="ico_menu_10"></i>溯源码登记列表</a></li>
+        </ul>
+    </div>
+    <div class="right_content">
+        <div class="right_content_con">
+            <div class="right_content_title">溯源申请</div>
+            <div class="right_content_list">
+                <p class="right_content_list_title"><i>*</i> 带星号为必填选项</p>
+                <!--step_01代表第1步，step_02代表第2步-->
+                <div class="flow_path_box step_05"></div>
+                <div class="form_group">
+                    <label>上传标签证书样张</label>
+                    <div class="form_info">
+                        <div class="table_info">
+                            <!--<a href="javascript:;" class="upload_files">选择文件</a>-->
+                            <input type="file" class="btn_file_style">
+                        </div>
+                    </div>
+                    <div class="btn_apply_con">
+                        <a href="javascript:;" class="btn_apply">暂存</a>
+                        <a href="javascript:;" class="btn_apply">上一步</a>
+                        <a href="javascript:;" class="btn_apply">下一步</a>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div class="footer">
+    <div class="w1200">
+        <p>©2016 Copyright GIQCI 中文站 | 免责声明</p>
+    </div>
+</div>
+
+
+</body>
+
+</body>
+</html>

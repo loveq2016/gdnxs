@@ -1,0 +1,11 @@
+package $packageName;
+import cn.com.gzqinghui.sysmgr.common.service.IPersistentOperation;
+/**
+* Copyright &copy; 2015 广州清汇信息科技有限公司
+* All rights reserved.
+* User: ${user}
+* date: ${time}
+*/
+public interface I${javaName}Service extends IPersistentOperation {
+
+}

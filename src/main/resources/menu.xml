@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<menus>
+
+    <!--<menu name="系统管理" role="ROLE_ADMIN">-->
+        <!--<item name="用户管理" href="${baseURL}/jsp/usermanage/usermanage_list.jsp"-->
+              <!--target="rightFrame"/>-->
+        <!--<item name="角色管理" href="${baseURL}/jsp/role/role_list.jsp"-->
+              <!--target="rightFrame"/>-->
+        <!--<item name="权限管理"-->
+              <!--href="${baseURL}/jsp/sysextmgr/permission/permission_list.jsp"-->
+              <!--target="rightFrame"/>-->
+        <!--<item name="字典管理" href="${baseURL}/jsp/dictionary/dictionary_list.jsp"-->
+              <!--target="rightFrame"/>-->
+        <!--<item name="配置管理" href="${baseURL}/jsp/sysextmgr/config/config_list.jsp"-->
+              <!--target="rightFrame"/>-->
+        <!--<item name="操作日志"-->
+              <!--href="${baseURL}/jsp/sysextmgr/operationlog/operationlog_list.jsp"-->
+              <!--target="rightFrame"/>-->
+        <!--<item name="敏感词管理"-->
+              <!--href="${baseURL}/jsp/sensitive/sensitive_list.jsp"-->
+              <!--target="rightFrame"/>-->
+    <!--</menu>-->
+    <!--<menu name="门户基础数据管理" role="ROLE_ADMIN">-->
+    <!-- <item name="门店管理" href="${baseURL}/jsp/storemanage/storemanage_list.jsp"
+        target="rightFrame" />
+    <item name="菜品管理" href="${baseURL}/jsp/dishes/dishes_list.jsp"
+        target="rightFrame" />
+    <item name="积分商城管理" href="${baseURL}/jsp/pointsmall/pointsmall_list.jsp"
+        target="rightFrame" />
+    <item name="优惠券管理" href="${baseURL}/jsp/coupon/coupon_list.jsp"
+        target="rightFrame" />
+    <item name="优惠活动管理" href="${baseURL}/jsp/promotions/promotions_list.jsp"
+        target="rightFrame" />
+    <item name="轮播图管理" href="${baseURL}/jsp/banner/banner_list.jsp"
+        target="rightFrame" />
+</menu>  -->
+    <menu name="商品管理" role="ROLE_ADMIN" module="GOODS_MODULE">
+        <item name="工厂商品管理" href="${baseURL}/jsp/commodityList/commodityList_list.jsp"
+              target="rightFrame"/>
+        <item name="流通商品管理" href="${baseURL}/jsp/shopCirculate/shopCirculate_list.jsp"
+              target="rightFrame"/>
+        <item name="批次号管理" href="${baseURL}/jsp/poic/poic_list.jsp"
+              target="rightFrame"/>
+        <item name="商品使用授权列表" href="${baseURL}/jsp/shopEmploy/shopEmploy_list.jsp"
+              target="rightFrame"/>
+        <item name="商品管理授权列表" href="${baseURL}/jsp/shopSupervise/shopSupervise_list.jsp"
+              target="rightFrame"/>
+    </menu>
+    <menu name="申请管理" role="ROLE_ADMIN" module="APPLY_MODULE">
+        <item name="工厂级溯源" href="${baseURL}/jsp/originsApply/originsApply_list.jsp"
+              target="rightFrame"/>
+        <item name="流通源溯源" href="${baseURL}/jsp/circulationOrigin/circulationOrigin_list.jsp"
+              target="rightFrame"/>
+        <item name="溯源申请记录" href="${baseURL}/jsp/originNumberApply/originNumberApply_list.jsp"
+              target="rightFrame"/>
+        <item name="海外仓级溯源" href="${baseURL}/jsp/originsOverseasWarehouse/originsOverseasWarehouse_list.jsp"
+              target="rightFrame"/>
+        <item name="公证文件管理" href="${baseURL}/jsp/notarizationFile/notarizationFile_list.jsp"
+              target="rightFrame"/>
+    </menu>
+    <!-- <menu name="400系统管理" role="ROLE_ADMIN,ROLE_400">
+        <item name="客户订餐"
+            href="${baseURL}/jsp/callcenter/ordering/ordering.jsp"
+            target="rightFrame" />
+        <item name="会员管理" href="${baseURL}/jsp/user/user_list.jsp"
+            target="rightFrame" />
+        <item name="沟通记录管理"
+            href="${baseURL}/jsp/callcenter/comunication/comunication_list.jsp"
+            target="rightFrame" />
+        <item name="订单管理" href="${baseURL}/jsp/order/order_list.jsp"
+            target="rightFrame" />
+        <item name="呼入记录管理 " href="${baseURL}/jsp/callcenter/call/call_list.jsp"
+            target="rightFrame" />
+        <item name="订单评价管理" href="${baseURL}/jsp/comment/comment_list.jsp"
+            target="rightFrame" />
+    </menu> -->
+    <menu name="企业管理" role="ROLE_ADMIN" module="ENTERPRISE_MODULE">
+        <item name="工厂列表" href="${baseURL}/jsp/factoryList/factoryList_list.jsp"
+              target="rightFrame"/>
+        <item name="品牌商列表" href="${baseURL}/jsp/brandsList/brandsList_list.jsp"
+              target="rightFrame"/>
+        <item name="贸易商列表" href="${baseURL}/jsp/tradersList/tradersList_list.jsp"
+              target="rightFrame"/>
+        <item name="口岸仓列表" href="${baseURL}/jsp/portWarehouseList/portWarehouseList_list.jsp"
+              target="rightFrame"/>
+        <item name="海外仓列表" href="${baseURL}/jsp/overseasWarehouseList/overseasWarehouseList_list.jsp"
+              target="rightFrame"/>
+        <item name="国际物流列表" href="${baseURL}/jsp/logisticsList/logisticsList_list.jsp"
+              target="rightFrame"/>
+        <item name="代理授权清单" href="${baseURL}/jsp/companyImpower/companyImpower_list.jsp"
+              target="rightFrame"/>
+    </menu>
+    <menu name="系统管理" role="ROLE_ADMIN" module="SYS_MGR_MODUEL">
+        <item name="品类管理" href="${baseURL}/jsp/goodType/goodType_list.jsp"
+              target="rightFrame"/>
+        <item name="国家列表"
+              href="${baseURL}/jsp/country/country_list.jsp"
+              target="rightFrame"/>
+        <item name="港口列表"
+              href="${baseURL}/jsp/port/port_list.jsp"
+              target="rightFrame"/>
+        <item name="多语音管理" href="${baseURL}/jsp/multiVoice/multiVoice_list.jsp"
+              target="rightFrame"/>
+        <item name="参数配置" href="${baseURL}/jsp/parameterConfiguration/parameterConfiguration_list.jsp"
+              target="rightFrame"/>
+        <item name="操作日志"
+              href="${baseURL}/jsp/sysextmgr/operationlog/operationlog_list.jsp"
+              target="rightFrame"/>
+    </menu>
+    <menu name="风险管理" role="ROLE_ADMIN" module="WARNING_MODULE">
+        <item name="黑名单企业列表" href="${baseURL}/jsp/blacklistEnterprise/blacklistEnterprise_list.jsp"
+              target="rightFrame"/>
+        <item name="预警商品管理" href="${baseURL}/jsp/shopOverseasCirculate/shopOverseasCirculate_list.jsp"
+              target="rightFrame"/>
+        <item name="异常工厂商品管理" href="${baseURL}/jsp/warningCommodity/warningCommodity_list.jsp"
+              target="rightFrame"/>
+    </menu>
+    <menu name="业务监控管理" role="ROLE_ADMIN" module="BIZ_OPERA_RECORD_MODULE">
+        <item name="操作记录" href="${baseURL}/jsp/operationRecord/operationRecord_list.jsp"
+              target="rightFrame"/>
+    </menu>
+    <menu name="用户管理" role="ROLE_ADMIN" module="USER_MODULE">
+        <item name="商户列表" href="${baseURL}/jsp/merchantList/merchantList_list.jsp"
+              target="rightFrame"/>
+        <item name="检验员列表" href="${baseURL}/jsp/examiner/examiner_list.jsp"
+              target="rightFrame"/>
+    </menu>
+    <menu name="数据交换中心" role="ROLE_ADMIN" module="DATA_EXCCTR_MODULE">
+        <item name="数据交换查询" href="${baseURL}/jsp/interfaceLog/interfaceLog_list.jsp"
+              target="rightFrame"/>
+    </menu>
+    <menu name="统计报表" role="ROLE_ADMIN" module="STATISTIC_MODULE">
+        <item name="周报表" href="${baseURL}/jsp/weeklyExport/weeklyExport_list.jsp"
+              target="rightFrame"/>
+        <item name="数据导出" href="${baseURL}/jsp/dataExport/dataExport_list.jsp"
+              target="rightFrame"/>
+    </menu>
+</menus>
+
+
+
+
+
