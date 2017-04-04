@@ -35,7 +35,9 @@
                         , className: "btn-light-blue"    // 按钮的类名
                         , callback:function (evt) {
                             $(this).find('button[data-bb-handler="success"]').addClass("disabled").text("请稍后...");
-                            options.confirmcallback(evt);
+                            var  flag =  options.confirmcallback(evt);
+                            (!flag)&&$(this).find('button[data-bb-handler="success"]').removeClass("disabled").text("保存");
+                            return flag;
                         }
 
                     }
@@ -56,27 +58,27 @@
 
             },
 
-            
+
             /**
              *  自定义的弹窗，可有多个按钮且可自定义相对应的事件 by Chang
-            * @returns customdialog
-            */
-           customdialog: function (options) {
-               var buttons =  {
-               };
-               options.addbtns&& $.isPlainObject(options.addbtns)&&$.extend(buttons,  options.addbtns);
-               var customdialog_dialog = bootbox.customdialog({
-                   title: options.title
-                   , url: options.url
-                   , closeButton: true
-                   , className: options.className || "default-bootbox-modal"//自定义宽度
-                   , // dialog底端按钮配置
-                   buttons:buttons
-               });
-               options.afterloaded && customdialog_dialog.on('loaded.bs.modal', options.afterloaded);
-               return customdialog_dialog;
-           },
-            
+             * @returns customdialog
+             */
+            customdialog: function (options) {
+                var buttons =  {
+                };
+                options.addbtns&& $.isPlainObject(options.addbtns)&&$.extend(buttons,  options.addbtns);
+                var customdialog_dialog = bootbox.customdialog({
+                    title: options.title
+                    , url: options.url
+                    , closeButton: true
+                    , className: options.className || "default-bootbox-modal"//自定义宽度
+                    , // dialog底端按钮配置
+                    buttons:buttons
+                });
+                options.afterloaded && customdialog_dialog.on('loaded.bs.modal', options.afterloaded);
+                return customdialog_dialog;
+            },
+
             /**
              *
              * @param options

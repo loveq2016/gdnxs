@@ -21,7 +21,7 @@ public class SysConfigPO implements Serializable,IBaseEntity {
     private java.lang.String configValue ;
     private java.lang.String description ;
     private java.lang.Boolean readOnly ;
-    
+
     public void setConfigKey(java.lang.String configKey){
     this.configKey=configKey ;
     }

@@ -54,6 +54,20 @@ main_global.render= {
     }
 };
 
+function setImagePreview(a,b) {
+    var url ='';
+    if (navigator.userAgent.indexOf("MSIE")>=1) { // IE
+        url = document.getElementById(a).value;
+    } else if(navigator.userAgent.indexOf("Firefox")>0) { // Firefox
+        url = window.URL.createObjectURL(document.getElementById(a).files.item(0));
+    } else if(navigator.userAgent.indexOf("Chrome")>0) { // Chrome
+        url = window.URL.createObjectURL(document.getElementById(a).files.item(0));
+    }
+    var imgPre = document.getElementById(b);
+    imgPre.src = url;
+}
+
+
 
 
 

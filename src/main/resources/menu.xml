@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <menus>
 
-    <!--<menu name="系统管理" role="ROLE_ADMIN">-->
-        <!--<item name="用户管理" href="${baseURL}/jsp/usermanage/usermanage_list.jsp"-->
-              <!--target="rightFrame"/>-->
-        <!--<item name="角色管理" href="${baseURL}/jsp/role/role_list.jsp"-->
-              <!--target="rightFrame"/>-->
-        <!--<item name="权限管理"-->
-              <!--href="${baseURL}/jsp/sysextmgr/permission/permission_list.jsp"-->
-              <!--target="rightFrame"/>-->
-        <!--<item name="字典管理" href="${baseURL}/jsp/dictionary/dictionary_list.jsp"-->
-              <!--target="rightFrame"/>-->
-        <!--<item name="配置管理" href="${baseURL}/jsp/sysextmgr/config/config_list.jsp"-->
-              <!--target="rightFrame"/>-->
-        <!--<item name="操作日志"-->
-              <!--href="${baseURL}/jsp/sysextmgr/operationlog/operationlog_list.jsp"-->
-              <!--target="rightFrame"/>-->
-        <!--<item name="敏感词管理"-->
-              <!--href="${baseURL}/jsp/sensitive/sensitive_list.jsp"-->
-              <!--target="rightFrame"/>-->
-    <!--</menu>-->
-    <!--<menu name="门户基础数据管理" role="ROLE_ADMIN">-->
-    <!-- <item name="门店管理" href="${baseURL}/jsp/storemanage/storemanage_list.jsp"
+   <!-- &lt;!&ndash;<menu name="系统管理" role="ROLE_ADMIN">&ndash;&gt;
+        &lt;!&ndash;<item name="用户管理" href="${baseURL}/jsp/usermanage/usermanage_list.jsp"&ndash;&gt;
+              &lt;!&ndash;target="rightFrame"/>&ndash;&gt;
+        &lt;!&ndash;<item name="角色管理" href="${baseURL}/jsp/role/role_list.jsp"&ndash;&gt;
+              &lt;!&ndash;target="rightFrame"/>&ndash;&gt;
+        &lt;!&ndash;<item name="权限管理"&ndash;&gt;
+              &lt;!&ndash;href="${baseURL}/jsp/sysextmgr/permission/permission_list.jsp"&ndash;&gt;
+              &lt;!&ndash;target="rightFrame"/>&ndash;&gt;
+        &lt;!&ndash;<item name="字典管理" href="${baseURL}/jsp/dictionary/dictionary_list.jsp"&ndash;&gt;
+              &lt;!&ndash;target="rightFrame"/>&ndash;&gt;
+        &lt;!&ndash;<item name="配置管理" href="${baseURL}/jsp/sysextmgr/config/config_list.jsp"&ndash;&gt;
+              &lt;!&ndash;target="rightFrame"/>&ndash;&gt;
+        &lt;!&ndash;<item name="操作日志"&ndash;&gt;
+              &lt;!&ndash;href="${baseURL}/jsp/sysextmgr/operationlog/operationlog_list.jsp"&ndash;&gt;
+              &lt;!&ndash;target="rightFrame"/>&ndash;&gt;
+        &lt;!&ndash;<item name="敏感词管理"&ndash;&gt;
+              &lt;!&ndash;href="${baseURL}/jsp/sensitive/sensitive_list.jsp"&ndash;&gt;
+              &lt;!&ndash;target="rightFrame"/>&ndash;&gt;
+    &lt;!&ndash;</menu>&ndash;&gt;
+    &lt;!&ndash;<menu name="门户基础数据管理" role="ROLE_ADMIN">&ndash;&gt;
+    &lt;!&ndash; <item name="门店管理" href="${baseURL}/jsp/storemanage/storemanage_list.jsp"
         target="rightFrame" />
     <item name="菜品管理" href="${baseURL}/jsp/dishes/dishes_list.jsp"
         target="rightFrame" />
@@ -33,7 +33,7 @@
         target="rightFrame" />
     <item name="轮播图管理" href="${baseURL}/jsp/banner/banner_list.jsp"
         target="rightFrame" />
-</menu>  -->
+</menu>  &ndash;&gt;
     <menu name="商品管理" role="ROLE_ADMIN" module="GOODS_MODULE">
         <item name="工厂商品管理" href="${baseURL}/jsp/commodityList/commodityList_list.jsp"
               target="rightFrame"/>
@@ -58,7 +58,7 @@
         <item name="公证文件管理" href="${baseURL}/jsp/notarizationFile/notarizationFile_list.jsp"
               target="rightFrame"/>
     </menu>
-    <!-- <menu name="400系统管理" role="ROLE_ADMIN,ROLE_400">
+    &lt;!&ndash; <menu name="400系统管理" role="ROLE_ADMIN,ROLE_400">
         <item name="客户订餐"
             href="${baseURL}/jsp/callcenter/ordering/ordering.jsp"
             target="rightFrame" />
@@ -73,7 +73,7 @@
             target="rightFrame" />
         <item name="订单评价管理" href="${baseURL}/jsp/comment/comment_list.jsp"
             target="rightFrame" />
-    </menu> -->
+    </menu> &ndash;&gt;
     <menu name="企业管理" role="ROLE_ADMIN" module="ENTERPRISE_MODULE">
         <item name="工厂列表" href="${baseURL}/jsp/factoryList/factoryList_list.jsp"
               target="rightFrame"/>
@@ -134,7 +134,7 @@
               target="rightFrame"/>
         <item name="数据导出" href="${baseURL}/jsp/dataExport/dataExport_list.jsp"
               target="rightFrame"/>
-    </menu>
+    </menu>-->
 </menus>
 
 

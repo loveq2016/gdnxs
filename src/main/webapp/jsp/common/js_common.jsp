@@ -5,6 +5,7 @@
   var _csrf = "${_csrf.parameterName}";
   var token = "${_csrf.token}";
   var communityId="${currentUser.communityId}";
+  var picpostfix = ".jpg,.png,.gif,.jpeg,.bmp";
 </script>
 <script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
 <!--[if lte IE 9]>

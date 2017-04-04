@@ -189,20 +189,29 @@ jQuery.extend({
     },
 
     uploadHttpData: function( r, type ) {
-        var data = !type;
-        data = type == "xml" || data ? r.responseXML : r.responseText;
-		
-        // If the type is "script", eval it in global context
-        if ( type == "script" )
-            jQuery.globalEval( data );
-        // Get the JavaScript object, if JSON is used.
-        if ( type == "json" )
-            eval( "data = " + data );
-        // evaluate scripts within html
-        if ( type == "html" )
-            jQuery("<div>").html(data).evalScripts();
-
-        return data;
+		var data = !type;
+		data = type == "xml" || data ? r.responseXML : r.responseText;
+		// If the type is "script", eval it in global context
+		if ( type == "script" )
+			jQuery.globalEval( data );
+		// Get the JavaScript object, if JSON is used.
+		if ( type == "json" ){
+			//处理会加pre标签
+			if(data.indexOf('<pre>') != -1) {
+				data = data.substring(5, data.length-6);
+			}
+			//处理会加audio标签
+			if(data.indexOf('<audio') != -1) {
+				data = data.substring(0, data.indexOf('<audio'));
+			}
+			//改变原来的转换json逻辑
+			data = jQuery.parseJSON(data);
+		}
+		// evaluate scripts within html
+		if ( type == "html" )
+			jQuery("<div>").html(data).evalScripts();
+		//alert($('param', data).each(function(){alert($(this).attr('value'));}));
+		return data;
     },
 	
 	handleError: function( s, xml, status, e ) {
