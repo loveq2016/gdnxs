@@ -55,7 +55,27 @@ public class MemberVO implements Serializable,IBaseEntity {
     private String modifieddate ;
       
     private String deletedflag ;
-    
+
+    private String mtype;
+
+    private String city;
+
+    public String getMtype() {
+        return mtype;
+    }
+
+    public void setMtype(String mtype) {
+        this.mtype = mtype;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public void setId(String id){
         this.id=id ;
     }
