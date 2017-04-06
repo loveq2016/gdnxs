@@ -68,6 +68,57 @@ function setImagePreview(a,b) {
 }
 
 
+function getDateStr(AddDayCount){
+    var dd = new Date();
+    dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期
+    var y = dd.getFullYear();
+    var m = dd.getMonth()+1;//获取当前月份的日期
+    var d = dd.getDate();
+    return y+"-"+m+"-"+d;
+}
+
+function getDateTimeStr(AddDayCount){
+    var dd = new Date();
+    dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期
+    var y = dd.getFullYear();
+    var m = dd.getMonth()+1;//获取当前月份的日期
+    var d = dd.getDate();
+    return y+"-"+m+"-"+d+' '+dd.getHours()+":"+dd.getMinutes()+":"+dd.getSeconds();
+}
+
+function getMonthFirstDate(){
+    var date_ = new Date();
+    var year = date_.getFullYear();
+    var month = date_.getMonth() + 1;
+    var firststr  = year + '-' + month + '-01';//当月第一天
+    return firststr;
+}
+
+function formatDateStr(str){
+    var date_ = new Date(str);
+    var year = date_.getFullYear();
+    var month = date_.getMonth() + 1;
+    var firststr  = year + '-' + month + '-'+date_.getDate()+' '+date_.getHours()+":"+date_.getMinutes()+":"+date_.getSeconds();
+    return firststr;
+}
+
+
+function getPreMonthFirstDate(){
+    var date_ = new Date();
+    var year = date_.getFullYear();
+    var month = date_.getMonth() + 1;
+    var firststr  = year + '-' + (month-1) + '-01';//上月第一天
+    return firststr;
+}
+
+
+function backupthis(a){
+    if(!$(a).attr("backup")){
+        $(a).attr("backup",$(a).val())
+    }
+}
+
+
 
 
 

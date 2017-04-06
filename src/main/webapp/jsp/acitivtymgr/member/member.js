@@ -120,7 +120,9 @@ var page_moudel = {};          //页面模块
                         , formatter: function (value, row, index) {
                             return "<img style='width:30px;height:30px;' src='"+baseURL+value+"'/>";
                         }
+
                     }
+
                     , {
                         title: '操作',
                         align: 'center',
@@ -160,10 +162,23 @@ var page_moudel = {};          //页面模块
      * @private
      */
     page_moudel.batchdel_member = function (id) {
-        var ids = $.getPresuffStr(id) || $('#member_list_table input[name=btSelectItem]:checked').strvalpresuff();
-        if (!ids) {
-            $.msg.toast();
-            return;
+        var str = '确定删除该行数据?';
+        var ids = '';
+        if(id){
+            ids ="'"+id+"'";
+        }else{
+            var rows = page_moudel.member_list_table.bootstrapTable('getSelections');
+            str = '确认删除所选数据?';
+            if(rows.length<=0){
+                $.msg.toast("请至少选中一项数据进行操作!");
+                return;
+            }
+            var strids = [];
+            for(var i = 0 ; i < rows.length; i++){
+                strids.push("'"+rows[i].id+"'");
+            }
+            ids = strids.join(',');
+
         }
 
         $.msg.confirm(function () {
@@ -187,10 +202,23 @@ var page_moudel = {};          //页面模块
      * @private
      */
     page_moudel.batchlogicdel_member = function (id) {
-        var ids =  $.getPresuffStr(id) || $('#member_list_table input[name=btSelectItem]:checked').strvalpresuff();
-        if (!ids) {
-            $.msg.toast();
-            return;
+        var str = '确定删除该行数据?';
+        var ids = '';
+        if(id){
+            ids ="'"+id+"'";
+        }else{
+            var rows = page_moudel.member_list_table.bootstrapTable('getSelections');
+            str = '确认删除所选数据?';
+            if(rows.length<=0){
+                $.msg.toast("请至少选中一项数据进行操作!");
+                return;
+            }
+            var strids = [];
+            for(var i = 0 ; i < rows.length; i++){
+                strids.push("'"+rows[i].id+"'");
+            }
+            ids = strids.join(',');
+
         }
 
         $.msg.confirm(function () {

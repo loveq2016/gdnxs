@@ -6,6 +6,7 @@
   var token = "${_csrf.token}";
   var communityId="${currentUser.communityId}";
   var picpostfix = ".jpg,.png,.gif,.jpeg,.bmp";
+  var attachmentpostfix = ".pdf,.jpg,.png,.gif,.jpeg,.bmp,.xls,.xlsx,.doc,.docx";
 </script>
 <script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
 <!--[if lte IE 9]>
