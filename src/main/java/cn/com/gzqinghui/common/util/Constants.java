@@ -11,4 +11,7 @@ public class Constants {
     //图片上传允许后缀
     public static final String PICPOSTFIX=".jpg,.png,.gif,.jpeg,.bmp";
 
+    //附件上传允许后缀
+    public static final String ATTACHMENTPOSTFIX=".pdf,.jpg,.png,.gif,.jpeg,.bmp,.xls,.xlsx,.doc,.docx";
+
 }
