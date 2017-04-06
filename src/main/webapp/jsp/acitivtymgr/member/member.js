@@ -101,7 +101,7 @@ var page_moudel = {};          //页面模块
                         , field: 'area'
                         , sortable: true
                         , formatter: function (value, row, index) {
-                            return main_global.render.dictFormat("area",value);
+                            return value;
                         }
                     }
                                                                                                                                                                                 , {
@@ -130,7 +130,7 @@ var page_moudel = {};          //页面模块
                             var html = "";
                             /*html += '<a href="javascript:void(0)" class="glyphicon glyphicon-copy" onclick="page_moudel.copy_member(\'' + row.id + '\',\'' + index + '\')"></a>';*/
                             html += '&nbsp;<a href="javascript:void(0)" class="glyphicon glyphicon-pencil" onclick="page_moudel.edit_member(\'' + row.id + '\',\'' + index + '\')"></a>';
-                            html += '&nbsp;<a href="javascript:void(0)" class="glyphicon glyphicon-file" onclick="page_moudel.view_member(\'' + index + '\')"></a>';
+                            /*html += '&nbsp;<a href="javascript:void(0)" class="glyphicon glyphicon-file" onclick="page_moudel.view_member(\'' + index + '\')"></a>';*/
                             html += '&nbsp;<a href="javascript:void(0)" class="glyphicon glyphicon-remove" onclick="page_moudel.batchdel_member(\'' + row.id + '\')"></a>';
                             return html;
                         }
@@ -344,6 +344,8 @@ var page_moudel = {};          //页面模块
                         $('#edit_member_work').val(currentrow.work);
                         $('#edit_member_concatPhone').val(currentrow.concatPhone);
                         $('#edit_member_birthday').val(currentrow.birthday);
+                $('#edit_member_mtype').val(currentrow.mtype);
+                $('#edit_member_city').val(currentrow.city);
                         $('#edit_member_area').val(currentrow.area);
                         $('#edit_member_specialty').val(currentrow.specialty);
                         $('#edit_member_selfdesc').val(currentrow.selfdesc);

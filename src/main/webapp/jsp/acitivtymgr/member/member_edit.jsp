@@ -70,10 +70,21 @@
                 <input type="text" name="member.birthday" check-type="required"  data-date-format="YYYY-MM-DD"  class="form-control" id="edit_member_birthday"/>
             </div>
         </div>
+      <div class="form-group">
+          <label  for="edit_member_mtype" class="col-md-3 control-label">类型：</label>
+          <div class="col-md-8">
+              <select type="text" name="member.mtype"  dict-type="MTYPE"  check-type="required"  class="form-control" id="edit_member_mtype"/>
+          </div>
+      </div>
+
                                                 <div class="form-group">
             <label  for="edit_member_area" class="col-md-3 control-label">区域：</label>
             <div class="col-md-8">
-                <select type="text" name="member.area"  dict-type="area"  class="form-control" id="edit_member_area"/>
+                <select  name="member.city"    class="form-control" style="width: 100px;display: inline-block" id="edit_member_city" onchange="chageAreaCity('edit_member_city','edit_member_area')"/>
+                <select  name="member.area"    class="form-control"  style="width: 100px;display: inline-block" id="edit_member_area"/>
+                <script>
+                    initAreaCity('edit_member_city')
+                </script>
             </div>
         </div>
                                                 <div class="form-group">

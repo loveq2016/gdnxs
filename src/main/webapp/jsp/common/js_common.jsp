@@ -1,3 +1,4 @@
+<%@ page import="cn.com.gzqinghui.common.util.AreaUtil" %>
 <%@page pageEncoding="utf-8" %>
 <script type="text/javascript">
   var baseURL = "${baseURL}";
@@ -7,6 +8,7 @@
   var communityId="${currentUser.communityId}";
   var picpostfix = ".jpg,.png,.gif,.jpeg,.bmp";
   var attachmentpostfix = ".pdf,.jpg,.png,.gif,.jpeg,.bmp,.xls,.xlsx,.doc,.docx";
+  var areaJson = eval("(" + '<%=AreaUtil.getInstance().getAreaListJson()%>' + ")");
 </script>
 <script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
 <!--[if lte IE 9]>
@@ -85,7 +87,7 @@
 
 <script type="text/javascript" >
   $(function(){
-    $(".container").append('<img onclick="return false;" src="${baseURL}/staticres/images/ceshi@3x.png" width="500" height="500" style="position: absolute;z-index: 10; top:50px; left:200px;pointer-events: none;" />');
+   // $(".container").append('<img onclick="return false;" src="${baseURL}/staticres/images/ceshi@3x.png" width="500" height="500" style="position: absolute;z-index: 10; top:50px; left:200px;pointer-events: none;" />');
     $.ajaxSetup({
       timeout:5000,
       //完成请求后触发
