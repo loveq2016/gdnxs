@@ -76,6 +76,12 @@
               <select type="text" name="member.mtype"  dict-type="MTYPE"  check-type="required"  class="form-control" id="edit_member_mtype"/>
           </div>
       </div>
+      <div class="form-group">
+          <label  for="edit_member_people" class="col-md-3 control-label">民族：</label>
+          <div class="col-md-8">
+              <select type="text" name="member.people"  dict-type="people"  check-type="required"  class="form-control" id="edit_member_people"/>
+          </div>
+      </div>
 
                                                 <div class="form-group">
             <label  for="edit_member_area" class="col-md-3 control-label">区域：</label>

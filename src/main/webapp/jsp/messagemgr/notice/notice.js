@@ -71,12 +71,20 @@ var page_moudel = {};          //页面模块
                             return "<img style='width:30px;height:30px;' src='"+baseURL+value+"'/>";
                         }
                     }
+                    , {
+                        title: '城市'
+                        , field: 'city'
+                        , sortable: true
+                        , formatter: function (value, row, index) {
+                            return value
+                        }
+                    }
                                                                                                                                                                                 , {
                         title: '区域'
                         , field: 'area'
                         , sortable: true
                         , formatter: function (value, row, index) {
-                            return main_global.render.dictFormat("area",value);
+                            return value
                         }
                     }
                                                                                                                                                                                 , {
@@ -307,6 +315,7 @@ var page_moudel = {};          //页面模块
                         $('#edit_notice_purl').val(currentrow.purl);
                 $('#edit_notice_purl_img').attr("src",baseURL+currentrow.purl);
                 $('#edit_notice_ndesc').val(currentrow.ndesc);
+                $('#edit_notice_city').val(currentrow.city);
                 $('#edit_notice_area').val(currentrow.area);
                 $('#edit_notice_attachmentname').val(currentrow.attachmentname);
                 $('#edit_notice_attachment').val(currentrow.attachment);

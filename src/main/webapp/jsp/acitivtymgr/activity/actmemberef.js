@@ -86,6 +86,22 @@
                             return value;
                         }
                     }
+                    , {
+                        title: '城市'
+                        , field: 'city'
+                        , sortable: true
+                        , formatter: function (value, row, index) {
+                            return value;
+                        }
+                    }
+                    , {
+                        title: '区域'
+                        , field: 'area'
+                        , sortable: true
+                        , formatter: function (value, row, index) {
+                            return value;
+                        }
+                    }
                                                                 , {
                         title: '操作',
                         align: 'center',

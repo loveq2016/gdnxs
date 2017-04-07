@@ -63,6 +63,22 @@ var page_moudel = {};          //页面模块
                             return value;
                         }
                     }
+                    , {
+                        title: '消息接受者'
+                        , field: 'name'
+                        , sortable: true
+                        , formatter: function (value, row, index) {
+                            return value;
+                        }
+                    }
+                    , {
+                        title: '接受者手机'
+                        , field: 'concatPhone'
+                        , sortable: true
+                        , formatter: function (value, row, index) {
+                            return value;
+                        }
+                    }
                                                                                                                                                                                 , {
                         title: '消息明细'
                         , field: 'msgdesc'

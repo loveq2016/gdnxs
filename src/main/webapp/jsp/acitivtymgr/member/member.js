@@ -80,6 +80,14 @@ var page_moudel = {};          //页面模块
                             return value;
                         }
                     }
+                    , {
+                        title: '民族'
+                        , field: 'people'
+                        , sortable: true
+                        , formatter: function (value, row, index) {
+                            return main_global.render.dictFormat("people",value);
+                        }
+                    }
                                                                                                                                                                                 , {
                         title: '联系号码'
                         , field: 'concatPhone'
@@ -91,6 +99,14 @@ var page_moudel = {};          //页面模块
                                                                                                                                                                                 , {
                         title: '生日'
                         , field: 'birthday'
+                        , sortable: true
+                        , formatter: function (value, row, index) {
+                            return value;
+                        }
+                    }
+                    , {
+                        title: '城市'
+                        , field: 'city'
                         , sortable: true
                         , formatter: function (value, row, index) {
                             return value;
@@ -346,6 +362,7 @@ var page_moudel = {};          //页面模块
                         $('#edit_member_birthday').val(currentrow.birthday);
                 $('#edit_member_mtype').val(currentrow.mtype);
                 $('#edit_member_city').val(currentrow.city);
+                $('#edit_member_people').val(currentrow.people);
                         $('#edit_member_area').val(currentrow.area);
                         $('#edit_member_specialty').val(currentrow.specialty);
                         $('#edit_member_selfdesc').val(currentrow.selfdesc);

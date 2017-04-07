@@ -47,9 +47,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label  for="add_notice_area" class="col-md-3 control-label">通知区域：</label>
+                        <label  for="add_notice_city" class="col-md-3 control-label">通知区域：</label>
                         <div class="col-md-8">
-                            <select type="text" name="notice.area" dict-type="area" check-type="required"   class="form-control" id="add_notice_area"/>
+                            <select  name="notice.city"    class="form-control" style="width: 100px;display: inline-block" id="add_notice_city" onchange="chageAreaCity('add_notice_city','add_notice_area')"/>
+                            <select  name="notice.area"    class="form-control"  style="width: 100px;display: inline-block" id="add_notice_area"/>
+                            <script>
+                                initAreaCity('add_notice_city')
+                            </script>
                         </div>
                     </div>
                     <div class="form-group">

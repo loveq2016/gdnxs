@@ -106,11 +106,27 @@ var page_moudel = {};          //页面模块
                         }
                     }
                     , {
+                        title: '民族'
+                        , field: 'people'
+                        , sortable: true
+                        , formatter: function (value, row, index) {
+                            return main_global.render.dictFormat("people",value);
+                        }
+                    }
+                    , {
+                        title: '城市'
+                        , field: 'city'
+                        , sortable: true
+                        , formatter: function (value, row, index) {
+                            return value;
+                        }
+                    }
+                    , {
                         title: '区域'
                         , field: 'area'
                         , sortable: true
                         , formatter: function (value, row, index) {
-                            return main_global.render.dictFormat("area",value);
+                            return value;
                         }
                     }
                     , {

@@ -20,9 +20,19 @@
                        <div class="search_box row">
                                         <label for="msginfo_title" class="search_label">消息标题：</label>
                                         <div class="col-xs-3">
-                                         <input name="msginfo.title" id="msginfo_title" type="text"
+                                         <input name="queryParams['title']" id="msginfo_title" type="text"
                                                         class="form-control btn-block" placeholder="" aria-describedby="basic-addon1"/></td>
                                         </div>
+                                       <label for="name" class="search_label">消息接受者：</label>
+                                       <div class="col-xs-3">
+                                           <input name="queryParams['name']" id="name" type="text"
+                                                  class="form-control btn-block" placeholder="" aria-describedby="basic-addon1"/></td>
+                                       </div>
+                                       <label for="phone" class="search_label">接受者手机：</label>
+                                       <div class="col-xs-3">
+                                           <input name="queryParams['phone']" id="phone" type="text"
+                                                  class="form-control btn-block" placeholder="" aria-describedby="basic-addon1"/></td>
+                                       </div>
                                          <%--<label for="msginfo_msgdesc" class="search_label">：</label>
                                         <div class="col-xs-3">
                                          <input name="msginfo.msgdesc" id="msginfo_msgdesc" type="text"
