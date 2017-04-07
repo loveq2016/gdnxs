@@ -45,7 +45,7 @@
                                                         class="form-control btn-block" placeholder="" aria-describedby="basic-addon1"/></td>
                                         </div>--%>
 
-                                        <label for="member_concatPhone" class="search_label">联系号码：<%=DictUtil.getDictValue("people","1")%></label>
+                                        <label for="member_concatPhone" class="search_label">联系号码：</label>
                                         <div class="col-xs-3">
                                          <input name="member.concatPhone" id="member_concatPhone" type="text"
                                                         class="form-control btn-block" placeholder="" aria-describedby="basic-addon1"/></td>
