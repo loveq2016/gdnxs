@@ -87,6 +87,14 @@
 		<sec:csrf disabled="true" />
 	</sec:http>
 
+	<!-- 前端 -->
+	<sec:http pattern="/mob/*" auto-config="true">
+		<sec:csrf disabled="true" />
+	</sec:http>
+	<!-- wechat -->
+	<sec:http pattern="/con/*" auto-config="true">
+		<sec:csrf disabled="true" />
+	</sec:http>
 	<!--监控配置-->
 	<sec:http pattern="/druid/*" auto-config="true">
 		<sec:csrf disabled="true" />

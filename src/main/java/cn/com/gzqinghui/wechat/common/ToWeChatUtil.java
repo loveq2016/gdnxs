@@ -96,7 +96,7 @@ public class ToWeChatUtil {
      * @return
      * @throws Exception
      */
-    public static WeChatCommonResult getWebUserInfoByUnion(String token, String openid) throws  Exception{
+    public static WeChatCommonResult getUserInfoHasUnion(String token, String openid) throws  Exception{
         String jsonStr = HTTPUtil.getInstance().doGetReq(Tools.preWeChatURL(WeChatReqsUTLCfg.WX_GET_USER_UNIONID, new Object[]{token, openid}));
         Map<String, Object> map = new Gson().fromJson(jsonStr.trim(), new TypeToken<Map>() {
         }.getType());
