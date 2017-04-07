@@ -22,18 +22,24 @@ import java.util.Map;
 public class DictUtil {
 
 
-    /*public  static List<DictVO> dictlist = new ArrayList();
+    public  static List<DictVO> dictlist = new ArrayList();
 
-
-
-    public  static String  getDictValue(String type,String key) throws Exception {
+    static {
         if(dictlist.size()<=0){
             IDictService dictService = (IDictService) AppContext.getSpringContext().getBean("dictService");
             DictVO dictVO = new DictVO();
             dictVO.setIsDel("0");
-            dictlist = dictService.queryList(dictVO);
+            try {
+                dictlist = dictService.queryList(dictVO);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+    }
 
+
+
+    public  static String  getDictValue(String type,String key) throws Exception {
         for(DictVO dictVO:dictlist){
             if(dictVO.getDictType().equalsIgnoreCase(type) && null!=dictVO.getParentId()){
                 if(dictVO.getItemCode().equalsIgnoreCase(key)){
@@ -43,7 +49,7 @@ public class DictUtil {
         }
         return null;
 
-    }*/
+    }
 
 
 

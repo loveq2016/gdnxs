@@ -60,6 +60,16 @@ public class MemberVO implements Serializable,IBaseEntity {
 
     private String city;
 
+    private String people;
+
+    public String getPeople() {
+        return people;
+    }
+
+    public void setPeople(String people) {
+        this.people = people;
+    }
+
     public String getMtype() {
         return mtype;
     }
@@ -135,7 +145,6 @@ public class MemberVO implements Serializable,IBaseEntity {
         this.birthday=birthday ;
     }
 
-            @DateFormat
         public String getBirthday(){
 
             return this.birthday  ;

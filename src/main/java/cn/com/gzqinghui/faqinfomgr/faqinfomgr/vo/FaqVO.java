@@ -1,4 +1,4 @@
-package cn.com.gzqinghui.messagemgr.notice.vo;
+package cn.com.gzqinghui.faqinfomgr.faqinfomgr.vo;
 import com.dexcoder.dal.annotation.Column;
 import com.dexcoder.dal.annotation.Table;
 import com.dexcoder.dal.annotation.Transient;
@@ -15,30 +15,20 @@ import com.dexcoder.dal.annotation.DateFormat;
 * Copyright &copy; 2015 广州清汇信息科技有限公司
 * All rights reserved.
 * User: x
-* date: 2017-04-06 09:50:19
+* date: 2017-04-07 09:54:40
 */
-@Table(name = "tb_notice_info", pkField = "id"
+@Table(name = "tb_faq_info", pkField = "id"
 , pkColumn = "ID"
 , defaultSort = "id"
 )
-public class NoticeVO implements Serializable,IBaseEntity {
+public class FaqVO implements Serializable,IBaseEntity {
 
       
     private String id ;
       
     private String title ;
       
-    private String purl ;
-      
-    private String ndesc ;
-
-    private String city;
-      
-    private String area ;
-      
-    private String attachmentname ;
-      
-    private String attachment ;
+    private String faqDesc ;
       
     private String creatorid ;
       
@@ -49,15 +39,7 @@ public class NoticeVO implements Serializable,IBaseEntity {
     private String modifieddate ;
       
     private String deletedflag ;
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
+    
     public void setId(String id){
         this.id=id ;
     }
@@ -80,58 +62,14 @@ public class NoticeVO implements Serializable,IBaseEntity {
     }
 
 
-    public void setPurl(String purl){
-        this.purl=purl ;
+    public void setFaqDesc(String faqDesc){
+        this.faqDesc=faqDesc ;
     }
 
         @Column(likeQuery =true)
-            public String getPurl(){
+            public String getFaqDesc(){
 
-            return this.purl  ;
-    }
-
-
-    public void setNdesc(String ndesc){
-        this.ndesc=ndesc ;
-    }
-
-        @Column(likeQuery =true)
-            public String getNdesc(){
-
-            return this.ndesc  ;
-    }
-
-
-    public void setArea(String area){
-        this.area=area ;
-    }
-
-        @Column(likeQuery =true)
-            public String getArea(){
-
-            return this.area  ;
-    }
-
-
-    public void setAttachmentname(String attachmentname){
-        this.attachmentname=attachmentname ;
-    }
-
-        @Column(likeQuery =true)
-            public String getAttachmentname(){
-
-            return this.attachmentname  ;
-    }
-
-
-    public void setAttachment(String attachment){
-        this.attachment=attachment ;
-    }
-
-        @Column(likeQuery =true)
-            public String getAttachment(){
-
-            return this.attachment  ;
+            return this.faqDesc  ;
     }
 
 
@@ -194,7 +132,7 @@ public class NoticeVO implements Serializable,IBaseEntity {
     * @return
     */
     public String _getTableName() {
-        return "TB_NOTICE_INFO";
+        return "TB_FAQ_INFO";
     }
 
     /**

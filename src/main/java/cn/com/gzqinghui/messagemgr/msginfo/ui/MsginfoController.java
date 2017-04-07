@@ -39,12 +39,12 @@ public class MsginfoController {
      */
     @RequestMapping(value = "/list",produces="application/json")
     @SystemControllerLog(model="消息管理模块",description="消息管理列表")
-    public void list(@FormModel MsginfoVO msginfo, @ModelAttribute AcePageBean pageBean, Writer out) throws Exception{
+    public void list(@ModelAttribute AcePageBean pageBean, Writer out) throws Exception{
 
         JSONObject json = new JSONObject();
 
         try {
-            Map<String, Object> msginfos = msginfoService.queryListByPage(msginfo, pageBean);
+            Map<String, Object> msginfos = msginfoService.queryMsgInfoMapListByPage(pageBean);
             json.put("code","1");
             json.put("desc","查询成功");
             json.put("data",msginfos);
