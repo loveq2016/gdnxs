@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 60011
 File Encoding         : 65001
 
-Date: 2017-04-06 13:57:48
+Date: 2017-04-07 17:44:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,8 +38,9 @@ CREATE TABLE `tb_activity_info` (
 -- ----------------------------
 -- Records of tb_activity_info
 -- ----------------------------
-INSERT INTO `tb_activity_info` VALUES ('032adb91-997a-4e64-8c15-307402b16226', 'XX活动', '/upload/member/201704/36d7bd48-882c-4fc4-a027-ae8d549949a1.jpg', '2017-04-12 10:56:00', '1', '<p>sbsbs</p>', '0', '001', '2017-04-05 10:56:22', '001', '2017-04-05 10:57:12', '0');
-INSERT INTO `tb_activity_info` VALUES ('837037c5-9e79-47ad-b5d6-618c8c8ed94d', '第二个活动', '/upload/member/201704/3bd95888-7f30-4148-8fe2-3f47c0045628.jpg', '2017-04-12 15:38:48', '1', '<p>随便随便说说</p>', '0', '001', '2017-04-05 15:39:06', '001', '2017-04-05 15:39:06', '0');
+INSERT INTO `tb_activity_info` VALUES ('032adb91-997a-4e64-8c15-307402b16226', 'XX活动', '/upload/member/201704/36d7bd48-882c-4fc4-a027-ae8d549949a1.jpg', '2017-04-12 10:56:00', '1', '<p>sbsbs</p>', '1', '001', '2017-04-05 10:56:22', '001', '2017-04-07 14:47:47', '0');
+INSERT INTO `tb_activity_info` VALUES ('40a8d75e-8a39-4553-ac90-eef79e7323da', '最新活动', '/upload/activity/201704/7e6a212f-c623-4c61-8627-0ba42d18b249.jpg', '2017-04-14 14:47:53', '0', '<p>是不是不是<br/></p>', '0', '001', '2017-04-07 14:48:09', '001', '2017-04-07 14:48:09', '0');
+INSERT INTO `tb_activity_info` VALUES ('837037c5-9e79-47ad-b5d6-618c8c8ed94d', '第二个活动', '/upload/member/201704/3bd95888-7f30-4148-8fe2-3f47c0045628.jpg', '2017-04-12 15:38:00', '0', '<p>随便随便说说</p>', '0', '001', '2017-04-05 15:39:06', '001', '2017-04-07 14:39:08', '0');
 
 -- ----------------------------
 -- Table structure for tb_activity_pics
@@ -61,7 +62,8 @@ CREATE TABLE `tb_activity_pics` (
 -- ----------------------------
 -- Records of tb_activity_pics
 -- ----------------------------
-INSERT INTO `tb_activity_pics` VALUES ('4ffff290-6a61-4b70-afbe-c9077d9dd376', '837037c5-9e79-47ad-b5d6-618c8c8ed94d', null, '/upload/activity/201704/413d4eb8-a5c9-4c3d-83ea-491f6079eb10.jpg', '001', '2017-04-05 17:16:31', '001', '2017-04-05 17:16:31', '0');
+INSERT INTO `tb_activity_pics` VALUES ('cad2c58b-8620-4d4e-8cf0-4f215e2e7297', '837037c5-9e79-47ad-b5d6-618c8c8ed94d', null, '/upload/activity/201704/4be51b0a-3bf0-44cc-9d95-9bc9188ce073.jpg', '001', '2017-04-07 15:45:43', '001', '2017-04-07 15:45:43', '0');
+INSERT INTO `tb_activity_pics` VALUES ('f9ee6b1c-220d-4925-a2d5-26063c89420f', '837037c5-9e79-47ad-b5d6-618c8c8ed94d', null, '/upload/activity/201704/8a6686b5-1ac0-4b91-908d-81f6b05c07ee.jpg', '001', '2017-04-07 15:45:40', '001', '2017-04-07 15:45:40', '0');
 
 -- ----------------------------
 -- Table structure for tb_act_member_ref
@@ -85,6 +87,24 @@ INSERT INTO `tb_act_member_ref` VALUES ('0a896208-a7da-40a1-b99d-c36deb6cc270', 
 INSERT INTO `tb_act_member_ref` VALUES ('0f56083e-c36c-4608-a628-21f3c93d9fa1', '837037c5-9e79-47ad-b5d6-618c8c8ed94d', '4b9ab219-8060-4f5b-878b-580825ddabb7', '1', '0', '001', '2017-04-05 15:40:15');
 INSERT INTO `tb_act_member_ref` VALUES ('b0de1bf9-445e-420f-9e85-6c56c75a8d4f', '032adb91-997a-4e64-8c15-307402b16226', '7a379b93-2a58-4f25-a1e0-68a5160ce2a3', '1', '0', '001', '2017-04-05 15:38:25');
 INSERT INTO `tb_act_member_ref` VALUES ('fcefa9ed-32eb-40ac-8ee5-baaad84e64f0', '032adb91-997a-4e64-8c15-307402b16226', '4b9ab219-8060-4f5b-878b-580825ddabb7', '0', '0', '001', '2017-04-05 15:38:25');
+
+-- ----------------------------
+-- Table structure for tb_area
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_area`;
+CREATE TABLE `tb_area` (
+  `ID` varchar(36) NOT NULL,
+  `CITY` varchar(100) DEFAULT NULL,
+  `AREATEXT` varchar(2000) DEFAULT NULL,
+  `CREATEDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tb_area
+-- ----------------------------
+INSERT INTO `tb_area` VALUES ('123', '茂名', ',茂名市,信宜,高州,化州,电白,茂南', '2017-04-06 16:32:06');
+INSERT INTO `tb_area` VALUES ('1234', '肇庆', ',肇庆办事处,高要,四会,广宁,怀集,封开,德庆,鼎湖,端州', '2017-04-29 16:32:15');
 
 -- ----------------------------
 -- Table structure for tb_config
@@ -132,18 +152,24 @@ CREATE TABLE `tb_dictionary` (
 -- ----------------------------
 -- Records of tb_dictionary
 -- ----------------------------
+INSERT INTO `tb_dictionary` VALUES ('00906023-2f78-4560-8584-8a302c177f17', 'MTYPE', '团员类型', '1', '团员', '2533824f-9478-419f-8660-d2f9f345d43c', '1', '0', '2017-04-06 17:15:06');
+INSERT INTO `tb_dictionary` VALUES ('0d3b9d41-3190-46d3-8ef8-036b2e934580', 'MTYPE', '团员类型', '0', '团干', '2533824f-9478-419f-8660-d2f9f345d43c', '1', '0', '2017-04-06 17:14:56');
 INSERT INTO `tb_dictionary` VALUES ('0e3cc5d2-3bf6-4759-8329-55b5232884b4', 'personSex', '性别', '0', '男', 'd9749a85-fc14-4dae-bd5c-79ce0518749c', '1', '0', '2017-04-03 17:30:15');
 INSERT INTO `tb_dictionary` VALUES ('104ae252-d979-11e6-b82a-00163e002c89', 'menuType', '菜单类型', '1', '目录', '73f9e8f2-07f3-11e7-b025-8cd8976a4d45', '1', '0', '2016-03-15 16:43:17');
 INSERT INTO `tb_dictionary` VALUES ('104d916c-d979-11e6-b82a-00163e002c89', 'menuType', '菜单类型', '2', '链接', '73f9e8f2-07f3-11e7-b025-8cd8976a4d45', '1', '0', '2016-03-17 11:12:56');
 INSERT INTO `tb_dictionary` VALUES ('10d73389-d621-4e3a-9413-fe680f23705b', 'area', '区域', null, null, null, '0', '0', '2017-04-03 17:35:01');
 INSERT INTO `tb_dictionary` VALUES ('11a2421a-b056-4434-9e64-f005f7e72bde', 'ACTSTATUS', '活动状态', null, null, null, '0', '0', '2017-04-05 09:42:43');
+INSERT INTO `tb_dictionary` VALUES ('2533824f-9478-419f-8660-d2f9f345d43c', 'MTYPE', '团员类型', null, null, null, '0', '0', '2017-04-06 17:14:48');
 INSERT INTO `tb_dictionary` VALUES ('2aac56e4-3072-4f4a-9269-80e355206e2a', 'personSex', '性别', '1', '女', 'd9749a85-fc14-4dae-bd5c-79ce0518749c', '1', '0', '2017-04-03 17:30:32');
 INSERT INTO `tb_dictionary` VALUES ('33d32d98-b1f5-4c20-84ac-d707208b2c26', 'area', '区域', '1', '深圳', '10d73389-d621-4e3a-9413-fe680f23705b', '1', '0', '2017-04-03 17:35:16');
 INSERT INTO `tb_dictionary` VALUES ('36001520-4cdb-442f-a48f-e2be93d82411', '1', '否', null, null, null, '0', '1', '2017-04-03 17:31:17');
+INSERT INTO `tb_dictionary` VALUES ('6cafd59d-2fb4-4b8b-94ba-be0805394b7e', 'people', '民族', null, null, null, '0', '0', '2017-04-07 09:37:08');
 INSERT INTO `tb_dictionary` VALUES ('7293009b-6069-467a-bd2e-8039735029db', 'YesOrNo', '是否', '0', '是', 'e5e51c66-22e3-4349-ab5e-b87a28e5c77c', '1', '0', '2017-04-03 17:31:05');
 INSERT INTO `tb_dictionary` VALUES ('73f9e8f2-07f3-11e7-b025-8cd8976a4d45', 'menuType', '菜单类型', null, null, null, '0', '0', '2017-03-13 21:46:26');
 INSERT INTO `tb_dictionary` VALUES ('8244d742-35f9-46be-8b7f-5b0bc0a73dd7', 'ACTSTATUS', '活动状态', '1', '已结束', '11a2421a-b056-4434-9e64-f005f7e72bde', '1', '0', '2017-04-05 09:43:08');
+INSERT INTO `tb_dictionary` VALUES ('96235716-870e-4837-b1a0-af881aa7c2ef', 'people', '民族', '1', '汉族', '6cafd59d-2fb4-4b8b-94ba-be0805394b7e', '1', '0', '2017-04-07 09:37:16');
 INSERT INTO `tb_dictionary` VALUES ('9c043cf5-6641-4893-9e8d-bc2f313b9f8d', 'ACTSTATUS', '活动状态', '0', '进行中', '11a2421a-b056-4434-9e64-f005f7e72bde', '1', '0', '2017-04-05 09:42:50');
+INSERT INTO `tb_dictionary` VALUES ('c8beb4e9-0b59-4145-9eef-6020b1885bb7', 'area', '区域', '1', '1', '33d32d98-b1f5-4c20-84ac-d707208b2c26', '2', '0', '2017-04-06 15:59:26');
 INSERT INTO `tb_dictionary` VALUES ('d2d3ad12-fa35-467d-937b-8135de4bfdd1', 'YesOrNo', '是否', '1', '否', 'e5e51c66-22e3-4349-ab5e-b87a28e5c77c', '1', '0', '2017-04-03 17:31:29');
 INSERT INTO `tb_dictionary` VALUES ('d9749a85-fc14-4dae-bd5c-79ce0518749c', 'personSex', '性别', null, null, null, '0', '0', '2017-04-03 17:30:00');
 INSERT INTO `tb_dictionary` VALUES ('e5e51c66-22e3-4349-ab5e-b87a28e5c77c', 'YesOrNo', '是否', null, null, null, '0', '0', '2017-04-03 17:30:55');
@@ -169,6 +195,7 @@ CREATE TABLE `tb_faq_info` (
 -- ----------------------------
 -- Records of tb_faq_info
 -- ----------------------------
+INSERT INTO `tb_faq_info` VALUES ('dcab4844-9d7e-4626-b14d-de9516ff8195', '标题', '<p>test</p>', '001', '2017-04-07 10:13:13', '001', '2017-04-07 10:15:02', '0');
 
 -- ----------------------------
 -- Table structure for tb_membervoterec
@@ -197,8 +224,11 @@ CREATE TABLE `tb_member_info` (
   `GENDER` varchar(2) DEFAULT NULL,
   `WORK` varchar(100) DEFAULT NULL,
   `CONCAT_PHONE` varchar(30) DEFAULT NULL,
-  `BIRTHDAY` datetime DEFAULT NULL,
+  `BIRTHDAY` date DEFAULT NULL,
+  `MTYPE` varchar(2) DEFAULT NULL,
+  `CITY` varchar(100) DEFAULT NULL,
   `AREA` varchar(100) DEFAULT NULL,
+  `PEOPLE` varchar(2) DEFAULT NULL,
   `SPECIALTY` varchar(200) DEFAULT NULL,
   `SELFDESC` varchar(300) DEFAULT NULL,
   `AVATAR` varchar(100) DEFAULT NULL,
@@ -215,8 +245,9 @@ CREATE TABLE `tb_member_info` (
 -- ----------------------------
 -- Records of tb_member_info
 -- ----------------------------
-INSERT INTO `tb_member_info` VALUES ('4b9ab219-8060-4f5b-878b-580825ddabb7', '123123', '1', '18613002847', '18613002847', '2017-04-04 00:00:00', '', '', '', '/upload/member/201704/6e0be816-a383-438b-a12e-786be172df04.jpg', '<p>ni tm jiushi ge sb<br/></p>', null, null, null, null, null, null);
-INSERT INTO `tb_member_info` VALUES ('7a379b93-2a58-4f25-a1e0-68a5160ce2a3', 'oy', '0', 'aa', '18613002847', '2017-04-10 00:00:00', '', '', '', '/upload/member/201704/01ba29c7-ebe7-437c-adec-6aad078355a9.jpg', '', null, null, null, null, null, null);
+INSERT INTO `tb_member_info` VALUES ('4b9ab219-8060-4f5b-878b-580825ddabb7', '123123', '1', '18613002847', '18613002847', '2017-04-04', '1', '肇庆', '肇庆办事处', '1', '吹牛B', '', '/upload/member/201704/6e0be816-a383-438b-a12e-786be172df04.jpg', '<p>ni tm jiushi ge sb<br/></p>', null, null, null, '001', '2017-04-07 14:38:21', null);
+INSERT INTO `tb_member_info` VALUES ('7a379b93-2a58-4f25-a1e0-68a5160ce2a3', 'oy', '0', 'aa', '18613002847', '2017-04-11', '0', '茂名', '信宜', '1', '', '', '/upload/member/201704/01ba29c7-ebe7-437c-adec-6aad078355a9.jpg', '<p>sb</p>', null, null, null, '001', '2017-04-07 09:42:11', null);
+INSERT INTO `tb_member_info` VALUES ('eb7932e5-fbe9-4f04-9cf2-3d956a08aa4a', '第三个团员', '0', '啊啊啊', '15666666666', '2017-04-11', '1', '茂名', '茂名市', '1', '', '', '/upload/member/201704/5f92546a-59ec-4f7e-b921-886c8175566d.jpg', '<p>煞笔煞笔煞笔</p>', null, '001', '2017-04-07 14:47:31', '001', '2017-04-07 14:47:31', '0');
 
 -- ----------------------------
 -- Table structure for tb_msg_info
@@ -224,6 +255,7 @@ INSERT INTO `tb_member_info` VALUES ('7a379b93-2a58-4f25-a1e0-68a5160ce2a3', 'oy
 DROP TABLE IF EXISTS `tb_msg_info`;
 CREATE TABLE `tb_msg_info` (
   `ID` varchar(36) NOT NULL,
+  `MEMBER_ID` varchar(36) DEFAULT NULL,
   `TITLE` varchar(100) DEFAULT NULL,
   `MSGDESC` varchar(500) DEFAULT NULL,
   `CREATORID` varchar(36) DEFAULT NULL,
@@ -234,7 +266,7 @@ CREATE TABLE `tb_msg_info` (
 -- ----------------------------
 -- Records of tb_msg_info
 -- ----------------------------
-INSERT INTO `tb_msg_info` VALUES ('uuid', '这是消息标题', '亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的', 'a', '2017-04-12 11:51:48');
+INSERT INTO `tb_msg_info` VALUES ('uuid', '7a379b93-2a58-4f25-a1e0-68a5160ce2a3', '这是消息标题', '亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的', 'a', '2017-04-12 11:51:48');
 
 -- ----------------------------
 -- Table structure for tb_notice_info
@@ -245,7 +277,8 @@ CREATE TABLE `tb_notice_info` (
   `TITLE` varchar(100) DEFAULT NULL,
   `PURL` varchar(100) DEFAULT NULL,
   `NDESC` text,
-  `AREA` varchar(2) DEFAULT NULL,
+  `CITY` varchar(100) DEFAULT NULL,
+  `AREA` varchar(100) DEFAULT NULL,
   `ATTACHMENTNAME` varchar(100) DEFAULT NULL,
   `ATTACHMENT` varchar(100) DEFAULT NULL,
   `CREATORID` varchar(36) DEFAULT NULL,
@@ -259,6 +292,7 @@ CREATE TABLE `tb_notice_info` (
 -- ----------------------------
 -- Records of tb_notice_info
 -- ----------------------------
+INSERT INTO `tb_notice_info` VALUES ('40f6206a-4d44-4ac0-999e-a6b148a95ccb', '这是一个通知', '/upload/member/201704/290ff448-5c21-477c-85c4-c69371420fc5.jpg', '<p>ssss</p>', '茂名', '茂名市', '1 (8).jpg', '/upload/notice/201704/5e14b305-2e3b-40b3-8d4e-0501cc1bf092.jpg', '001', '2017-04-07 09:22:53', '001', '2017-04-07 09:24:12', null);
 
 -- ----------------------------
 -- Table structure for tb_operation_log
@@ -279,6 +313,9 @@ CREATE TABLE `tb_operation_log` (
   KEY `AUTHOR_ID` (`AUTHOR_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='系统运行日志';
 
+-- ----------------------------
+-- Records of tb_operation_log
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for tb_ref_role_permission
@@ -297,23 +334,22 @@ CREATE TABLE `tb_ref_role_permission` (
 -- ----------------------------
 INSERT INTO `tb_ref_role_permission` VALUES ('0046db8c-c27c-4e68-a77e-47c5abd1b9f1', 'a8c1542c-fbfd-45ce-8360-345bc30b982a', 'cb04de33-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('0063bc3a-cc6c-4235-988a-cf1f77633058', 'a8c1542c-fbfd-45ce-8360-345bc30b982a', '09e2dfe5-1ec0-4711-bf7c-7a1175c6683e');
+INSERT INTO `tb_ref_role_permission` VALUES ('04071edb-346c-43ee-a4da-528aac3038f6', '001', 'ab0175ef-0271-4b70-90c3-08c3ce6ba045');
 INSERT INTO `tb_ref_role_permission` VALUES ('0578df39-feb3-4aef-aa86-4777eaf5a0a5', '004', '15db1c5d-460d-44dd-83c5-010a3aec1d56');
 INSERT INTO `tb_ref_role_permission` VALUES ('068845ec-5b1d-446d-9bcc-f6812bebc520', '003', 'cb04d976-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('07c951c6-8145-4c9b-be72-76a3fe4f5e14', 'a8c1542c-fbfd-45ce-8360-345bc30b982a', 'f0ed419f-3354-4299-b6ed-4b5afb713907');
-INSERT INTO `tb_ref_role_permission` VALUES ('086713af-8d95-4f5d-bd47-1fc748564027', '001', 'cb04e2f9-ec03-11e5-ac22-00163e002c89');
-INSERT INTO `tb_ref_role_permission` VALUES ('0a36b690-a325-471f-a775-cf823d6e4ea2', '001', 'ab0175ef-0271-4b70-90c3-08c3ce6ba045');
 INSERT INTO `tb_ref_role_permission` VALUES ('0aacf648-fe73-41c2-a334-6cee03c8eb4b', '003', 'cb04e230-ec03-11e5-ac22-00163e002c89');
+INSERT INTO `tb_ref_role_permission` VALUES ('0d6936a5-d563-4e18-811b-7885cd994acb', '001', 'a4bee7d4-5304-42a6-8787-409e67c468cd');
+INSERT INTO `tb_ref_role_permission` VALUES ('0f58cb73-bacd-4a35-a853-daba2106077b', '001', 'cb04d3d4-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('10e51271-0495-4f5e-bf2a-9735db8a4dd2', '002', '032cd939-ded6-4ac3-9354-6ee9f6956e36');
 INSERT INTO `tb_ref_role_permission` VALUES ('122b3b3e-db74-4682-be18-f37f031dd9a7', '004', '4e3e5fdc-222f-4e07-9f9c-d80590aa652a');
 INSERT INTO `tb_ref_role_permission` VALUES ('12d92b25-1857-4284-bedd-140a271aeeb2', '005', '0937dae2-9ebf-46d0-a012-d534fa404da6');
 INSERT INTO `tb_ref_role_permission` VALUES ('13038f55-b821-4595-9627-4e3627bf769f', '003', '7abbd908-41dc-4587-b5c2-7d3fcafc2448');
 INSERT INTO `tb_ref_role_permission` VALUES ('147cc46f-5d0c-4a5b-9614-873f881e6569', '003', 'ba70946b-a55a-4c1b-b413-3264d12f748f');
-INSERT INTO `tb_ref_role_permission` VALUES ('1578c8e2-ea9f-469c-b893-648043a00307', '001', 'cb04dbdb-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('174957c1-03ab-4427-8bf5-d8faba70c74c', '7f1748b1-7849-4b8b-a700-3ea6fb973a56', 'ba3bbb26-8b0b-4255-ab7f-fc452b2c1eba');
 INSERT INTO `tb_ref_role_permission` VALUES ('18a935da-ea9b-43ee-8b4a-f8e37c0e1d19', '003', 'cb04d572-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('1abed8f5-2bd3-41aa-ba03-92f9301f7d3a', 'a8c1542c-fbfd-45ce-8360-345bc30b982a', 'cb04c7ef-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('1ae788dd-7f3e-443e-8753-ba29056a37ef', '005', '3afd2895-48ad-4c90-a44b-a1d37445acab');
-INSERT INTO `tb_ref_role_permission` VALUES ('1bca2580-e08f-4384-84af-05f105229e64', '001', 'a4bee7d4-5304-42a6-8787-409e67c468cd');
 INSERT INTO `tb_ref_role_permission` VALUES ('1ce3521f-6e2a-43be-8466-2ad32a5bb0d8', '004', '0937dae2-9ebf-46d0-a012-d534fa404da6');
 INSERT INTO `tb_ref_role_permission` VALUES ('1d557af6-ca9e-4b69-ba25-56ef5d3245bc', '004', '8327f409-1795-435f-b4ea-6dde0e05c1d5');
 INSERT INTO `tb_ref_role_permission` VALUES ('1f390de3-948a-4001-8402-000d72b18e58', '002', 'cb04e485-ec03-11e5-ac22-00163e002c89');
@@ -322,10 +358,11 @@ INSERT INTO `tb_ref_role_permission` VALUES ('22fdc068-cc0c-4ce4-8b71-eefa8f3c5e
 INSERT INTO `tb_ref_role_permission` VALUES ('233e00db-0cad-4591-8bc8-615d6d3da7fa', '002', 'cb04ea0b-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('246ec980-f428-4e0e-a3a7-58102b48954e', 'd82c0b29-4445-4d0d-98ae-9a7cd5683aa7', '8ca2302d-aacc-4635-bc14-8ea287f71dd2');
 INSERT INTO `tb_ref_role_permission` VALUES ('25adcb38-4c94-4321-81ef-ce8f865a815f', '004', 'a155aafb-2ca2-4acf-bb8e-12018952717a');
+INSERT INTO `tb_ref_role_permission` VALUES ('262e8647-de93-4eff-91b3-2791fd612e6f', '001', 'df1edb40-366e-4f43-b8b9-155112a26390');
 INSERT INTO `tb_ref_role_permission` VALUES ('27597933-6739-42fe-a04e-e2d53b6ddf35', '004', '9a2a48e4-1185-4577-98df-dd759b37ab3d');
+INSERT INTO `tb_ref_role_permission` VALUES ('2a4f5b01-1640-4b49-af6d-6050513f425d', '001', '2cc42a8c-cabe-45d3-ac75-00f8c4218675');
 INSERT INTO `tb_ref_role_permission` VALUES ('2a701737-8749-4278-9814-594e9c0ce13f', 'd82c0b29-4445-4d0d-98ae-9a7cd5683aa7', 'cb04c7ef-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('2bdbc668-365d-4ebe-9784-fa45cd125093', '005', 'cb04de33-ec03-11e5-ac22-00163e002c89');
-INSERT INTO `tb_ref_role_permission` VALUES ('2e7a0d79-43ba-4089-a6c5-aa94f44475cf', '001', '36a1627e-cf95-440c-9cf2-99b821451048');
 INSERT INTO `tb_ref_role_permission` VALUES ('31121302-76dc-42d6-93ce-188626443c33', '004', 'cb04c7ef-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('319ed6b2-383b-4573-b0f3-d1f00979bd75', '003', '7316d44f-c27d-482d-94d4-9ed8b2795335');
 INSERT INTO `tb_ref_role_permission` VALUES ('335b8dfd-dda0-4a4c-a53d-8756719f23f9', '004', 'c6022e32-c5d1-44b0-ba3f-7c3ac5b1caf2');
@@ -336,20 +373,20 @@ INSERT INTO `tb_ref_role_permission` VALUES ('3bfd65ee-2afe-45fa-9982-619dbd5f13
 INSERT INTO `tb_ref_role_permission` VALUES ('3e645120-5eff-4fb3-b1cb-5102ac122114', '003', 'd601ab5c-d407-4677-b603-73669e7de6c5');
 INSERT INTO `tb_ref_role_permission` VALUES ('41fbe67f-dd16-43cc-add2-66a544882fcb', '441e0d3a-da85-4aa4-86a1-8b12ffefcf4e', 'd5ad6dec-a056-40b5-aa57-79f3b4205814');
 INSERT INTO `tb_ref_role_permission` VALUES ('46e6698b-8192-4ac7-9500-75a744474d18', '002', 'cb04dbdb-ec03-11e5-ac22-00163e002c89');
-INSERT INTO `tb_ref_role_permission` VALUES ('489d9c01-891e-413e-8d24-913e47b1823f', '001', 'cb04d3d4-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('4926244a-cde3-4ed3-919d-06f2f55bcd2f', '7f1748b1-7849-4b8b-a700-3ea6fb973a56', '394d23de-3d3a-4c44-871f-ca9e6caf40c4');
-INSERT INTO `tb_ref_role_permission` VALUES ('49b7faf6-ad81-43d1-bb5e-07bbc31b67cf', '001', 'cb04e485-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('4c63560f-1ae8-4417-9a4e-fbef72cad7b2', '003', 'cb04cbd2-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('4f855473-a2aa-440e-a952-4612ae70c2df', '004', '115f3fd6-64c6-40ed-a750-ac87b0b36f74');
 INSERT INTO `tb_ref_role_permission` VALUES ('500717e9-8917-4262-9381-58aaf7c48401', '004', '1875e06c-22d9-408b-94b1-27c126fa88da');
 INSERT INTO `tb_ref_role_permission` VALUES ('507f466f-8f41-46f3-87e6-8fe92b0f2c4b', '002', '904a1caf-2941-400e-88c7-07c519091e83');
 INSERT INTO `tb_ref_role_permission` VALUES ('52ebffb9-e932-4a05-a5d4-628e46a175e5', '441e0d3a-da85-4aa4-86a1-8b12ffefcf4e', 'f0ed419f-3354-4299-b6ed-4b5afb713907');
+INSERT INTO `tb_ref_role_permission` VALUES ('541bdba6-acac-4fc9-b88d-d8552ab4705a', '001', '766382c8-c3d1-4ad3-955d-d0d3b9acecc6');
 INSERT INTO `tb_ref_role_permission` VALUES ('547b903c-9bbd-43c3-b072-64b36e8dd1f7', '005', 'a8191c68-9936-4806-a3a6-e930eddfd559');
 INSERT INTO `tb_ref_role_permission` VALUES ('55e45dde-b727-4ff2-a4a9-948629033ab6', '004', 'cb04de33-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('56acb793-3a09-470e-8b06-6c6ec6f7b9c9', '002', 'cb04e2f9-ec03-11e5-ac22-00163e002c89');
-INSERT INTO `tb_ref_role_permission` VALUES ('585d0377-832b-44f9-a11b-3e14555f5c5a', '001', '5aa661ec-b990-445b-b638-f636617ff934');
+INSERT INTO `tb_ref_role_permission` VALUES ('5caaae4e-2646-48b6-b3a5-7b1798753f14', '001', 'b5676bd0-c813-425c-89db-cac87a964f63');
+INSERT INTO `tb_ref_role_permission` VALUES ('5dccb158-ffe1-411a-a37e-1a9aeac58c61', '001', 'cb04ea0b-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('6199add4-0ac7-4461-a697-d9bb5c82d050', '003', '2ce2033e-9ba0-4148-902c-9c6bf8515a1c');
-INSERT INTO `tb_ref_role_permission` VALUES ('623a8d17-c8da-42ee-9ef8-3873a3fef7ef', '001', 'cb04dfd1-ec03-11e5-ac22-00163e002c89');
+INSERT INTO `tb_ref_role_permission` VALUES ('62c282c3-7191-4048-a4b9-b8b8b0135f34', '001', '5aa661ec-b990-445b-b638-f636617ff934');
 INSERT INTO `tb_ref_role_permission` VALUES ('636c4521-a482-4576-9575-6219c3d9a0b6', '005', 'd636ef1a-49f4-4cb7-8c3c-7127af6a4a0d');
 INSERT INTO `tb_ref_role_permission` VALUES ('65b5563e-2873-4dfc-a69d-c61b31a4de4f', 'd82c0b29-4445-4d0d-98ae-9a7cd5683aa7', '3496ede0-c4d0-4c2e-9544-d8ef9271ec61');
 INSERT INTO `tb_ref_role_permission` VALUES ('65c6fc79-2bea-4eb5-bc03-0867db48bcdf', '004', 'cb04e61e-ec03-11e5-ac22-00163e002c89');
@@ -361,32 +398,35 @@ INSERT INTO `tb_ref_role_permission` VALUES ('6b906ef0-e4eb-443c-a913-cc7c953cdb
 INSERT INTO `tb_ref_role_permission` VALUES ('70043ec1-b54c-4575-bec8-952e86774e14', '003', 'cb04dca5-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('70537159-2c8a-4ec9-a716-9a2240a94a04', '005', '4e3e5fdc-222f-4e07-9f9c-d80590aa652a');
 INSERT INTO `tb_ref_role_permission` VALUES ('721a889d-bc5b-404b-a75a-4809559819b1', '003', '24444d92-c525-4a40-9ad9-724edadd979d');
-INSERT INTO `tb_ref_role_permission` VALUES ('744f2d57-578b-458d-a42d-b57b2da83703', '001', 'cb04ea0b-ec03-11e5-ac22-00163e002c89');
-INSERT INTO `tb_ref_role_permission` VALUES ('75d0727a-0639-45b1-bf4f-0ee48c202d4a', '001', '58432011-e153-4407-94c0-7c1b10915b42');
 INSERT INTO `tb_ref_role_permission` VALUES ('775e5baa-985b-43b4-8d1c-60aaaf1536fd', '003', 'cb04d70a-ec03-11e5-ac22-00163e002c89');
+INSERT INTO `tb_ref_role_permission` VALUES ('77b5e993-a051-44e0-9642-3d7c9158ae30', '001', 'cb04dbdb-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('786a032b-7f91-47d2-93bf-215f692adbaf', '7f1748b1-7849-4b8b-a700-3ea6fb973a56', '2d63bf15-42cd-4563-8e6b-c5efc9c7e287');
 INSERT INTO `tb_ref_role_permission` VALUES ('7b1e1c09-15c1-413e-b864-bbba0a042a55', '004', '3afd2895-48ad-4c90-a44b-a1d37445acab');
+INSERT INTO `tb_ref_role_permission` VALUES ('7e4b1941-a79b-4fab-8790-c53c170fa898', '001', 'cb04dfd1-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('7e59463f-a21a-4e74-9d5f-95f4512aa96e', '004', 'e9cd41ef-6920-49bf-a107-d396621ac721');
 INSERT INTO `tb_ref_role_permission` VALUES ('810f522e-3e1c-4eca-8e16-2c4bce12dbf3', 'd82c0b29-4445-4d0d-98ae-9a7cd5683aa7', 'cb04de33-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('869244e9-d7b0-482b-98fe-9871e2e6102b', '003', 'd2749891-f1ad-42f8-8d52-68ceee734dcb');
 INSERT INTO `tb_ref_role_permission` VALUES ('877640cb-7e15-4e0a-8356-6a93bf91c059', '005', 'f0ed419f-3354-4299-b6ed-4b5afb713907');
 INSERT INTO `tb_ref_role_permission` VALUES ('88e5fe9a-734c-4787-9b1d-5d599bded6b5', '004', '9a349bdb-27c3-48e3-ab97-12c4049f7456');
+INSERT INTO `tb_ref_role_permission` VALUES ('8a190de4-2714-47e6-9bb6-3694529c995e', '001', 'cb04e2f9-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('8b87bf83-6f73-4c36-abcf-512155124d0f', '003', 'cb04cd7c-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('8c22df99-3b71-434e-bc4c-6d0061033bf3', '441e0d3a-da85-4aa4-86a1-8b12ffefcf4e', 'a4e38d92-0d45-4f9a-92b3-7a26ceb75ede');
 INSERT INTO `tb_ref_role_permission` VALUES ('91bd3251-3254-4f2d-b312-096c837d5037', '005', 'cb04e099-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('92c80ee1-7ecc-422d-9f6a-d7e21be0182c', '005', 'd5ad6dec-a056-40b5-aa57-79f3b4205814');
 INSERT INTO `tb_ref_role_permission` VALUES ('94c3a2de-77c2-47e3-92e3-d5880333e221', '004', 'd636ef1a-49f4-4cb7-8c3c-7127af6a4a0d');
 INSERT INTO `tb_ref_role_permission` VALUES ('94e8084e-869c-4cde-9c43-d2ae2881c162', '003', '2491301b-501f-4d84-9910-2a4c3552e57b');
-INSERT INTO `tb_ref_role_permission` VALUES ('958c0ea3-1e6a-4684-bfc4-a20315d9945a', '001', 'b5676bd0-c813-425c-89db-cac87a964f63');
 INSERT INTO `tb_ref_role_permission` VALUES ('95cc8842-9688-427b-a524-593fb0ef00fc', '004', 'cb04e099-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('96ca67b1-5a35-49e1-af16-68a8e7302a82', 'd82c0b29-4445-4d0d-98ae-9a7cd5683aa7', 'c90ad304-2e3a-47a8-9e52-f925dbb241e3');
 INSERT INTO `tb_ref_role_permission` VALUES ('9b235ee7-9df9-40d5-9738-d613402b712f', '002', '254a2f56-2c9f-46f7-9a84-5797c9dc41c0');
 INSERT INTO `tb_ref_role_permission` VALUES ('9b433c83-9723-4adc-b975-82006894b565', '005', '3d4fd7ad-84c1-46a0-b988-ea9fec33c279');
+INSERT INTO `tb_ref_role_permission` VALUES ('9bbeb054-2c06-4e57-9932-3396b4cb5e5d', '001', 'cb04e485-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('9dd8b4ab-2e29-4f8c-9594-7dea4ef76d3c', '441e0d3a-da85-4aa4-86a1-8b12ffefcf4e', 'de2e59c8-8057-43d6-af35-598cc14338a5');
 INSERT INTO `tb_ref_role_permission` VALUES ('9e56cb2b-93ca-4a47-a1a1-b651ebd4fd47', '003', 'cb04ce4d-ec03-11e5-ac22-00163e002c89');
+INSERT INTO `tb_ref_role_permission` VALUES ('9fde62ae-d054-460c-8cee-9413be4dabe5', '001', '58432011-e153-4407-94c0-7c1b10915b42');
 INSERT INTO `tb_ref_role_permission` VALUES ('a3ed90e8-cc78-4915-aa7a-56a7bb725059', '003', 'cb04d8af-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('a40f8d48-70ff-47de-a47c-a6c50e71f4fa', '003', 'cb04d8af-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('a521081b-d50e-48ca-a347-409ce0c65806', '004', 'f0ed419f-3354-4299-b6ed-4b5afb713907');
+INSERT INTO `tb_ref_role_permission` VALUES ('a5c07fe2-d764-4134-bd58-f5f8f33a4e5d', '001', 'b2b4af64-cda0-4370-8d2f-b6579c33fcc0');
 INSERT INTO `tb_ref_role_permission` VALUES ('a782ca45-4136-4cda-96de-cf3d3203e63e', '003', '4b8cd0e3-0237-4ba8-85c7-17188f672279');
 INSERT INTO `tb_ref_role_permission` VALUES ('a7d32951-c531-4726-832e-5cf9dd2a6833', '441e0d3a-da85-4aa4-86a1-8b12ffefcf4e', '8ca2302d-aacc-4635-bc14-8ea287f71dd2');
 INSERT INTO `tb_ref_role_permission` VALUES ('aa05c5ae-1675-427e-914b-5132a0ce108e', '004', 'cb04d7de-ec03-11e5-ac22-00163e002c89');
@@ -402,17 +442,18 @@ INSERT INTO `tb_ref_role_permission` VALUES ('be8f4603-fca4-470b-aff3-bfa444204d
 INSERT INTO `tb_ref_role_permission` VALUES ('c200ebce-aeda-4230-8f08-fe3e97198e45', '441e0d3a-da85-4aa4-86a1-8b12ffefcf4e', 'cb04e099-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('c3d572e5-414e-46c8-84f8-31a80db74946', 'd82c0b29-4445-4d0d-98ae-9a7cd5683aa7', 'fc3d0362-259b-4f0d-b343-80992915ec46');
 INSERT INTO `tb_ref_role_permission` VALUES ('c416c21a-69af-48ba-978c-5ad09969f19b', 'd82c0b29-4445-4d0d-98ae-9a7cd5683aa7', 'cb04e099-ec03-11e5-ac22-00163e002c89');
+INSERT INTO `tb_ref_role_permission` VALUES ('c4f64a39-5a8a-46c6-9320-a4dc8303c5e8', '001', '0df95deb-2480-427b-8978-1009afc2200d');
 INSERT INTO `tb_ref_role_permission` VALUES ('c52d193a-6111-41d2-ad86-7c85abdc583d', '003', 'cb04e54c-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('c5a430d9-e210-4d8d-b115-8c79b966c543', '441e0d3a-da85-4aa4-86a1-8b12ffefcf4e', 'cb04c7ef-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('c5c26e05-1197-4719-ab29-336a2a858005', '003', '7ebb9183-c726-42a5-951d-090e1b176f17');
 INSERT INTO `tb_ref_role_permission` VALUES ('c85c444b-84d4-4696-88ac-a5944ef13f7a', 'a8c1542c-fbfd-45ce-8360-345bc30b982a', 'd5ad6dec-a056-40b5-aa57-79f3b4205814');
 INSERT INTO `tb_ref_role_permission` VALUES ('ca8e1ee5-55d0-4157-af68-14a783d22ac0', '441e0d3a-da85-4aa4-86a1-8b12ffefcf4e', '3496ede0-c4d0-4c2e-9544-d8ef9271ec61');
 INSERT INTO `tb_ref_role_permission` VALUES ('cda8c5e6-9fc1-4cc9-83c8-52d5f53aac34', '004', '3496ede0-c4d0-4c2e-9544-d8ef9271ec61');
+INSERT INTO `tb_ref_role_permission` VALUES ('cf6812be-e318-447e-9384-a45b81bdf58f', '001', '36a1627e-cf95-440c-9cf2-99b821451048');
 INSERT INTO `tb_ref_role_permission` VALUES ('d0216fe9-2dc3-4a13-9d69-76211ae2fc2c', '003', 'cb04dd6a-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('d0742fff-b303-4f3a-8ce2-42e479a7514a', '002', '5aa661ec-b990-445b-b638-f636617ff934');
 INSERT INTO `tb_ref_role_permission` VALUES ('d4929fe9-d0f8-4325-88d2-947f4bf71e3e', '002', '2cc42a8c-cabe-45d3-ac75-00f8c4218675');
 INSERT INTO `tb_ref_role_permission` VALUES ('d50844d2-fd12-448c-a649-8a025c94bdc3', '004', '5a03c8a2-95ab-42b9-8dfc-859ce9779dc9');
-INSERT INTO `tb_ref_role_permission` VALUES ('d64170ca-79f1-4759-aa44-f1856af334c8', '001', '0df95deb-2480-427b-8978-1009afc2200d');
 INSERT INTO `tb_ref_role_permission` VALUES ('d8376a84-573d-47f6-a2a6-9ffd93070df7', 'a8c1542c-fbfd-45ce-8360-345bc30b982a', 'cb04e099-ec03-11e5-ac22-00163e002c89');
 INSERT INTO `tb_ref_role_permission` VALUES ('d86d04b0-aed0-401a-afad-6913bfce2a63', '004', '3d4fd7ad-84c1-46a0-b988-ea9fec33c279');
 INSERT INTO `tb_ref_role_permission` VALUES ('db5f5ab0-783b-46f4-afb2-b5cfb173be4f', '005', 'cb04c7ef-ec03-11e5-ac22-00163e002c89');
@@ -440,8 +481,6 @@ INSERT INTO `tb_ref_role_permission` VALUES ('f964959a-2427-4cab-afa3-a9c175d562
 INSERT INTO `tb_ref_role_permission` VALUES ('f9eee626-3f62-495f-be2a-83572ae7a9e0', '003', 'd2749891-f1ad-42f8-8d52-68ceee734dcb');
 INSERT INTO `tb_ref_role_permission` VALUES ('fb88af81-eb31-48cf-b51d-d1adac3aaaab', '005', 'c6022e32-c5d1-44b0-ba3f-7c3ac5b1caf2');
 INSERT INTO `tb_ref_role_permission` VALUES ('fce33bc5-fc6a-4f4a-b5ee-7dfc78d8c733', '441e0d3a-da85-4aa4-86a1-8b12ffefcf4e', 'cb04de33-ec03-11e5-ac22-00163e002c89');
-INSERT INTO `tb_ref_role_permission` VALUES ('fe9c1835-d6f1-4861-be92-f8762f004e25', '001', '2cc42a8c-cabe-45d3-ac75-00f8c4218675');
-INSERT INTO `tb_ref_role_permission` VALUES ('feaea1e6-f4cd-4e32-950c-53b33f95c6e1', '001', '766382c8-c3d1-4ad3-955d-d0d3b9acecc6');
 
 -- ----------------------------
 -- Table structure for tb_ref_usr_role
@@ -559,6 +598,7 @@ CREATE TABLE `tb_sys_menu_info` (
 -- ----------------------------
 INSERT INTO `tb_sys_menu_info` VALUES ('2199c2af-a95f-400b-81f4-a30962cd620e', '代码生成', '2', null, '/jsp/sysextmgr/generator/generator_list.jsp', 'rightFrame', 'MEMBER_MGR', 'd0c8a943-93d9-449c-ad89-cff82d4a9103', '0', '100', '');
 INSERT INTO `tb_sys_menu_info` VALUES ('2c2833b5-a355-44a7-8fe6-73f9abc1b562', '活动管理', '2', null, '/jsp/acitivtymgr/activity/activity_list.jsp', 'rightFrame', 'ACTIVITY_MGR', 'f2bca1d7-ee6d-499b-8f64-beeeba435068', '0', '2', '');
+INSERT INTO `tb_sys_menu_info` VALUES ('488042bf-e135-4ab9-a66e-4a164a6686c7', '问题管理', '1', null, '', 'rightFrame', 'FAQ_MGR_MODUEL', '', '0', '4', '');
 INSERT INTO `tb_sys_menu_info` VALUES ('6d187ca7-5ba6-49a3-b84b-e55069c6a542', '扩展配置', '2', null, '/jsp/sysextmgr/extconfig/extconfig_list.jsp', 'rightFrame', 'EXT_CONFIG_MGR', 'd0c8a943-93d9-449c-ad89-cff82d4a9103', '0', '8', '');
 INSERT INTO `tb_sys_menu_info` VALUES ('6f18336a-2e9c-4992-8e72-a685ac42944f', '消息管理', '2', null, '/jsp/messagemgr/msginfo/msginfo_list.jsp', 'rightFrame', 'MESSAGE_MGR', 'a83f17e9-4633-4104-978e-f7f6bf6f661f', '0', '2', '');
 INSERT INTO `tb_sys_menu_info` VALUES ('89db3662-50a4-460a-81c8-5874386c4555', '菜单管理', '2', null, '/jsp/sysextmgr/menu/menu_list.jsp', 'rightFrame', 'MENU_MGR', 'd0c8a943-93d9-449c-ad89-cff82d4a9103', null, '4', '');
@@ -568,6 +608,7 @@ INSERT INTO `tb_sys_menu_info` VALUES ('c0c5550b-333e-41c9-8bae-a0e0dec63c29', '
 INSERT INTO `tb_sys_menu_info` VALUES ('c6a62b1d-2fc2-4b6b-89bb-71014d523cb5', '用户管理', '2', null, '/jsp/sysextmgr/usermanage/usermanage_list.jsp', 'rightFrame', 'USER_MGR', 'd0c8a943-93d9-449c-ad89-cff82d4a9103', null, '1', '');
 INSERT INTO `tb_sys_menu_info` VALUES ('caf9208f-d24c-4eb1-b7c0-0001c6ed8cc4', '活动结果', '2', null, '/jsp/acitivtymgr/activityquery/activityquery_list.jsp', 'rightFrame', 'ACTIVITYQUERY_MGR', 'f2bca1d7-ee6d-499b-8f64-beeeba435068', '0', '3', '');
 INSERT INTO `tb_sys_menu_info` VALUES ('cd595f89-ddee-42ca-9765-4ff66eb2338d', '权限管理', '2', null, '/jsp/sysextmgr/permission/permission_list.jsp', 'rightFrame', 'PERMISSON_MGR', 'd0c8a943-93d9-449c-ad89-cff82d4a9103', '0', '3', '');
+INSERT INTO `tb_sys_menu_info` VALUES ('ce49c6dc-3cbd-4b90-a560-609d6aeb6c7d', '问题管理', '2', null, '/jsp/faqinfomgr/faqinfomgr/faqinfomgr_list.jsp', 'rightFrame', 'FAQ_MGR', '488042bf-e135-4ab9-a66e-4a164a6686c7', '0', '1', '');
 INSERT INTO `tb_sys_menu_info` VALUES ('ce827f05-a8d4-479c-a111-af96578a5fd9', '团员管理', '2', null, '/jsp/acitivtymgr/member/member_list.jsp', 'rightFrame', 'MEMBER_MGR', 'f2bca1d7-ee6d-499b-8f64-beeeba435068', '0', '1', '');
 INSERT INTO `tb_sys_menu_info` VALUES ('d0c8a943-93d9-449c-ad89-cff82d4a9103', '系统管理', '1', '/staticres/images/xitong.png', '', 'rightFrame', 'SYS_MGR_MODUEL', '', null, '1', '');
 INSERT INTO `tb_sys_menu_info` VALUES ('d10127f4-80c7-4188-a850-56434db1c06d', '日志管理', '2', null, '/jsp/sysextmgr/operationlog/operationlog_list.jsp', 'rightFrame', 'LOG_MGR', 'd0c8a943-93d9-449c-ad89-cff82d4a9103', null, '6', '');
@@ -594,6 +635,7 @@ CREATE TABLE `tb_sys_permission` (
 -- Records of tb_sys_permission
 -- ----------------------------
 INSERT INTO `tb_sys_permission` VALUES ('032cd939-ded6-4ac3-9354-6ee9f6956e36', 'PERMISSON_MGR', '代码生成', '系统管理', 'SYS_MGR_MODUEL', null, null, null);
+INSERT INTO `tb_sys_permission` VALUES ('09712813-2614-4f1d-b118-5b7492d68c9d', 'FAQ_MGR_MODUEL', '问题管理', '问题管理', 'FAQ_MGR_MODUEL', null, null, null);
 INSERT INTO `tb_sys_permission` VALUES ('0df95deb-2480-427b-8978-1009afc2200d', 'ACTIVITYQUERY_MGR', '活动结果', '五四活动管理', 'ACTIVITY_MGR_MODUEL', null, null, null);
 INSERT INTO `tb_sys_permission` VALUES ('254a2f56-2c9f-46f7-9a84-5797c9dc41c0', 'PERMISSON_MGR', '权限管理', '系统管理', 'SYS_MGR_MODUEL', null, null, null);
 INSERT INTO `tb_sys_permission` VALUES ('2cc42a8c-cabe-45d3-ac75-00f8c4218675', 'PARAMETERCONFIGURATION_LIST', '参数配置', '系统管理', 'SYS_MGR_MODUEL', null, null, null);
@@ -604,13 +646,17 @@ INSERT INTO `tb_sys_permission` VALUES ('766382c8-c3d1-4ad3-955d-d0d3b9acecc6', 
 INSERT INTO `tb_sys_permission` VALUES ('904a1caf-2941-400e-88c7-07c519091e83', 'EXT_CONFIG_MGR', '扩展配置', '系统管理', 'SYS_MGR_MODUEL', '1', null, null);
 INSERT INTO `tb_sys_permission` VALUES ('a4bee7d4-5304-42a6-8787-409e67c468cd', 'ACTIVITY_MGR', '活动管理', '五四活动管理', 'ACTIVITY_MGR_MODUEL', null, null, null);
 INSERT INTO `tb_sys_permission` VALUES ('ab0175ef-0271-4b70-90c3-08c3ce6ba045', 'NOTICE_MGR', '通知管理', '信息管理', 'MESSAGE_MGR_MODUEL', null, null, null);
+INSERT INTO `tb_sys_permission` VALUES ('b2b4af64-cda0-4370-8d2f-b6579c33fcc0', 'FAQ_MGR_MODUEL', '问题管理', '问题管理', 'FAQ_MGR_MODUEL', null, null, null);
 INSERT INTO `tb_sys_permission` VALUES ('b5676bd0-c813-425c-89db-cac87a964f63', 'ACTIVITY_MGR_MODUEL', '五四活动管理', '五四活动管理', 'ACTIVITY_MGR_MODUEL', null, null, null);
+INSERT INTO `tb_sys_permission` VALUES ('be8f7b3f-fc09-4f1f-b50d-15e858f0de88', 'FAQ_MGR', '问题管理', '问题管理', 'FAQ_MGR_MODUEL', null, null, null);
 INSERT INTO `tb_sys_permission` VALUES ('cb04d3d4-ec03-11e5-ac22-00163e002c89', 'MENU_MGR', '菜单管理', '系统管理', 'SYS_MGR_MODUEL', '1', null, '2016-03-17 13:47:53');
 INSERT INTO `tb_sys_permission` VALUES ('cb04dbdb-ec03-11e5-ac22-00163e002c89', 'ROLE_MGR', '角色管理', '系统管理', 'SYS_MGR_MODUEL', '1', null, '2016-03-17 13:47:53');
 INSERT INTO `tb_sys_permission` VALUES ('cb04dfd1-ec03-11e5-ac22-00163e002c89', 'DICT_MGR', '字典管理', '系统管理', 'SYS_MGR_MODUEL', '1', null, '2016-03-17 13:47:53');
 INSERT INTO `tb_sys_permission` VALUES ('cb04e2f9-ec03-11e5-ac22-00163e002c89', 'USER_MGR', '用户管理', '系统管理', 'SYS_MGR_MODUEL', '1', null, '2016-03-17 13:47:53');
 INSERT INTO `tb_sys_permission` VALUES ('cb04e485-ec03-11e5-ac22-00163e002c89', 'LOG_MGR', '日志管理', '系统管理', 'SYS_MGR_MODUEL', '1', null, '2016-03-17 13:47:53');
 INSERT INTO `tb_sys_permission` VALUES ('cb04ea0b-ec03-11e5-ac22-00163e002c89', 'PERMISSON_MGR', '权限管理', '系统管理', 'SYS_MGR_MODUEL', '1', null, '2016-03-17 13:47:53');
+INSERT INTO `tb_sys_permission` VALUES ('de0fc718-e2c1-44c5-833d-b4347b415d4b', 'FAQ_MGR', '问题管理', '问题管理', 'FAQ_MGR_MODUEL', null, null, null);
+INSERT INTO `tb_sys_permission` VALUES ('df1edb40-366e-4f43-b8b9-155112a26390', 'FAQ_MGR', '问题管理', '问题管理', 'FAQ_MGR_MODUEL', null, null, null);
 
 -- ----------------------------
 -- Table structure for tb_sys_role_info
@@ -676,7 +722,7 @@ CREATE TABLE `tb_sys_usr_info` (
 -- ----------------------------
 -- Records of tb_sys_usr_info
 -- ----------------------------
-INSERT INTO `tb_sys_usr_info` VALUES ('001', null, null, null, 'admin', 'admin', '098f6bcd4621d373cade4e832627b4f6', '1', '2017-04-06 11:16:14', '2130706433', '2017-04-06 11:48:52', '2130706433', null, '2015-10-10 16:52:12', null, null, '2015-10-19 15:59:07', '001', 'admin', null, null, '0', null);
+INSERT INTO `tb_sys_usr_info` VALUES ('001', null, null, null, 'admin', 'admin', '098f6bcd4621d373cade4e832627b4f6', '1', '2017-04-07 14:43:31', '2130706433', '2017-04-07 15:45:25', '2130706433', null, '2015-10-10 16:52:12', null, null, '2015-10-19 15:59:07', '001', 'admin', null, null, '0', null);
 
 -- ----------------------------
 -- View structure for view_user_permission
