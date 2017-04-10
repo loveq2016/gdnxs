@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 60011
 File Encoding         : 65001
 
-Date: 2017-04-07 17:44:06
+Date: 2017-04-10 17:38:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -84,7 +84,7 @@ CREATE TABLE `tb_act_member_ref` (
 -- Records of tb_act_member_ref
 -- ----------------------------
 INSERT INTO `tb_act_member_ref` VALUES ('0a896208-a7da-40a1-b99d-c36deb6cc270', '837037c5-9e79-47ad-b5d6-618c8c8ed94d', '7a379b93-2a58-4f25-a1e0-68a5160ce2a3', '2', '0', '001', '2017-04-05 15:40:15');
-INSERT INTO `tb_act_member_ref` VALUES ('0f56083e-c36c-4608-a628-21f3c93d9fa1', '837037c5-9e79-47ad-b5d6-618c8c8ed94d', '4b9ab219-8060-4f5b-878b-580825ddabb7', '1', '0', '001', '2017-04-05 15:40:15');
+INSERT INTO `tb_act_member_ref` VALUES ('0f56083e-c36c-4608-a628-21f3c93d9fa1', '837037c5-9e79-47ad-b5d6-618c8c8ed94d', '4b9ab219-8060-4f5b-878b-580825ddabb7', '1', '1', '001', '2017-04-05 15:40:15');
 INSERT INTO `tb_act_member_ref` VALUES ('b0de1bf9-445e-420f-9e85-6c56c75a8d4f', '032adb91-997a-4e64-8c15-307402b16226', '7a379b93-2a58-4f25-a1e0-68a5160ce2a3', '1', '0', '001', '2017-04-05 15:38:25');
 INSERT INTO `tb_act_member_ref` VALUES ('fcefa9ed-32eb-40ac-8ee5-baaad84e64f0', '032adb91-997a-4e64-8c15-307402b16226', '4b9ab219-8060-4f5b-878b-580825ddabb7', '0', '0', '001', '2017-04-05 15:38:25');
 
@@ -202,17 +202,19 @@ INSERT INTO `tb_faq_info` VALUES ('dcab4844-9d7e-4626-b14d-de9516ff8195', '标�
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_membervoterec`;
 CREATE TABLE `tb_membervoterec` (
-  `ID` varchar(36) DEFAULT NULL,
+  `ID` varchar(36) NOT NULL,
   `OPENID` varchar(200) DEFAULT NULL,
   `NAME` varchar(100) DEFAULT NULL,
   `ACT_ID` varchar(36) DEFAULT NULL,
   `MENBER` varchar(36) DEFAULT NULL,
-  `IP` varchar(100) DEFAULT NULL
+  `IP` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_membervoterec
 -- ----------------------------
+INSERT INTO `tb_membervoterec` VALUES ('b653f626-4a66-4178-b888-4a624f0143ee', 'oy123456', 'oy', '837037c5-9e79-47ad-b5d6-618c8c8ed94d', '4b9ab219-8060-4f5b-878b-580825ddabb7', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for tb_member_info
@@ -233,7 +235,7 @@ CREATE TABLE `tb_member_info` (
   `SELFDESC` varchar(300) DEFAULT NULL,
   `AVATAR` varchar(100) DEFAULT NULL,
   `PROFILE` text,
-  `OPEINID` varchar(100) DEFAULT NULL,
+  `OPENID` varchar(100) DEFAULT NULL,
   `CREATORID` varchar(36) DEFAULT NULL,
   `CREATEDATE` datetime DEFAULT NULL,
   `MODIFIEDID` varchar(36) DEFAULT NULL,
@@ -245,8 +247,8 @@ CREATE TABLE `tb_member_info` (
 -- ----------------------------
 -- Records of tb_member_info
 -- ----------------------------
-INSERT INTO `tb_member_info` VALUES ('4b9ab219-8060-4f5b-878b-580825ddabb7', '123123', '1', '18613002847', '18613002847', '2017-04-04', '1', '肇庆', '肇庆办事处', '1', '吹牛B', '', '/upload/member/201704/6e0be816-a383-438b-a12e-786be172df04.jpg', '<p>ni tm jiushi ge sb<br/></p>', null, null, null, '001', '2017-04-07 14:38:21', null);
-INSERT INTO `tb_member_info` VALUES ('7a379b93-2a58-4f25-a1e0-68a5160ce2a3', 'oy', '0', 'aa', '18613002847', '2017-04-11', '0', '茂名', '信宜', '1', '', '', '/upload/member/201704/01ba29c7-ebe7-437c-adec-6aad078355a9.jpg', '<p>sb</p>', null, null, null, '001', '2017-04-07 09:42:11', null);
+INSERT INTO `tb_member_info` VALUES ('4b9ab219-8060-4f5b-878b-580825ddabb7', '123123', '1', '18613002847', '18613002847', '2017-04-04', '1', '肇庆', '肇庆办事处', '1', '吹牛B', '', '/upload/member/201704/6e0be816-a383-438b-a12e-786be172df04.jpg', '<p>ni tm jiushi ge sb<br/></p>', null, null, null, '001', '2017-04-07 14:38:21', '0');
+INSERT INTO `tb_member_info` VALUES ('7a379b93-2a58-4f25-a1e0-68a5160ce2a3', 'oy', '0', 'aa', '18613002847', '2017-04-11', '0', '茂名', '信宜', '1', '', '', 'avatar/1491794950764.jpeg', '<p>sb</p>', 'oy123456', null, null, '001', '2017-04-07 09:42:11', '0');
 INSERT INTO `tb_member_info` VALUES ('eb7932e5-fbe9-4f04-9cf2-3d956a08aa4a', '第三个团员', '0', '啊啊啊', '15666666666', '2017-04-11', '1', '茂名', '茂名市', '1', '', '', '/upload/member/201704/5f92546a-59ec-4f7e-b921-886c8175566d.jpg', '<p>煞笔煞笔煞笔</p>', null, '001', '2017-04-07 14:47:31', '001', '2017-04-07 14:47:31', '0');
 
 -- ----------------------------
