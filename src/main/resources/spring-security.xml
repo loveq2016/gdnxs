@@ -88,7 +88,7 @@
 	</sec:http>
 
 	<!-- 前端 -->
-	<sec:http pattern="/mob/*" auto-config="true">
+	<sec:http pattern="/mob/**/*.mvc" auto-config="true">
 		<sec:csrf disabled="true" />
 	</sec:http>
 	<!-- wechat -->

@@ -21,8 +21,8 @@ ${act}
 ${actmemberlist}
 <br/>
     <c:forEach items="${actmemberlist}" var="member">
-        <a href="${baseURL}/mob/index/act/member/detail?id=${member.id}&actid=${act.id}">${member.no},${member.votenum}</a>
-        <a href="#">投我一票</a>
+        <a href="${baseURL}/mob/index/act/member/detail?id=${member.id}&actid=${act.id}">${member.name}.${member.no},${member.votenum}</a>
+        <a href="javascript:;" openid="${member.openid}" mid="${member.id}" onclick="actVote(this)">投我一票</a>
         <br/>
     </c:forEach>
 
@@ -37,5 +37,21 @@ ${actmemberlist}
 </html>
 
 <script>
+
+    function actVote(a){
+        if($(a).attr("openid") == '${_userinfo.openid}'){
+            alert("不能投自己！")
+            return;
+        }
+        $.post(baseURL + '/mob/index/act/vote.mvc?', {"id":($(a).attr("mid")),"actid":'${act.id}'}, function (rec) {
+            if (rec.code == "1") {
+                alert("投票成功")
+            } else {
+                alert(rec.desc);
+            }
+        }, "json").error(function () {
+            alert("操作失败");
+        });
+    }
 
 </script>
