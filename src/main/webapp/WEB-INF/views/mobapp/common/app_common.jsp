@@ -15,3 +15,4 @@
     var areaJson = eval("(" + '<%=AreaUtil.getInstance().getAreaListJson()%>' + ")");
 </script>
 <script src="${baseURL}/staticres/js/jquery-1.8.3.min.js"></script>
+<script src="${baseURL}/staticres/mobapp/js/common.js"></script>

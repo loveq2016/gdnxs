@@ -1,5 +1,6 @@
 package cn.com.gzqinghui.mob.usercenter.usermain.service.impl;
 
+import cn.com.gzqinghui.acitivtymgr.member.vo.MemberVO;
 import cn.com.gzqinghui.mob.usercenter.usermain.service.IUsermainService;
 import cn.com.gzqinghui.sysmgr.common.service.impl.PersistentOperationImpl;
 import com.dexcoder.dal.JdbcDao;
@@ -35,5 +36,12 @@ public class UsermainServiceImpl extends PersistentOperationImpl implements IUse
         String headimg = "/"+ HttpDownload.httpDownload((String) userinfo.get("headimgurl"), request,"avatar");
         jdbcDao.updateForSql(" update tb_member_info set openid = '" + userinfo.get("openid") + "',AVATAR='" + headimg + "' where DELETEDFLAG = 0 and `NAME` = '" + name + "' and BIRTHDAY = '" + birthday + "' ");
        return jdbcDao.queryListForSql(" select * from tb_member_info  where DELETEDFLAG = 0 and `NAME` = '"+name+"' and BIRTHDAY = '"+birthday+"' ").get(0);
+    }
+
+    @Override
+    public Map editUserinfo(MemberVO member) throws Exception {
+        StringBuffer sql = new StringBuffer("update tb_member_info set  GENDER = '"+member.getGender()+"',city='"+member.getCity()+"',area='"+member.getArea()+"',SPECIALTY='"+member.getSpecialty()+"',SELFDESC='"+member.getSelfdesc()+"' where ID = '"+member.getId()+"' ");
+        jdbcDao.updateForSql(sql.toString());
+        return  jdbcDao.queryListForSql(" select * from  tb_member_info where id = '"+member.getId()+"' ").get(0);
     }
 }

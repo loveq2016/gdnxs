@@ -1,5 +1,6 @@
 package cn.com.gzqinghui.mob.usercenter.usermain.service;
 
+import cn.com.gzqinghui.acitivtymgr.member.vo.MemberVO;
 import cn.com.gzqinghui.sysmgr.common.service.IPersistentOperation;
 
 import java.util.Map;
@@ -13,6 +14,8 @@ import java.util.Map;
 public interface IUsermainService extends IPersistentOperation {
 
     Map userBind(String name,String birthday) throws Exception;
+
+    Map editUserinfo(MemberVO member) throws Exception;
 
 
 }

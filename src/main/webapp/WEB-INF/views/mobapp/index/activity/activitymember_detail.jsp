@@ -25,7 +25,3 @@ ${member}
 <a href="${baseURL}/mob/index/act/member/poster?id=${member.id}&actid=${act.id}">拉票海报</a>
 </body>
 </html>
-<script>
-    var dictJson = eval("(" + '<%=DictUtil.getDictJson()%>' + ")");
-</script>
-<script src="${baseURL}/staticres/mobapp/js/mobapphtml-render.v1.0.js"></script>

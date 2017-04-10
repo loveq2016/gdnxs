@@ -14,6 +14,9 @@
 <body>
     个人中心
     <br/>
+<a href="${baseURL}/usercenter/usermain/userinfo.mvc">个人资料</a><br/>
+    <a href="#">消息</a><br/>
+    <a href="#">联系客服</a><br/>
 </body>
 </html>
 

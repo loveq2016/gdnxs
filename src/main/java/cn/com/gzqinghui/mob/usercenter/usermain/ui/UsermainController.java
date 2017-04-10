@@ -1,6 +1,7 @@
 
 package cn.com.gzqinghui.mob.usercenter.usermain.ui;
 
+import cn.com.gzqinghui.acitivtymgr.member.vo.MemberVO;
 import cn.com.gzqinghui.mob.usercenter.usermain.service.IUsermainService;
 import cn.com.gzqinghui.wechat.common.WeChatAuthUtil;
 import net.sf.json.JSONObject;
@@ -9,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -69,6 +71,32 @@ public class UsermainController {
     }
 
 
+    /*
+    * 个人资料完善
+    */
+    @RequestMapping(value = "/userinfo",method = RequestMethod.GET)
+    public String userinfo(HttpServletRequest request) throws Exception{
+        return "/mobapp/usercenter/usermain/userinfo";
+    }
+
+
+    @RequestMapping(value = "/userinfo",produces="application/json",method = RequestMethod.POST)
+    public void userinfo(HttpServletRequest request,MemberVO member, Writer out) throws Exception{
+        JSONObject json = new JSONObject();
+
+        try {
+            Map userinfo =  mobUsermainService.editUserinfo(member);
+            request.getSession().setAttribute("_sysuserinfo", userinfo);
+            json.put("code","1");
+            json.put("desc","修改成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            json.put("code","0");
+            json.put("desc",e.getMessage());
+        }
+
+        IOUtils.write(json.toString(), out);
+    }
 
 
 
