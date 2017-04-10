@@ -81,6 +81,7 @@ public class WeChatAuthUtil {
 		wxuserinfo.put("openid","oy123456");
 		wxuserinfo.put("nickname","oy");
 		wxuserinfo.put("subscribe","0");
+		wxuserinfo.put("headimgurl","http://125.93.186.3:9091/staticres/userphoto/1479177037502_24ef97f5-26bf-4c28-8dc0-b21403e0b54e.jpg");
 		request.getSession().setAttribute("_userinfo", wxuserinfo);
 		return wxuserinfo;
 		/*if(null !=request.getSession().getAttribute("_wxuserinfo")){

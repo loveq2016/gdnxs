@@ -117,7 +117,7 @@ public class MobActivityController {
 
 
     /*
-     * 获取活动排行
+     * 投票
      */
     @RequestMapping(value = "/act/vote",produces="application/json")
     public void actTop(HttpServletRequest request,String id,String actid, Writer out) throws Exception{
