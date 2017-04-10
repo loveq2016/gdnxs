@@ -17,5 +17,7 @@ public interface IUsermainService extends IPersistentOperation {
 
     Map editUserinfo(MemberVO member) throws Exception;
 
+    Map editUserAvatar(String url) throws Exception;
+
 
 }

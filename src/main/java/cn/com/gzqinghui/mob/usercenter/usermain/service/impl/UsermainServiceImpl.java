@@ -44,4 +44,12 @@ public class UsermainServiceImpl extends PersistentOperationImpl implements IUse
         jdbcDao.updateForSql(sql.toString());
         return  jdbcDao.queryListForSql(" select * from  tb_member_info where id = '"+member.getId()+"' ").get(0);
     }
+
+    @Override
+    public Map editUserAvatar(String url) throws Exception {
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        Map sysuserinfo =  (Map)request.getSession().getAttribute("_sysuserinfo");
+        jdbcDao.updateForSql("update tb_member_info set avatar='"+url+"' where id='"+sysuserinfo.get("id")+"' ");
+        return  jdbcDao.queryListForSql(" select * from  tb_member_info  where id='"+sysuserinfo.get("id")+"'").get(0);
+    }
 }

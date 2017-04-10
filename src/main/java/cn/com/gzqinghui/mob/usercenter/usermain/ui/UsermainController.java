@@ -2,7 +2,9 @@
 package cn.com.gzqinghui.mob.usercenter.usermain.ui;
 
 import cn.com.gzqinghui.acitivtymgr.member.vo.MemberVO;
+import cn.com.gzqinghui.common.util.Constants;
 import cn.com.gzqinghui.mob.usercenter.usermain.service.IUsermainService;
+import cn.com.gzqinghui.sysmgr.common.util.FileUploadUtil;
 import cn.com.gzqinghui.wechat.common.WeChatAuthUtil;
 import net.sf.json.JSONObject;
 import org.apache.commons.io.IOUtils;
@@ -11,9 +13,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.io.Writer;
 import java.util.Map;
 
@@ -96,6 +101,35 @@ public class UsermainController {
         }
 
         IOUtils.write(json.toString(), out);
+    }
+
+    /*
+    * 上传
+    */
+    @RequestMapping(value = "/uploadAvatar", produces = "application/json",method = RequestMethod.POST)
+    public void uploadAvatar(HttpServletResponse response, HttpServletRequest request,MultipartFile upFile, String folder, Writer out) throws IOException {
+        JSONObject json = new JSONObject();
+
+        try {
+            org.json.JSONObject jso = FileUploadUtil.fileUploadApk(request, upFile, Constants.PICPOSTFIX, "/upload/" + folder);
+            if(jso.getBoolean("success")){
+                Map userinfo =  mobUsermainService.editUserAvatar(jso.getString("fileName"));
+                request.getSession().setAttribute("_sysuserinfo", userinfo);
+                json.put("code","1");
+                json.put("desc","修改成功");
+            }else{
+                json.put("code","0");
+                json.put("desc","修改失败");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            json.put("code","0");
+            json.put("desc",e.getMessage());
+        }
+
+        IOUtils.write(json.toString(), out);
+
     }
 
 
