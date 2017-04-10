@@ -1,7 +1,6 @@
 package cn.com.gzqinghui.wechat.common;
 
 import cn.com.gzqinghui.sysmgr.core.AppContext;
-import cn.com.gzqinghui.wechat.basic.WeChatCommonResult;
 import com.dexcoder.dal.JdbcDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,7 +49,7 @@ public class WeChatAuthUtil {
 	 * @param
 	 * @return
 	 */
-	private Map getUserInfo(){
+	public Map getUserInfo(){
 		HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
 		HashMap retMap = new HashMap();
 		retMap.put("code","0");
@@ -76,13 +75,15 @@ public class WeChatAuthUtil {
 
 
 
-	public  Map getWXuserinfo() throws Exception{
+	private   Map getWXuserinfo() throws Exception{
 		HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
 		Map wxuserinfo = new HashMap();
-		/*
-		request.setAttribute("_userinfo", wxuserinfo);
-		return wxuserinfo;*/
-		if(null !=request.getSession().getAttribute("_wxuserinfo")){
+		wxuserinfo.put("openid","oy123456");
+		wxuserinfo.put("nickname","oy");
+		wxuserinfo.put("subscribe","0");
+		request.getSession().setAttribute("_userinfo", wxuserinfo);
+		return wxuserinfo;
+		/*if(null !=request.getSession().getAttribute("_wxuserinfo")){
 			wxuserinfo = (Map) request.getSession().getAttribute("_wxuserinfo");
 			if(wxuserinfo.get("nickname").toString().contains("\\xF0")){
 				wxuserinfo.put("nickname","无法识别");
@@ -111,7 +112,7 @@ public class WeChatAuthUtil {
 			}
 			request.getSession().setAttribute("_wxuserinfo", wxuserinfo);
 		}
-		return wxuserinfo;
+		return wxuserinfo;*/
 	}
 
 
@@ -121,7 +122,7 @@ public class WeChatAuthUtil {
 		if(null !=request.getSession().getAttribute("_sysuserinfo")){
 			sysuserinfo = (Map) request.getSession().getAttribute("_sysuserinfo");
 		}else{
-			StringBuilder sql = new StringBuilder("select * from tb_member_info where OPEINID = '" + userinfo.get("openid") + "' ");
+			StringBuilder sql = new StringBuilder("select * from tb_member_info where OPENID = '" + userinfo.get("openid") + "' ");
 			List members = jdbcDao.queryListForSql(sql.toString());
 			if (members.size() > 0) {
 				sysuserinfo = (Map) members.get(0);

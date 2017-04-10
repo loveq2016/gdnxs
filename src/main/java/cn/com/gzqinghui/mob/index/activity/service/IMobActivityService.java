@@ -28,4 +28,6 @@ public interface IMobActivityService extends IPersistentOperation {
 
     List searchActivityTopList(String id) throws Exception;
 
+    void actVote(String id,String actid) throws Exception;
+
 }
