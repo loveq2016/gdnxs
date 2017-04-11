@@ -133,6 +133,52 @@ public class UsermainController {
     }
 
 
+    /*
+    * 通知列表
+    */
+    @RequestMapping(value = "/notice/list",method = RequestMethod.GET)
+    public String notice(HttpServletRequest request) throws Exception{
+        request.setAttribute("noticelist", mobUsermainService.listNotice());
+        return "/mobapp/usercenter/usermain/notice_list";
+    }
+
+
+
+    /*
+    * 通知列表
+    */
+    @RequestMapping(value = "/notice/detail",method = RequestMethod.GET)
+    public String noticeDetail(HttpServletRequest request,String id) throws Exception{
+        request.setAttribute("notice", mobUsermainService.searchNoticeDetail(id));
+        return "/mobapp/usercenter/usermain/notice_detail";
+    }
+
+
+    /*
+    * 消息列表
+    */
+    @RequestMapping(value = "/msg/list",method = RequestMethod.GET)
+    public String msgList(HttpServletRequest request,String id) throws Exception{
+        request.setAttribute("msglist", mobUsermainService.listMsg());
+        return "/mobapp/usercenter/usermain/msg_list";
+    }
+
+
+    /*
+   * 问题列表
+   */
+    @RequestMapping(value = "/faq/list",method = RequestMethod.GET)
+    public String faqList(HttpServletRequest request) throws Exception{
+        request.setAttribute("faqlist", mobUsermainService.listFaq());
+        return "/mobapp/usercenter/usermain/faq_list";
+    }
+
+
+    @RequestMapping(value = "/faq/detail",method = RequestMethod.GET)
+    public String faqDetail(HttpServletRequest request,String id) throws Exception{
+        request.setAttribute("faq", mobUsermainService.searchFaqDetail(id));
+        return "/mobapp/usercenter/usermain/faq_detail";
+    }
 
 
 }

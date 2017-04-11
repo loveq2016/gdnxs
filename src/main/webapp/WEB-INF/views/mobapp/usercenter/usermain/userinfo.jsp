@@ -21,7 +21,7 @@
     生日: <input type="text" name="birthday" value="${_sysuserinfo.birthday}"><br/>
     性别: <select type="text" name="gender" id="gender" dict-type="personSex"></select><br/>
     所属团队区域: <select  name="city"    class="form-control"  id="city" onchange="chageAreaCity('city','area')"></select>
-    <select  name="city"  id="area"  class="form-control"   ></select>
+    <select  name="area"  id="area"  class="form-control"   ></select>
     <script>
         initAreaCity('city')
     </script>
@@ -38,11 +38,11 @@
     var picpostfix = ".jpg,.png,.gif,.jpeg,.bmp";
     var dictJson = eval("(" + '<%=DictUtil.getDictJson()%>' + ")");
     $(function(){
-        $("#city").val('${_sysuserinfo.city}')
-        $("#area").val('${_sysuserinfo.area}')
 
         setTimeout(function(){
             $("#gender").val('${_sysuserinfo.gender}')
+            $("#city").val('${_sysuserinfo.city}')
+            $("#area").val('${_sysuserinfo.area}')
         },"500")
     })
 

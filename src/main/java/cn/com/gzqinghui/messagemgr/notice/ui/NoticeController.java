@@ -1,15 +1,16 @@
 
 package cn.com.gzqinghui.messagemgr.notice.ui;
 import cn.com.gzqinghui.common.util.Constants;
+import cn.com.gzqinghui.messagemgr.notice.service.INoticeService;
+import cn.com.gzqinghui.messagemgr.notice.vo.NoticeVO;
 import cn.com.gzqinghui.sysmgr.common.util.DateUtil;
 import cn.com.gzqinghui.sysmgr.common.util.FileUploadUtil;
 import cn.com.gzqinghui.sysmgr.core.AppContext;
 import cn.com.gzqinghui.sysmgr.log.annotation.SystemControllerLog;
-import cn.com.gzqinghui.messagemgr.notice.service.INoticeService;
-import org.apache.commons.lang3.StringUtils;
 import com.dexcoder.commons.pager.AcePageBean;
 import com.dexcoder.dal.annotation.FormModel;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,15 +19,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import cn.com.gzqinghui.messagemgr.notice.vo.NoticeVO;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.Writer;
 import java.util.Map;
-import java.util.UUID;
 
 /**
 * 信息管理-通知管理管理
@@ -86,6 +84,7 @@ public class NoticeController {
             notice.setCreatorid(AppContext.getCurrentUser().getId());
             notice.setModifieddate(DateUtil.formartCurrentDateTime());
             notice.setModifiedid(AppContext.getCurrentUser().getId());
+            notice.setDeletedflag("0");
             int row = noticeService.save(notice);
             if(row < 1){
                 throw new Exception("新增失败");

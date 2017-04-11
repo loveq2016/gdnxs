@@ -11,6 +11,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -51,5 +52,34 @@ public class UsermainServiceImpl extends PersistentOperationImpl implements IUse
         Map sysuserinfo =  (Map)request.getSession().getAttribute("_sysuserinfo");
         jdbcDao.updateForSql("update tb_member_info set avatar='"+url+"' where id='"+sysuserinfo.get("id")+"' ");
         return  jdbcDao.queryListForSql(" select * from  tb_member_info  where id='"+sysuserinfo.get("id")+"'").get(0);
+    }
+
+    @Override
+    public List listNotice() throws Exception {
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        Map sysuserinfo =  (Map)request.getSession().getAttribute("_sysuserinfo");
+        return  jdbcDao.queryListForSql(" select * from  tb_notice_info  where CITY='"+sysuserinfo.get("city")+"' and AREA = '"+sysuserinfo.get("area")+"' and DELETEDFLAG = 0 order by CREATEDATE desc");
+    }
+
+    @Override
+    public Map searchNoticeDetail(String id) throws Exception {
+        return  jdbcDao.queryListForSql(" select * from  tb_notice_info  where id ='"+id+"' ").get(0);
+    }
+
+    @Override
+    public List listMsg() throws Exception {
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        Map sysuserinfo =  (Map)request.getSession().getAttribute("_sysuserinfo");
+        return  jdbcDao.queryListForSql(" select * from  tb_msg_info  where MEMBER_ID = '"+sysuserinfo.get("id")+"' order by CREATEDATE desc ");
+    }
+
+    @Override
+    public List listFaq() throws Exception {
+        return  jdbcDao.queryListForSql(" select * from  tb_faq_info  where DELETEDFLAG = 0 ");
+    }
+
+    @Override
+    public Map searchFaqDetail(String id) throws Exception {
+        return  jdbcDao.queryListForSql(" select * from  tb_faq_info  where id ='"+id+"' ").get(0);
     }
 }

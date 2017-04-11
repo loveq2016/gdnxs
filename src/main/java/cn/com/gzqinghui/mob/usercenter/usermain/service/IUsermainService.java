@@ -3,6 +3,7 @@ package cn.com.gzqinghui.mob.usercenter.usermain.service;
 import cn.com.gzqinghui.acitivtymgr.member.vo.MemberVO;
 import cn.com.gzqinghui.sysmgr.common.service.IPersistentOperation;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,6 +19,16 @@ public interface IUsermainService extends IPersistentOperation {
     Map editUserinfo(MemberVO member) throws Exception;
 
     Map editUserAvatar(String url) throws Exception;
+
+    List listNotice() throws Exception;
+
+    Map searchNoticeDetail(String id) throws Exception;
+
+    List listMsg()throws Exception;
+
+    List listFaq()throws Exception;
+
+    Map searchFaqDetail(String id) throws Exception;
 
 
 }
