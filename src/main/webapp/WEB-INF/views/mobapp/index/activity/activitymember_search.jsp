@@ -1,3 +1,4 @@
+<%@ page import="java.net.URLDecoder" %>
 <%@page language="java" contentType="text/html; charset=UTF-8" %>
 <%--<!DOCTYPE html>
 <html>
@@ -6,24 +7,20 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>拉票海报</title>
+    <title>活动简介</title>
     <%@include file="../../common/app_common.jsp" %>
-
-
 
 </head>
 
 <body>
-拉票海报
+    活动简介
     <br/>
-${member.poster}
-    <br/>
-<img src="${baseURL}/mob/index/act/member/poster/qrcode?id=${param.id}&actid=${param.actid}">
-<br/>
-<a onclick="location.href='${baseURL}/mob/index/act/member/poster?id=${member.id}&actid=${act.id}'">拉票海报</a>
+${act}
 </body>
 </html>
+
 <script>
+
 </script>--%>
 <!DOCTYPE html>
 <html>
@@ -33,21 +30,25 @@ ${member.poster}
     <%@include file="../../common/app_common.jsp" %>
 </head>
 
-    <body class="bg">
-    <div class="share_explain">
-        <p>1.长按图片，保存到手机</p>
-        <p>2.将保存到手机的图片分享到朋友圈</p>
-    </div>
-    <div class="qr_code">
-        <img src="${baseURL}/${member.avatar}">
-    </div>
-    <p class="participant">编号：${member.no}</p>
-    <p class="participant">姓名：${member.name}</p>
-    <div class="qr_code">
-        <img src="${baseURL}/mob/index/act/member/poster/qrcode?id=${param.id}&actid=${param.actid}">
+<body  class="bg">
+    <div class="pop_flexbg"></div>
+    <div class="search_page">
+        <input type="text" id="keyword" value="<%=URLDecoder.decode(request.getParameter("kw") == null ? "" : request.getParameter("kw"), "UTF-8")%>" placeholder="输入编号或者号码"/>
+        <a href="javascript:;" onclick="doSearch()">搜索</a>
     </div>
 
 
+    <%@include file="../../common/footer_common.jsp" %>
+    <%@include file="../../common/footer_tip.jsp" %>
 </body>
 </html>
 <script type="text/javascript" src="${baseURL}/staticres/mobapp/js/main.js"></script>
+
+<script>
+    if('${msg}'!=''){
+        alert('${msg}')
+    }
+    function doSearch(){
+        location.href="${baseURL}/mob/index/act/search.mvc?id=${param.id}&kw="+encodeURIComponent(encodeURIComponent($("#keyword").val()));
+    }
+</script>

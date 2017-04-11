@@ -4,6 +4,7 @@ package cn.com.gzqinghui.mob.index.activity.ui;
 import cn.com.gzqinghui.mob.index.activity.service.IMobActivityService;
 import cn.com.gzqinghui.sysmgr.common.util.QrcodeUtil;
 import cn.com.gzqinghui.wechat.common.WeChatAuthUtil;
+import com.qinghui.base.util.ValidateUtil;
 import net.sf.json.JSONObject;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.Writer;
 import java.net.URLDecoder;
+import java.util.Map;
 
 /**
 * 广州清汇信息科技有限公司
@@ -46,7 +48,7 @@ public class MobActivityController {
     @RequestMapping(value = "/act/history/list")
     public String list(HttpServletRequest request,String kw) throws Exception{
         request.setAttribute("actCarousel",mobActivityService.searchActivityHomeCarousel());
-        request.setAttribute("actList",mobActivityService.searchActivityHomeHistory(URLDecoder.decode(kw, "UTF-8")));
+        request.setAttribute("actList",mobActivityService.searchActivityHomeHistory(URLDecoder.decode(null == kw ? "" : kw, "UTF-8")));
         return "/mobapp/index/activity/activityhistory_list";
     }
 
@@ -58,7 +60,9 @@ public class MobActivityController {
         request.getSession().removeAttribute("_userinfo");
         request.getSession().removeAttribute("_sysuserinfo");
         WeChatAuthUtil.getInstance().getUserInfo();
-        request.setAttribute("act",mobActivityService.searchActivityDetail(id));
+        Map act = (Map) mobActivityService.searchActivityDetail(id);
+        request.setAttribute("act",act);
+        request.getSession().setAttribute("actid",act.get("id"));
         request.setAttribute("actmemberlist",mobActivityService.searchActivityDetailMemberList(id));
         request.setAttribute("actphotolist",mobActivityService.searchActivityDetailPhotoList(id));
         return "/mobapp/index/activity/activity_detail";
@@ -71,7 +75,7 @@ public class MobActivityController {
     @RequestMapping(value = "/act/member/detail")
     public String actMemberdetail(HttpServletRequest request,String id,String actid) throws Exception{
         request.setAttribute("act",mobActivityService.searchActivityDetail(actid));
-        request.setAttribute("member",mobActivityService.searchActivityMemberDetail(id));
+        request.setAttribute("member",mobActivityService.searchActivityMemberDetail(id, actid));
         return "/mobapp/index/activity/activitymember_detail";
     }
 
@@ -80,7 +84,7 @@ public class MobActivityController {
     */
     @RequestMapping(value = "/act/member/poster")
     public String actMemberposter(HttpServletRequest request,String id,String actid) throws Exception{
-        request.setAttribute("member",mobActivityService.searchActivityMemberDetail(id));
+        request.setAttribute("member",mobActivityService.searchActivityMemberDetail(id,actid));
         return "/mobapp/index/activity/activitymember_poster";
     }
 
@@ -91,7 +95,7 @@ public class MobActivityController {
     public void actMemberposter(HttpServletRequest request,HttpServletResponse response,String id,String actid) throws Exception{
         String   baseURL   =   request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath();
         String url = baseURL+"/act/member/detail/?id="+id+"&actid="+actid;
-        QrcodeUtil.QrcodeImg(url,response);
+        QrcodeUtil.QrcodeImg(url, response);
     }
 
     /*
@@ -99,7 +103,7 @@ public class MobActivityController {
      */
     @RequestMapping(value = "/act/desc")
     public String actMemberdetail(HttpServletRequest request,String id) throws Exception{
-        request.setAttribute("act",mobActivityService.searchActivityDetail(id));
+        request.setAttribute("act", mobActivityService.searchActivityDetail(id));
         return "/mobapp/index/activity/activity_desc";
     }
 
@@ -136,6 +140,25 @@ public class MobActivityController {
         IOUtils.write(json.toString(), out);
     }
 
+
+    /*
+     * 获取活动排行
+     */
+    @RequestMapping(value = "/act/search")
+    public String actMemberSearch(HttpServletRequest request,String id,String kw) throws Exception{
+        if(!ValidateUtil.isNullOrBlank(kw)){
+            Map member = mobActivityService.searchActMember(id,kw);
+            if(null == member){
+                request.setAttribute("msg","未找到对应的团员信息");
+                return "/mobapp/index/activity/activitymember_search";
+            }else{
+                String   baseURL   =   request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath();
+                return "redirect:"+baseURL+"/mob/index/act/member/detail?id="+member.get("id")+"&actid="+id;
+            }
+
+        }
+        return "/mobapp/index/activity/activitymember_search";
+    }
 
 
 }

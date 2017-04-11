@@ -78,9 +78,10 @@ public class MobActivityServiceImpl extends PersistentOperationImpl implements I
     }
 
     @Override
-    public Object searchActivityMemberDetail(String id) throws Exception {
-        StringBuilder sql =  new StringBuilder(" select * from tb_member_info where id = '"+id+"' ");
-        return  jdbcDao.queryListForSql(sql.toString()).get(0);
+    public Object searchActivityMemberDetail(String id,String actid) throws Exception {
+        StringBuilder sql =  new StringBuilder(" select b.*,a.ACT_ID,a.VOTENUM,a.`NO`  from tb_act_member_ref a \n" +
+                "INNER JOIN tb_member_info b on a.MEMBER_ID = b.ID where a.ACT_ID = '"+actid+"' and b.id='"+id+"' ");
+        return jdbcDao.queryListForSql(sql.toString()).get(0);
     }
 
     @Override
@@ -108,5 +109,17 @@ public class MobActivityServiceImpl extends PersistentOperationImpl implements I
         jdbcDao.save(membervoterecVO);
         jdbcDao.updateForSql(" update tb_act_member_ref set VOTENUM = VOTENUM+1 where ACT_ID='"+actid+"' and MEMBER_ID = '"+id+"' ");
 
+    }
+
+    @Override
+    public Map searchActMember(String id, String kw) throws Exception {
+        StringBuilder sql =  new StringBuilder(" select b.*,a.ACT_ID,a.VOTENUM,a.`NO`  from tb_act_member_ref a \n" +
+                "INNER JOIN tb_member_info b on a.MEMBER_ID = b.ID where a.ACT_ID = '"+id+"' and (a.no ='"+kw+"' or b.name like '%"+kw+"%')  ");
+        List members =  jdbcDao.queryListForSql(sql.toString());
+        if(members.size()>0){
+            return (Map) members.get(0);
+        }else{
+            return null;
+        }
     }
 }

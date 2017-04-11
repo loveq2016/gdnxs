@@ -140,7 +140,7 @@ var page_moudel = {};          //页面模块
 
                     , {
                         title: '获得票数'
-                        , field: 'VOTENUM'
+                        , field: 'votenum'
                         , sortable: true
                         , formatter: function (value, row, index) {
                             return value;
