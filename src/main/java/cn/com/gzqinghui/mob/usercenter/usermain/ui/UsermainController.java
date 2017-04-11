@@ -81,6 +81,7 @@ public class UsermainController {
     */
     @RequestMapping(value = "/userinfo",method = RequestMethod.GET)
     public String userinfo(HttpServletRequest request) throws Exception{
+        WeChatAuthUtil.getInstance().getUserInfo();
         return "/mobapp/usercenter/usermain/userinfo";
     }
 
