@@ -16,6 +16,8 @@
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 	<aop:aspectj-autoproxy proxy-target-class="false" />
+	<task:annotation-driven scheduler="qbScheduler" mode="proxy"/>
+	<task:scheduler id="qbScheduler" pool-size="10"/>
 
 	<bean id="propertyConfig"
 		class="cn.com.gzqinghui.sysmgr.common.framebase.spring.SecretPropertyPlaceholderConfigurer">

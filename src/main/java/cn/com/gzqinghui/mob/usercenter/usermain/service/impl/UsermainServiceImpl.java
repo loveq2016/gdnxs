@@ -1,8 +1,10 @@
 package cn.com.gzqinghui.mob.usercenter.usermain.service.impl;
 
 import cn.com.gzqinghui.acitivtymgr.member.vo.MemberVO;
+import cn.com.gzqinghui.messagemgr.msginfo.vo.MsginfoVO;
 import cn.com.gzqinghui.mob.usercenter.usermain.service.IUsermainService;
 import cn.com.gzqinghui.sysmgr.common.service.impl.PersistentOperationImpl;
+import cn.com.gzqinghui.sysmgr.common.util.DateUtil;
 import com.dexcoder.dal.JdbcDao;
 import com.wechat.util.HttpDownload;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
 * Copyright &copy; 2015 广州清汇信息科技有限公司
@@ -36,7 +39,15 @@ public class UsermainServiceImpl extends PersistentOperationImpl implements IUse
         }
         String headimg = "/"+ HttpDownload.httpDownload((String) userinfo.get("headimgurl"), request,"avatar");
         jdbcDao.updateForSql(" update tb_member_info set openid = '" + userinfo.get("openid") + "',AVATAR='" + headimg + "' where DELETEDFLAG = 0 and `NAME` = '" + name + "' and BIRTHDAY = '" + birthday + "' ");
-       return jdbcDao.queryListForSql(" select * from tb_member_info  where DELETEDFLAG = 0 and `NAME` = '"+name+"' and BIRTHDAY = '"+birthday+"' ").get(0);
+       Map memeber =   jdbcDao.queryListForSql(" select * from tb_member_info  where DELETEDFLAG = 0 and `NAME` = '" + name + "' and BIRTHDAY = '" + birthday + "' ").get(0);
+        MsginfoVO msginfoVO = new MsginfoVO();
+        msginfoVO.setId(UUID.randomUUID().toString());
+        msginfoVO.setMemberId((String) memeber.get("id"));
+        msginfoVO.setCreatedate(DateUtil.formartCurrentDate());
+        msginfoVO.setTitle("绑定成功");
+        msginfoVO.setMsgdesc("亲爱的"+memeber.get("name")+"，恭喜您绑定成功。");
+        jdbcDao.save(msginfoVO);
+       return memeber;
     }
 
     @Override

@@ -1,12 +1,11 @@
 package cn.com.gzqinghui.messagemgr.msginfo.vo;
-import com.dexcoder.dal.annotation.Column;
-import com.dexcoder.dal.annotation.Table;
-import com.dexcoder.dal.annotation.Transient;
-import java.io.Serializable;
 import com.dexcoder.commons.bean.IBaseEntity;
-import java.util.Date;
-import org.apache.commons.lang3.StringUtils;
+import com.dexcoder.dal.annotation.Column;
 import com.dexcoder.dal.annotation.DateFormat;
+import com.dexcoder.dal.annotation.Table;
+import org.apache.commons.lang3.StringUtils;
+
+import java.io.Serializable;
 
 
 
@@ -27,13 +26,23 @@ public class MsginfoVO implements Serializable,IBaseEntity {
     private String id ;
       
     private String title ;
+
+    private String memberId;
       
     private String msgdesc ;
       
     private String creatorid ;
       
     private String createdate ;
-    
+
+    public String getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
+    }
+
     public void setId(String id){
         this.id=id ;
     }
