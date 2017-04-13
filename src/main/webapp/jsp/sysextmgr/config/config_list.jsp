@@ -1,7 +1,8 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <%@include file="../../../jsp/common/sbadmin_common.jsp" %>
+    <%@include file="../../../jsp/common/css_common.jsp" %>
+    <%@include file="../../../jsp/common/js_common.jsp" %>
     <script type="text/javascript" src="${baseURL}/jsp/sysextmgr/config/config.js"></script>
 </head>
 

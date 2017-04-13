@@ -2,9 +2,9 @@ package cn.com.gzqinghui.acitivtymgr.activityquery.service.impl;
 
 import cn.com.gzqinghui.acitivtymgr.activityquery.service.IactivityqueryService;
 import cn.com.gzqinghui.sysmgr.common.service.impl.PersistentOperationImpl;
+import cn.com.gzqinghui.sysmgr.common.util.ValidateUtil;
 import com.dexcoder.commons.pager.AcePageBean;
 import com.dexcoder.dal.JdbcDao;
-import com.qinghui.base.util.ValidateUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

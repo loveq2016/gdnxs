@@ -1,13 +1,10 @@
 package cn.com.gzqinghui.common.util;
 
 import cn.com.gzqinghui.sysextmgr.area.vo.AreaVO;
+import cn.com.gzqinghui.sysmgr.common.util.JsonUtil;
+import cn.com.gzqinghui.sysmgr.common.util.ValidateUtil;
 import cn.com.gzqinghui.sysmgr.core.AppContext;
-import cn.com.gzqinghui.sysmgr.dict.service.IDictService;
-import cn.com.gzqinghui.sysmgr.dict.vo.DictVO;
 import com.dexcoder.dal.JdbcDao;
-import com.qinghui.base.util.JsonUtil;
-import com.qinghui.base.util.ValidateUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.HashMap;

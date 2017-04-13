@@ -1,5 +1,5 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" %>
-<!DOCTYPE html>
+<%--<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,8 +17,23 @@
 ${faq}
     <br/>
 </body>
+</html>--%>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!-- 适应移动端end -->
+    <title>广东农信社</title>
+    <%@include file="../../common/app_common.jsp" %>
+</head>
+
+<body>
+<div class="details_page">
+    <p class="details_page_title">${faq.title}</p>
+    <div>
+        ${faq.faqDesc}
+    </div>
+</div>
+
+</body>
 </html>
-
-<script>
-
-</script>
+<script type="text/javascript" src="${baseURL}/staticres/mobapp/js/main.js"></script>

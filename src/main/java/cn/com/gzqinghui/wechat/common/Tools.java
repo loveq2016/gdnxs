@@ -2,7 +2,6 @@ package cn.com.gzqinghui.wechat.common;
 
 import cn.com.gzqinghui.wechat.bean.InMessage;
 import cn.com.gzqinghui.wechat.bean.OutMessage;
-import com.qinghui.base.util.AssertUtil;
 import com.thoughtworks.xstream.XStream;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
@@ -118,7 +117,7 @@ public final class Tools {
      * @param
      */
     public static String genWXPaySign(Map<String, String> params)throws Exception{
-        if (AssertUtil.isEmpty(params)) {
+        if (null == params) {
             return "";
         }
         Set<String> keySet = params.keySet();

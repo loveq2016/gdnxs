@@ -35,8 +35,8 @@ public class ActivityJob {
                 for(int i=0;i<memberlist.size();i++){
                     MsginfoVO msginfoVO = new MsginfoVO();
                     msginfoVO.setId(UUID.randomUUID().toString());
-                    msginfoVO.setMemberId((String) memberlist.get(0).get("id"));
-                    msginfoVO.setCreatedate(DateUtil.formartCurrentDate());
+                    msginfoVO.setMemberId((String) memberlist.get(i).get("id"));
+                    msginfoVO.setCreatedate(DateUtil.formartCurrentDateTime());
                     msginfoVO.setTitle("活动结束投票结果信息");
                     msginfoVO.setMsgdesc("您参加的活动" + rec.get("title") + "投票已经结束，恭喜您获得了第" + (i + 1) + "名。");
                     jdbcDao.save(msginfoVO);

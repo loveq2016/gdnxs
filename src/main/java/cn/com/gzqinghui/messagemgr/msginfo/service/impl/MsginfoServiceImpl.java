@@ -1,13 +1,13 @@
 package cn.com.gzqinghui.messagemgr.msginfo.service.impl;
 
 import cn.com.gzqinghui.messagemgr.msginfo.service.IMsginfoService;
-
+import cn.com.gzqinghui.sysmgr.common.service.impl.PersistentOperationImpl;
+import cn.com.gzqinghui.sysmgr.common.util.ValidateUtil;
 import com.dexcoder.commons.pager.AcePageBean;
-import com.qinghui.base.util.ValidateUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import cn.com.gzqinghui.sysmgr.common.service.impl.PersistentOperationImpl;
+
 import java.util.Map;
 
 /**

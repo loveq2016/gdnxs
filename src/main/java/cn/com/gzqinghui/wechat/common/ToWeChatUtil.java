@@ -1,11 +1,11 @@
 package cn.com.gzqinghui.wechat.common;
 
+import cn.com.gzqinghui.sysmgr.common.util.EhcacheUtil;
+import cn.com.gzqinghui.sysmgr.common.util.ValidateUtil;
 import cn.com.gzqinghui.wechat.basic.WeChatCommonResult;
 import cn.com.gzqinghui.wechat.basic.WeChatReqsUTLCfg;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.qinghui.base.util.EhcacheUtil;
-import com.qinghui.base.util.ValidateUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -126,7 +126,7 @@ public class ToWeChatUtil {
      */
     public static WeChatCommonResult getWXJSApi(String accessToken) throws Exception{
         if(!ValidateUtil.isNullOrBlank(EhcacheUtil.getInstance().get("WE_CHAT_CACHE").get("ticket"))){
-            return (WeChatCommonResult)EhcacheUtil.getInstance().get("WE_CHAT_CACHE").get("ticket").getObjectValue();
+            return (WeChatCommonResult) EhcacheUtil.getInstance().get("WE_CHAT_CACHE").get("ticket").getObjectValue();
         }
         String jsonStr = HTTPUtil.getInstance().doGetReq(Tools.preWeChatURL(WeChatReqsUTLCfg.WX_JS_API_URL, new Object[]{accessToken}));
         Map<String, Object> map = new Gson().fromJson(jsonStr, new TypeToken<Map>() {

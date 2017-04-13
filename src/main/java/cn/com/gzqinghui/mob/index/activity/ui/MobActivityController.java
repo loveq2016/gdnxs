@@ -3,8 +3,8 @@ package cn.com.gzqinghui.mob.index.activity.ui;
 
 import cn.com.gzqinghui.mob.index.activity.service.IMobActivityService;
 import cn.com.gzqinghui.sysmgr.common.util.QrcodeUtil;
+import cn.com.gzqinghui.sysmgr.common.util.ValidateUtil;
 import cn.com.gzqinghui.wechat.common.WeChatAuthUtil;
-import com.qinghui.base.util.ValidateUtil;
 import net.sf.json.JSONObject;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
