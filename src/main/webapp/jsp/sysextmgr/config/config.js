@@ -29,7 +29,7 @@ var page_moudel = {};          //页面模块
                 , showPaginationSwitch: false
                 , smartDisplay: true
                 , showToggle: false
-                , idField: 'CONFIG_KEY'
+                , idField: 'configKey'
                 , sidePagination: "server" //服务端请求
                 , toolbar: '#config_toolbar'
                 , queryParams: function (params) {
@@ -56,8 +56,8 @@ var page_moudel = {};          //页面模块
                         }
                     }
                     , {
-                        title: '描述'
-                        , field: 'description'
+                        title: '配置键'
+                        , field: 'configKey'
                         , sortable: true
                         , formatter: function (value, row, index) {
                             return value;
@@ -72,9 +72,18 @@ var page_moudel = {};          //页面模块
                         }
                     }
                     , {
+                        title: '描述'
+                        , field: 'description'
+                        , sortable: true
+                        , formatter: function (value, row, index) {
+                            return value;
+                        }
+                    }
+                    , {
                         title: '操作',
                         align: 'center',
                         formatter: function (value, row, index) {
+                            console.info(row);
                             var html = "";
                             html += '<a href="javascript:void(0)" class="glyphicon glyphicon-pencil" onclick="page_moudel.edit_config(\'' + row.CONFIG_KEY + '\',\'' + index + '\')"></a>';
                             // html += '&nbsp;<a href="javascript:void(0)" class="glyphicon glyphicon-file" onclick="page_moudel.view_config(\'' + index + '\')"></a>';
@@ -212,7 +221,7 @@ var page_moudel = {};          //页面模块
                         if ( result.code == "1") {
                             $.msg.success('新增配置成功');
                             page_moudel.config_list_table.bootstrapTable('refresh');
-                            $(".modal-footer .btn-danger").trigger("click");
+                            $(".modal-footer button[data-bb-handler='cancel']").trigger("click");
                         } else {
                             $.msg.fail(result.desc);
                             return false;
@@ -267,7 +276,7 @@ var page_moudel = {};          //页面模块
                         if ("1" == result.code) {
                             $.msg.success('修改配置成功');
                             page_moudel.config_list_table.bootstrapTable('refresh');
-                            $(".modal-footer .btn-danger").trigger("click");
+                            $(".modal-footer button[data-bb-handler='cancel']").trigger("click");
                         } else {
                             $.msg.fail(result.desc);
                             return false;

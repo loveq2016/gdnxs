@@ -43,6 +43,16 @@
                                                 <input type="hidden" name="${_csrf.parameterName}"
                                                        value="${_csrf.token}"/>
                                             </td>
+
+                                            <td>
+                                                <a id="config_add" href="javascript:void(0);" onclick="page_moudel.add_config()">
+                                                    <img src="${baseURL}/staticres/images/tianjia.png"> &nbsp;新增
+                                                </a>
+                                                &nbsp;&nbsp;
+                                                <a id="config_remove" href="javascript:void(0);"  onclick="page_moudel.batchdel_config();">
+                                                    <img width="14" height="14" src="${baseURL}/staticres/images/shanchu.png"> &nbsp; 删除
+                                                </a>
+                                            </td>
                                         </tr>
 
                                     </table>

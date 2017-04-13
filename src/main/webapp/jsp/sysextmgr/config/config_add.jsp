@@ -7,7 +7,7 @@
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
                                                                                    <div class="form-group">
-                    <label  for="add_config_configKey" class="col-md-3 control-label">configKey：</label>
+                    <label  for="add_config_configKey" class="col-md-3 control-label">配置键：</label>
                     <div class="col-md-8">
                         <input type="text" name="config.configKey" check-type="required"   class="form-control" id="add_config_configKey"/>
                     </div>
@@ -24,12 +24,12 @@
                         <input type="text" name="config.description" check-type="required"   class="form-control" id="add_config_description"/>
                     </div>
                  </div>
-                                                                                         <div class="form-group">
+              <%--                                                                           <div class="form-group">
                     <label  for="add_config_readOnly" class="col-md-3 control-label">运行时是否只读，0非只读；1只读：</label>
                     <div class="col-md-8">
                         <input type="text" name="config.readOnly" check-type="required"   class="form-control" id="add_config_readOnly"/>
                     </div>
-                 </div>
+                 </div>--%>
                           
     </form>
 

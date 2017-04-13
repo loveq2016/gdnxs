@@ -5,15 +5,16 @@
 
   <div class="form-group"></div>
   <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-  <input type="hidden" name="config.configKey" check-type="required" class="form-control" id="edit_config_configKey"/>
+  <%--<input type="hidden" name="config.configKey" check-type="required" class="form-control" id="edit_config_configKey"/>--%>
 
       <div class="form-group">
-          <label for="edit_config_description" class="col-md-3 control-label">描述：</label>
+          <label  for="edit_config_configKey" class="col-md-3 control-label">配置键：</label>
           <div class="col-md-8">
-              <input type="text" name="config.description" check-type="required" class="form-control"
-                     id="edit_config_description"/>
+              <input type="text" name="config.configKey" check-type="required"   class="form-control" id="edit_config_configKey"/>
           </div>
       </div>
+
+
 
       <div class="form-group">
           <label for="edit_config_configValue" class="col-md-3 control-label">配置值：</label>
@@ -23,6 +24,13 @@
           </div>
       </div>
 
+      <div class="form-group">
+          <label for="edit_config_description" class="col-md-3 control-label">描述：</label>
+          <div class="col-md-8">
+              <input type="text" name="config.description" check-type="required" class="form-control"
+                     id="edit_config_description"/>
+          </div>
+      </div>
 
                   </form>
 
