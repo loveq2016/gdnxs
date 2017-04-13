@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 60011
 File Encoding         : 65001
 
-Date: 2017-04-10 17:38:13
+Date: 2017-04-13 17:51:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -40,7 +40,7 @@ CREATE TABLE `tb_activity_info` (
 -- ----------------------------
 INSERT INTO `tb_activity_info` VALUES ('032adb91-997a-4e64-8c15-307402b16226', 'XX活动', '/upload/member/201704/36d7bd48-882c-4fc4-a027-ae8d549949a1.jpg', '2017-04-12 10:56:00', '1', '<p>sbsbs</p>', '1', '001', '2017-04-05 10:56:22', '001', '2017-04-07 14:47:47', '0');
 INSERT INTO `tb_activity_info` VALUES ('40a8d75e-8a39-4553-ac90-eef79e7323da', '最新活动', '/upload/activity/201704/7e6a212f-c623-4c61-8627-0ba42d18b249.jpg', '2017-04-14 14:47:53', '0', '<p>是不是不是<br/></p>', '0', '001', '2017-04-07 14:48:09', '001', '2017-04-07 14:48:09', '0');
-INSERT INTO `tb_activity_info` VALUES ('837037c5-9e79-47ad-b5d6-618c8c8ed94d', '第二个活动', '/upload/member/201704/3bd95888-7f30-4148-8fe2-3f47c0045628.jpg', '2017-04-12 15:38:00', '0', '<p>随便随便说说</p>', '0', '001', '2017-04-05 15:39:06', '001', '2017-04-07 14:39:08', '0');
+INSERT INTO `tb_activity_info` VALUES ('837037c5-9e79-47ad-b5d6-618c8c8ed94d', '第二个活动', '/upload/member/201704/3bd95888-7f30-4148-8fe2-3f47c0045628.jpg', '2017-04-23 15:38:00', '0', '<p>随便随便说说</p>', '0', '001', '2017-04-05 15:39:06', '001', '2017-04-07 14:39:08', '0');
 
 -- ----------------------------
 -- Table structure for tb_activity_pics
@@ -248,8 +248,8 @@ CREATE TABLE `tb_member_info` (
 -- Records of tb_member_info
 -- ----------------------------
 INSERT INTO `tb_member_info` VALUES ('4b9ab219-8060-4f5b-878b-580825ddabb7', '123123', '1', '18613002847', '18613002847', '2017-04-04', '1', '肇庆', '肇庆办事处', '1', '吹牛B', '', '/upload/member/201704/6e0be816-a383-438b-a12e-786be172df04.jpg', '<p>ni tm jiushi ge sb<br/></p>', null, null, null, '001', '2017-04-07 14:38:21', '0');
-INSERT INTO `tb_member_info` VALUES ('7a379b93-2a58-4f25-a1e0-68a5160ce2a3', 'oy', '0', 'aa', '18613002847', '2017-04-11', '0', '茂名', '信宜', '1', '', '', 'avatar/1491794950764.jpeg', '<p>sb</p>', 'oy123456', null, null, '001', '2017-04-07 09:42:11', '0');
-INSERT INTO `tb_member_info` VALUES ('eb7932e5-fbe9-4f04-9cf2-3d956a08aa4a', '第三个团员', '0', '啊啊啊', '15666666666', '2017-04-11', '1', '茂名', '茂名市', '1', '', '', '/upload/member/201704/5f92546a-59ec-4f7e-b921-886c8175566d.jpg', '<p>煞笔煞笔煞笔</p>', null, '001', '2017-04-07 14:47:31', '001', '2017-04-07 14:47:31', '0');
+INSERT INTO `tb_member_info` VALUES ('7a379b93-2a58-4f25-a1e0-68a5160ce2a3', 'oy', '0', 'aa', '18613002847', '2017-04-11', '0', '茂名', '信宜', '1', 'sbs', 's', '/upload/avatar/201704/84688644-051e-4470-a3c5-842530faefc5.jpg', '<p>sb</p>', 'oy123456', null, null, '001', '2017-04-07 09:42:11', '0');
+INSERT INTO `tb_member_info` VALUES ('eb7932e5-fbe9-4f04-9cf2-3d956a08aa4a', '第三个团员', '0', '啊啊啊', '15666666666', '2017-04-11', '1', null, null, '1', '', '', '/upload/member/201704/5f92546a-59ec-4f7e-b921-886c8175566d.jpg', '<p>煞笔煞笔煞笔</p>', null, '001', '2017-04-07 14:47:31', '001', '2017-04-07 14:47:31', '0');
 
 -- ----------------------------
 -- Table structure for tb_msg_info
@@ -268,6 +268,13 @@ CREATE TABLE `tb_msg_info` (
 -- ----------------------------
 -- Records of tb_msg_info
 -- ----------------------------
+INSERT INTO `tb_msg_info` VALUES ('1c6cf679-4e05-43f0-8b8d-bdf3bc0d7db1', '4b9ab219-8060-4f5b-878b-580825ddabb7', '活动结束投票结果信息', '您参加的活动第二个活动投票已经结束，恭喜您获得了第1名。', null, '2017-04-13 00:00:00');
+INSERT INTO `tb_msg_info` VALUES ('20ca8d6c-6a9a-44b4-ab58-10cba1d6264f', '4b9ab219-8060-4f5b-878b-580825ddabb7', '活动结束投票结果信息', '您参加的活动第二个活动投票已经结束，恭喜您获得了第2名。', null, '2017-04-13 00:00:00');
+INSERT INTO `tb_msg_info` VALUES ('4be71ca5-1fa3-46fb-b942-5a4dd06add07', '4b9ab219-8060-4f5b-878b-580825ddabb7', '活动结束投票结果信息', '您参加的活动第二个活动投票已经结束，恭喜您获得了第2名。', null, '2017-04-13 00:00:00');
+INSERT INTO `tb_msg_info` VALUES ('9bb38772-9570-4d7f-912e-e918c45deb1b', '4b9ab219-8060-4f5b-878b-580825ddabb7', '活动结束投票结果信息', '您参加的活动第二个活动投票已经结束，恭喜您获得了第1名。', null, '2017-04-11 00:00:00');
+INSERT INTO `tb_msg_info` VALUES ('a951d335-5475-4b3d-ba84-348e80738cbd', '7a379b93-2a58-4f25-a1e0-68a5160ce2a3', '绑定成功', '亲爱的oy，恭喜您绑定成功。', null, '2017-04-11 00:00:00');
+INSERT INTO `tb_msg_info` VALUES ('ce6caa84-072b-4ae6-ad03-76fd9ef7cf29', '4b9ab219-8060-4f5b-878b-580825ddabb7', '活动结束投票结果信息', '您参加的活动第二个活动投票已经结束，恭喜您获得了第2名。', null, '2017-04-11 00:00:00');
+INSERT INTO `tb_msg_info` VALUES ('d69150a2-c6e6-403d-a369-be3eb3fbf24f', '4b9ab219-8060-4f5b-878b-580825ddabb7', '活动结束投票结果信息', '您参加的活动第二个活动投票已经结束，恭喜您获得了第1名。', null, '2017-04-13 00:00:00');
 INSERT INTO `tb_msg_info` VALUES ('uuid', '7a379b93-2a58-4f25-a1e0-68a5160ce2a3', '这是消息标题', '亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的亲爱的', 'a', '2017-04-12 11:51:48');
 
 -- ----------------------------
@@ -294,7 +301,7 @@ CREATE TABLE `tb_notice_info` (
 -- ----------------------------
 -- Records of tb_notice_info
 -- ----------------------------
-INSERT INTO `tb_notice_info` VALUES ('40f6206a-4d44-4ac0-999e-a6b148a95ccb', '这是一个通知', '/upload/member/201704/290ff448-5c21-477c-85c4-c69371420fc5.jpg', '<p>ssss</p>', '茂名', '茂名市', '1 (8).jpg', '/upload/notice/201704/5e14b305-2e3b-40b3-8d4e-0501cc1bf092.jpg', '001', '2017-04-07 09:22:53', '001', '2017-04-07 09:24:12', null);
+INSERT INTO `tb_notice_info` VALUES ('40f6206a-4d44-4ac0-999e-a6b148a95ccb', '这是一个通知', '/upload/member/201704/290ff448-5c21-477c-85c4-c69371420fc5.jpg', '<p>ssss</p>', '茂名', '信宜', '1 (8).jpg', '/upload/notice/201704/5e14b305-2e3b-40b3-8d4e-0501cc1bf092.jpg', '001', '2017-04-07 09:22:53', '001', '2017-04-11 08:39:41', '0');
 
 -- ----------------------------
 -- Table structure for tb_operation_log
@@ -318,6 +325,56 @@ CREATE TABLE `tb_operation_log` (
 -- ----------------------------
 -- Records of tb_operation_log
 -- ----------------------------
+INSERT INTO `tb_operation_log` VALUES ('0552c541-1dac-4f64-aa2f-26b14cb9b618', '001', 'admin', '0:0:0:0:0:0:0:1', '字典模块', '字典列表', 'cn.com.gzqinghui.sysmgr.dict.ui.DictController.list()', '2017-04-13 17:08:11', '1');
+INSERT INTO `tb_operation_log` VALUES ('068e95cc-217c-4162-b8ea-fd63d73c916b', '001', 'admin', '0:0:0:0:0:0:0:1', '配置模块', '配置列表', 'cn.com.gzqinghui.sysmgr.config.ui.ConfigController.list()', '2017-04-13 17:07:01', '1');
+INSERT INTO `tb_operation_log` VALUES ('0ed2bfda-7d5a-4ef3-94e8-3fc00a4e46c0', '001', 'admin', '0:0:0:0:0:0:0:1', '日志模块', '日志列表', 'cn.com.gzqinghui.sysmgr.operationlog.ui.OperaLogController.list()', '2017-04-13 17:06:48', '1');
+INSERT INTO `tb_operation_log` VALUES ('1365a502-83fc-4141-b426-c13e8bff3f54', '001', 'admin', '0:0:0:0:0:0:0:1', '问题管理模块', '问题管理列表', 'cn.com.gzqinghui.faqinfomgr.faqinfomgr.ui.FaqController.list()', '2017-04-11 08:11:29', '1');
+INSERT INTO `tb_operation_log` VALUES ('16fb5e96-2f34-46ea-8b86-dbc210fc045b', '001', 'admin', '0:0:0:0:0:0:0:1', '配置模块', '编辑配置', 'cn.com.gzqinghui.sysmgr.config.ui.ConfigController.update()', '2017-04-13 17:08:36', '1');
+INSERT INTO `tb_operation_log` VALUES ('19b330a1-4a47-4a6e-bb15-d22bf1f656ef', '001', 'admin', '0:0:0:0:0:0:0:1', '菜单模块', '所有菜单目录列表', 'cn.com.gzqinghui.sysmgr.menu.ui.MenuController.allDirs()', '2017-04-13 17:05:07', '1');
+INSERT INTO `tb_operation_log` VALUES ('1e252abc-0e71-4e5e-93e9-6d7e496dc55c', '001', 'admin', '0:0:0:0:0:0:0:1', '配置模块', '配置列表', 'cn.com.gzqinghui.sysmgr.config.ui.ConfigController.list()', '2017-04-13 17:08:44', '1');
+INSERT INTO `tb_operation_log` VALUES ('20529732-930e-434c-a4dc-f35c91216257', '001', 'admin', '0:0:0:0:0:0:0:1', '字典模块', '字典列表', 'cn.com.gzqinghui.sysmgr.dict.ui.DictController.list()', '2017-04-11 15:03:25', '1');
+INSERT INTO `tb_operation_log` VALUES ('2222e042-7c67-4449-937f-5e9a5726bd41', '001', 'admin', '0:0:0:0:0:0:0:1', '字典模块', '字典列表', 'cn.com.gzqinghui.sysmgr.dict.ui.DictController.list()', '2017-04-11 08:11:27', '1');
+INSERT INTO `tb_operation_log` VALUES ('25530bd4-871b-4e24-89f8-5b4f0b670827', '001', 'admin', '0:0:0:0:0:0:0:1', '活动管理模块', '活动结果查询', 'cn.com.gzqinghui.acitivtymgr.activityquery.ui.activityqueryController.list()', '2017-04-11 15:03:34', '1');
+INSERT INTO `tb_operation_log` VALUES ('26d09df5-3b5b-45f2-b3d1-d4c0e5e67db7', '001', 'admin', '0:0:0:0:0:0:0:1', '字典模块', '字典列表', 'cn.com.gzqinghui.sysmgr.dict.ui.DictController.list()', '2017-04-13 17:07:50', '1');
+INSERT INTO `tb_operation_log` VALUES ('2c0421a3-db7f-43bc-9f90-ab4925f6e405', '001', 'admin', '0:0:0:0:0:0:0:1', '菜单模块', '新增菜单', 'cn.com.gzqinghui.sysmgr.menu.ui.MenuController.list()', '2017-04-13 17:06:34', '1');
+INSERT INTO `tb_operation_log` VALUES ('2f461268-0ff6-4a2f-a54c-9d421762ac8b', '001', 'admin', '0:0:0:0:0:0:0:1', '团员管理模块', '团员管理列表', 'cn.com.gzqinghui.acitivtymgr.member.ui.MemberController.list()', '2017-04-11 08:11:46', '1');
+INSERT INTO `tb_operation_log` VALUES ('31a811b5-1a03-400e-816d-445b1ddc53f0', '001', 'admin', '0:0:0:0:0:0:0:1', '字典模块', '字典列表', 'cn.com.gzqinghui.sysmgr.dict.ui.DictController.list()', '2017-04-11 08:36:28', '1');
+INSERT INTO `tb_operation_log` VALUES ('3253a3e8-6697-4960-afd3-c6d59cf53049', '001', 'admin', '0:0:0:0:0:0:0:1', '配置模块', '配置列表', 'cn.com.gzqinghui.sysmgr.config.ui.ConfigController.list()', '2017-04-13 17:08:33', '1');
+INSERT INTO `tb_operation_log` VALUES ('3ce3bb6a-c7d9-46ed-a35e-2a5792dd141f', '001', 'admin', '0:0:0:0:0:0:0:1', '配置模块', '配置列表', 'cn.com.gzqinghui.sysmgr.config.ui.ConfigController.list()', '2017-04-13 17:07:21', '1');
+INSERT INTO `tb_operation_log` VALUES ('3f8f9a3f-4f94-4666-976a-b7941af42f9d', '001', 'admin', '0:0:0:0:0:0:0:1', '通知管理模块', '编辑通知管理', 'cn.com.gzqinghui.messagemgr.notice.ui.NoticeController.update()', '2017-04-11 08:39:41', '1');
+INSERT INTO `tb_operation_log` VALUES ('43130efd-43de-49c7-810c-1fd009f8f08b', '001', 'admin', '0:0:0:0:0:0:0:1', '字典模块', '字典列表', 'cn.com.gzqinghui.sysmgr.dict.ui.DictController.list()', '2017-04-13 17:07:18', '1');
+INSERT INTO `tb_operation_log` VALUES ('454e29b3-1d16-4202-ae7a-1694e0eb6f7a', '001', 'admin', '0:0:0:0:0:0:0:1', '活动管理模块', '活动结果查询', 'cn.com.gzqinghui.acitivtymgr.activityquery.ui.activityqueryController.list()', '2017-04-11 15:03:59', '1');
+INSERT INTO `tb_operation_log` VALUES ('5e5260ec-4fa3-4e7e-bffd-318a0a1f04de', '001', 'admin', '0:0:0:0:0:0:0:1', '字典模块', '字典列表', 'cn.com.gzqinghui.sysmgr.dict.ui.DictController.list()', '2017-04-11 15:03:30', '1');
+INSERT INTO `tb_operation_log` VALUES ('5ece3ff2-ddee-4b3e-a341-d22d92e806e9', '001', 'admin', '0:0:0:0:0:0:0:1', '字典模块', '字典列表', 'cn.com.gzqinghui.sysmgr.dict.ui.DictController.list()', '2017-04-11 15:02:26', '1');
+INSERT INTO `tb_operation_log` VALUES ('614f7ca8-afa2-4458-b29a-3de9a549cb3f', '001', 'admin', '0:0:0:0:0:0:0:1', '字典模块', '字典列表', 'cn.com.gzqinghui.sysmgr.dict.ui.DictController.list()', '2017-04-13 17:06:53', '1');
+INSERT INTO `tb_operation_log` VALUES ('633e77b5-40a8-4453-b4a9-fb1b585e75aa', '001', 'admin', '0:0:0:0:0:0:0:1', '字典模块', '字典列表', 'cn.com.gzqinghui.sysmgr.dict.ui.DictController.list()', '2017-04-13 17:07:09', '1');
+INSERT INTO `tb_operation_log` VALUES ('7367e647-ac42-4295-bd19-cf9d16177d3f', '001', 'admin', '0:0:0:0:0:0:0:1', '消息管理模块', '消息管理列表', 'cn.com.gzqinghui.messagemgr.msginfo.ui.MsginfoController.list()', '2017-04-11 08:11:43', '1');
+INSERT INTO `tb_operation_log` VALUES ('77fc8467-e877-4c82-9a8a-842810690ad8', '001', 'admin', '0:0:0:0:0:0:0:1', '配置模块', '配置列表', 'cn.com.gzqinghui.sysmgr.config.ui.ConfigController.list()', '2017-04-13 17:06:55', '1');
+INSERT INTO `tb_operation_log` VALUES ('7de80d3d-2384-45e8-8fa8-7d6cb464cffd', '001', 'admin', '0:0:0:0:0:0:0:1', '团员管理模块', '团员管理列表', 'cn.com.gzqinghui.acitivtymgr.member.ui.MemberController.list()', '2017-04-11 15:03:40', '1');
+INSERT INTO `tb_operation_log` VALUES ('8b44ad7e-82ba-42df-bf40-bd96030f8147', '001', 'admin', '0:0:0:0:0:0:0:1', '配置模块', '配置列表', 'cn.com.gzqinghui.sysmgr.config.ui.ConfigController.list()', '2017-04-13 17:08:36', '1');
+INSERT INTO `tb_operation_log` VALUES ('96d6f812-e635-433a-8e2c-73612f947f50', '001', 'admin', '0:0:0:0:0:0:0:1', '字典模块', '字典列表', 'cn.com.gzqinghui.sysmgr.dict.ui.DictController.list()', '2017-04-11 15:03:56', '1');
+INSERT INTO `tb_operation_log` VALUES ('9e2353bf-547e-45c4-a12f-0c6586e8c5fd', '001', 'admin', '0:0:0:0:0:0:0:1', '团员管理模块', '活动团员导入列表', 'cn.com.gzqinghui.acitivtymgr.activity.ui.ActivityController.list()', '2017-04-11 08:11:47', '1');
+INSERT INTO `tb_operation_log` VALUES ('a25e85b6-5613-4a39-9f54-067dcac87eaf', '001', 'admin', '0:0:0:0:0:0:0:1', '消息管理模块', '消息管理列表', 'cn.com.gzqinghui.messagemgr.msginfo.ui.MsginfoController.list()', '2017-04-11 15:02:28', '1');
+INSERT INTO `tb_operation_log` VALUES ('a2722895-7f0b-4b83-827a-3440dd7c8804', '001', 'admin', '0:0:0:0:0:0:0:1', '配置模块', '配置列表', 'cn.com.gzqinghui.sysmgr.config.ui.ConfigController.list()', '2017-04-13 17:06:45', '1');
+INSERT INTO `tb_operation_log` VALUES ('ac32a8f8-d2aa-47db-8635-bea260ac77d0', '001', 'admin', '0:0:0:0:0:0:0:1', '配置模块', '配置列表', 'cn.com.gzqinghui.sysmgr.config.ui.ConfigController.list()', '2017-04-13 17:13:37', '1');
+INSERT INTO `tb_operation_log` VALUES ('ad909986-1ca6-44b4-88a9-e210cb95718b', '001', 'admin', '0:0:0:0:0:0:0:1', '通知管理模块', '通知管理列表', 'cn.com.gzqinghui.messagemgr.notice.ui.NoticeController.list()', '2017-04-11 08:11:41', '1');
+INSERT INTO `tb_operation_log` VALUES ('b30e0b47-d543-49ef-bd37-77c1860b87a5', '001', 'admin', '0:0:0:0:0:0:0:1', '菜单模块', '所有菜单目录列表', 'cn.com.gzqinghui.sysmgr.menu.ui.MenuController.allDirs()', '2017-04-13 17:06:24', '1');
+INSERT INTO `tb_operation_log` VALUES ('b654153b-709a-4cb5-a6a5-91d556a341a1', '001', 'admin', '0:0:0:0:0:0:0:1', '配置模块', '配置列表', 'cn.com.gzqinghui.sysmgr.config.ui.ConfigController.list()', '2017-04-13 17:08:30', '1');
+INSERT INTO `tb_operation_log` VALUES ('bd294254-9811-4ca9-800c-966e54148289', '001', 'admin', '0:0:0:0:0:0:0:1', '通知管理模块', '通知管理列表', 'cn.com.gzqinghui.messagemgr.notice.ui.NoticeController.list()', '2017-04-11 08:36:30', '1');
+INSERT INTO `tb_operation_log` VALUES ('c0e09c09-4b92-4c06-9891-6f8ba84a5641', '001', 'admin', '0:0:0:0:0:0:0:1', '菜单模块', '新增菜单', 'cn.com.gzqinghui.sysmgr.menu.ui.MenuController.list()', '2017-04-13 17:06:20', '1');
+INSERT INTO `tb_operation_log` VALUES ('c130a7ed-f3f0-4787-bad7-aef662e213ad', '001', 'admin', '0:0:0:0:0:0:0:1', '活动管理模块', '活动结果查询', 'cn.com.gzqinghui.acitivtymgr.activityquery.ui.activityqueryController.list()', '2017-04-11 08:11:51', '1');
+INSERT INTO `tb_operation_log` VALUES ('cdb95737-d643-4341-81d3-3f4c20bc5ce9', '001', 'admin', '0:0:0:0:0:0:0:1', '菜单模块', '编辑菜单', 'cn.com.gzqinghui.sysmgr.menu.ui.MenuController.update()', '2017-04-13 17:06:34', '1');
+INSERT INTO `tb_operation_log` VALUES ('ce4ffb91-dec9-46b2-a9a3-9486112a4d0c', '001', 'admin', '0:0:0:0:0:0:0:1', '活动管理模块', '活动结果查询', 'cn.com.gzqinghui.acitivtymgr.activityquery.ui.activityqueryController.list()', '2017-04-11 15:02:31', '1');
+INSERT INTO `tb_operation_log` VALUES ('d48adf0f-c5e0-4fa0-8fa1-50034592941a', '001', 'admin', '0:0:0:0:0:0:0:1', '字典模块', '字典列表', 'cn.com.gzqinghui.sysmgr.dict.ui.DictController.list()', '2017-04-13 17:06:59', '1');
+INSERT INTO `tb_operation_log` VALUES ('d4bc47c6-0e9f-4653-9cc1-663aec4d4ddf', '001', 'admin', '0:0:0:0:0:0:0:1', '字典模块', '字典列表', 'cn.com.gzqinghui.sysmgr.dict.ui.DictController.list()', '2017-04-13 17:04:40', '1');
+INSERT INTO `tb_operation_log` VALUES ('d6a6a86a-18e9-40a5-9a40-30c58bb40f9c', '001', 'admin', '0:0:0:0:0:0:0:1', '配置模块', '配置列表', 'cn.com.gzqinghui.sysmgr.config.ui.ConfigController.list()', '2017-04-13 17:13:37', '1');
+INSERT INTO `tb_operation_log` VALUES ('d86278fa-833c-4fea-b897-4f23c8c701bc', '001', 'admin', '0:0:0:0:0:0:0:1', '菜单模块', '所有菜单目录列表', 'cn.com.gzqinghui.sysmgr.menu.ui.MenuController.allDirs()', '2017-04-13 17:06:24', '1');
+INSERT INTO `tb_operation_log` VALUES ('ea5ccbf3-f4c6-45c9-8d52-ed3d759a8651', '001', 'admin', '0:0:0:0:0:0:0:1', '权限模块', '新增权限', 'cn.com.gzqinghui.sysmgr.permission.ui.PermissionController.list()', '2017-04-13 17:05:14', '1');
+INSERT INTO `tb_operation_log` VALUES ('eacb4aef-a5d6-4f26-ad11-89b6e0e44cda', '001', 'admin', '0:0:0:0:0:0:0:1', '字典模块', '字典列表', 'cn.com.gzqinghui.sysmgr.dict.ui.DictController.list()', '2017-04-13 17:06:40', '1');
+INSERT INTO `tb_operation_log` VALUES ('efcc8ea6-c5ea-4e9e-8b1d-dc9e0947218f', '001', 'admin', '0:0:0:0:0:0:0:1', '配置模块', '配置列表', 'cn.com.gzqinghui.sysmgr.config.ui.ConfigController.list()', '2017-04-13 17:13:36', '1');
+INSERT INTO `tb_operation_log` VALUES ('faac60f3-c246-4292-ae8c-0c998185f889', '001', 'admin', '0:0:0:0:0:0:0:1', '配置模块', '配置列表', 'cn.com.gzqinghui.sysmgr.config.ui.ConfigController.list()', '2017-04-13 17:08:33', '1');
+INSERT INTO `tb_operation_log` VALUES ('fd67b868-5c89-4c5d-9347-c179f703af20', '001', 'admin', '0:0:0:0:0:0:0:1', '菜单模块', '新增菜单', 'cn.com.gzqinghui.sysmgr.menu.ui.MenuController.list()', '2017-04-13 17:05:07', '1');
+INSERT INTO `tb_operation_log` VALUES ('fe85551a-c93f-49f0-9808-2fd41e5b50b0', '001', 'admin', '0:0:0:0:0:0:0:1', '通知管理模块', '通知管理列表', 'cn.com.gzqinghui.messagemgr.notice.ui.NoticeController.list()', '2017-04-11 08:39:41', '1');
 
 -- ----------------------------
 -- Table structure for tb_ref_role_permission
@@ -601,7 +658,7 @@ CREATE TABLE `tb_sys_menu_info` (
 INSERT INTO `tb_sys_menu_info` VALUES ('2199c2af-a95f-400b-81f4-a30962cd620e', '代码生成', '2', null, '/jsp/sysextmgr/generator/generator_list.jsp', 'rightFrame', 'MEMBER_MGR', 'd0c8a943-93d9-449c-ad89-cff82d4a9103', '0', '100', '');
 INSERT INTO `tb_sys_menu_info` VALUES ('2c2833b5-a355-44a7-8fe6-73f9abc1b562', '活动管理', '2', null, '/jsp/acitivtymgr/activity/activity_list.jsp', 'rightFrame', 'ACTIVITY_MGR', 'f2bca1d7-ee6d-499b-8f64-beeeba435068', '0', '2', '');
 INSERT INTO `tb_sys_menu_info` VALUES ('488042bf-e135-4ab9-a66e-4a164a6686c7', '问题管理', '1', null, '', 'rightFrame', 'FAQ_MGR_MODUEL', '', '0', '4', '');
-INSERT INTO `tb_sys_menu_info` VALUES ('6d187ca7-5ba6-49a3-b84b-e55069c6a542', '扩展配置', '2', null, '/jsp/sysextmgr/extconfig/extconfig_list.jsp', 'rightFrame', 'EXT_CONFIG_MGR', 'd0c8a943-93d9-449c-ad89-cff82d4a9103', '0', '8', '');
+INSERT INTO `tb_sys_menu_info` VALUES ('6d187ca7-5ba6-49a3-b84b-e55069c6a542', '扩展配置', '2', null, '/jsp/sysextmgr/config/config_list.jsp', 'rightFrame', 'EXT_CONFIG_MGR', 'd0c8a943-93d9-449c-ad89-cff82d4a9103', '0', '8', '');
 INSERT INTO `tb_sys_menu_info` VALUES ('6f18336a-2e9c-4992-8e72-a685ac42944f', '消息管理', '2', null, '/jsp/messagemgr/msginfo/msginfo_list.jsp', 'rightFrame', 'MESSAGE_MGR', 'a83f17e9-4633-4104-978e-f7f6bf6f661f', '0', '2', '');
 INSERT INTO `tb_sys_menu_info` VALUES ('89db3662-50a4-460a-81c8-5874386c4555', '菜单管理', '2', null, '/jsp/sysextmgr/menu/menu_list.jsp', 'rightFrame', 'MENU_MGR', 'd0c8a943-93d9-449c-ad89-cff82d4a9103', null, '4', '');
 INSERT INTO `tb_sys_menu_info` VALUES ('a83f17e9-4633-4104-978e-f7f6bf6f661f', '信息管理', '1', null, '', 'rightFrame', 'MESSAGE_MGR_MODUEL', '', '0', '3', '');
@@ -724,7 +781,7 @@ CREATE TABLE `tb_sys_usr_info` (
 -- ----------------------------
 -- Records of tb_sys_usr_info
 -- ----------------------------
-INSERT INTO `tb_sys_usr_info` VALUES ('001', null, null, null, 'admin', 'admin', '098f6bcd4621d373cade4e832627b4f6', '1', '2017-04-07 14:43:31', '2130706433', '2017-04-07 15:45:25', '2130706433', null, '2015-10-10 16:52:12', null, null, '2015-10-19 15:59:07', '001', 'admin', null, null, '0', null);
+INSERT INTO `tb_sys_usr_info` VALUES ('001', null, null, null, 'admin', 'admin', '098f6bcd4621d373cade4e832627b4f6', '1', '2017-04-13 17:06:40', '2130706433', '2017-04-13 17:07:17', '2130706433', null, '2015-10-10 16:52:12', null, null, '2015-10-19 15:59:07', '001', 'admin', null, null, '0', null);
 
 -- ----------------------------
 -- View structure for view_user_permission
